@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "_comment": "Example file — shared/subscriptions.json is .gitignored. Copy this to shared/subscriptions.json and edit to match your real subscriptions. The dashboard reads it via /api/subscriptions.",
+  "subscriptions": [
+    {
+      "id": "claude-pro",
+      "name": "Claude Pro",
+      "vendor": "Anthropic",
+      "price_usd": 20,
+      "billing": "monthly",
+      "purpose": "Claude Code (this CLI) via OAuth login",
+      "status": "active",
+      "features": [
+        "Claude Code via OAuth (no API key needed)",
+        "All Claude models: Sonnet, Opus, Haiku",
+        "~5x message limits vs free tier"
+      ],
+      "rate_limits": [
+        { "label": "Sonnet messages / 5h", "value": "~45", "tier": "estimated" }
+      ],
+      "docs_url": "https://support.anthropic.com/en/articles/8324991",
+      "tracked_models": ["claude-*"]
+    },
+    {
+      "id": "chatgpt-plus",
+      "name": "ChatGPT Plus",
+      "vendor": "OpenAI",
+      "price_usd": 20,
+      "billing": "monthly",
+      "purpose": "ChatGPT app + Codex (via subscription OAuth)",
+      "status": "active",
+      "features": [
+        "GPT-5.x access",
+        "Codex via subscription OAuth (no API key needed)",
+        "Custom GPTs, voice mode"
+      ],
+      "rate_limits": [
+        { "label": "GPT-5 messages / 3h", "value": "~80", "tier": "estimated" }
+      ],
+      "docs_url": "https://help.openai.com/en/articles/9275245-chatgpt-plus-pricing-and-features",
+      "tracked_models": ["gpt-*"]
+    },
+    {
+      "id": "google-one-ai-premium",
+      "name": "Google One AI Premium",
+      "vendor": "Google",
+      "price_usd": 20,
+      "billing": "monthly",
+      "purpose": "Gemini Advanced + Antigravity + NotebookLM Plus + 2TB Drive",
+      "status": "active",
+      "features": [
+        "Antigravity CLI (agy) + IDE — Gemini 3.5 Flash default",
+        "Gemini Advanced — 2M context",
+        "NotebookLM Plus",
+        "2TB Google One storage"
+      ],
+      "docs_url": "https://one.google.com/about/ai-premium/",
+      "tracked_models": ["gemini-*"]
+    }
+  ]
+}

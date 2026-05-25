@@ -1,0 +1,18 @@
+{
+  "schema_version": 2,
+  "updated_at": "2026-05-25T00:00:00.000Z",
+  "_comment": "Example file — shared/goals.json is .gitignored. Copy this to shared/goals.json and edit, or use the dashboard to create goals.",
+  "goals": [
+    {
+      "id": "00000000-0000-0000-0000-000000000001",
+      "title": "Ship Mission Control v1",
+      "description": "Build the three-rail dashboard with agent + brain integrations.",
+      "progress": 0.6,
+      "targetDate": "2026-06-15",
+      "status": "active",
+      "tags": ["mission-control", "dashboard"],
+      "createdAt": "2026-05-25T00:00:00.000Z",
+      "updatedAt": "2026-05-25T00:00:00.000Z"
+    }
+  ]
+}

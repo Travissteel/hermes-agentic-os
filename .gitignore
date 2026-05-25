@@ -1,0 +1,43 @@
+# ============================================================================
+# Antigravity OS — repo .gitignore
+# Sensitive personal state and runtime artifacts must never be committed.
+# ============================================================================
+
+# --- Personal/runtime state ---
+# Contains your actual goals, activity, notes, subscriptions. Use the
+# .example versions as templates.
+shared/goals.json
+shared/subscriptions.json
+shared/notes.md
+shared/activity-log.md
+shared/hermes-state.md
+
+# --- Claude Code workspace settings ---
+# .claude/settings.local.json embeds API tokens in command patterns.
+# .claude/ also contains session caches.
+.claude/
+
+# --- Antigravity IDE project marker ---
+.antigravitycli/
+
+# --- Node / Next.js build artifacts (also handled inside mission-control/.gitignore) ---
+node_modules/
+.next/
+out/
+
+# --- Env files ---
+.env
+.env.local
+.env.*.local
+*.env
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+*.log
+
+# --- Bun caches ---
+.bun/
