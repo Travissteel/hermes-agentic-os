@@ -41,3 +41,6 @@ Thumbs.db
 
 # --- Bun caches ---
 .bun/
+
+# Personal Ralph PRDs + run state
+ralphs/

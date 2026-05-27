@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import type { Goal } from "@/lib/goals";
+import type { Goal } from "@/lib/goals-types";
 import type { JournalDay } from "@/lib/journal";
 
 function todayISO(): string {

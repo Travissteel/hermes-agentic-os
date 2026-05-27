@@ -9,22 +9,13 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { randomUUID } from "node:crypto";
 import path from "node:path";
 import { PATHS } from "./paths";
+import type { Goal, GoalStatus, GoalModel } from "./goals-types";
 
-export type GoalStatus = "active" | "paused" | "done" | "abandoned";
-
-export type Goal = {
-  id: string;
-  title: string;
-  description: string;
-  /** 0..1 */
-  progress: number;
-  /** ISO date (YYYY-MM-DD) or null */
-  targetDate: string | null;
-  status: GoalStatus;
-  tags: string[];
-  createdAt: string;
-  updatedAt: string;
-};
+// Re-export pure types so existing imports of these from `@/lib/goals`
+// keep working. Client components should still prefer `@/lib/goals-types`
+// to avoid pulling node:fs into the browser bundle via value imports.
+export type { Goal, GoalStatus, GoalModel } from "./goals-types";
+export { GOAL_MODELS } from "./goals-types";
 
 type GoalsFile = {
   schema_version: number;
@@ -55,6 +46,13 @@ async function readAll(): Promise<GoalsFile> {
           ? g.status
           : "active",
       tags: Array.isArray(g.tags) ? g.tags.filter((t) => typeof t === "string") : [],
+      prdPath: typeof g.prdPath === "string" && g.prdPath.trim() ? g.prdPath : null,
+      model:
+        g.model === "claude" ||
+        g.model === "amp" ||
+        g.model === "antigravity"
+          ? g.model
+          : "hermes",
       createdAt:
         typeof g.createdAt === "string" ? g.createdAt : new Date().toISOString(),
       updatedAt:
@@ -107,6 +105,8 @@ export async function createGoal(input: {
   targetDate?: string | null;
   tags?: string[];
   progress?: number;
+  prdPath?: string | null;
+  model?: GoalModel;
 }): Promise<Goal> {
   const title = input.title.trim();
   if (!title) throw new Error("title is required");
@@ -119,6 +119,8 @@ export async function createGoal(input: {
     targetDate: input.targetDate?.trim() || null,
     status: "active",
     tags: input.tags ?? [],
+    prdPath: input.prdPath?.trim() || null,
+    model: input.model ?? "hermes",
     createdAt: now,
     updatedAt: now,
   };
@@ -130,7 +132,7 @@ export async function createGoal(input: {
 
 export async function updateGoal(
   id: string,
-  patch: Partial<Pick<Goal, "title" | "description" | "progress" | "targetDate" | "status" | "tags">>
+  patch: Partial<Pick<Goal, "title" | "description" | "progress" | "targetDate" | "status" | "tags" | "prdPath" | "model">>
 ): Promise<Goal | null> {
   const file = await readAll();
   const idx = file.goals.findIndex((g) => g.id === id);
@@ -148,6 +150,11 @@ export async function updateGoal(
         : (patch.targetDate?.trim() || null),
     status: patch.status ?? existing.status,
     tags: patch.tags ?? existing.tags,
+    prdPath:
+      patch.prdPath === undefined
+        ? existing.prdPath
+        : (patch.prdPath?.trim() || null),
+    model: patch.model ?? existing.model,
     updatedAt: new Date().toISOString(),
   };
   file.goals[idx] = next;
