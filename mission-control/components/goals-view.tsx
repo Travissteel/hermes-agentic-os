@@ -437,6 +437,20 @@ function GoalCard({
   );
 }
 
+type RalphRunState = {
+  state: "idle" | "running";
+  pid?: number;
+  startedAt?: string;
+  runForSeconds?: number;
+  model?: GoalModel;
+  toolFlag?: string;
+  maxIterations?: number;
+  logPath: string;
+  logTail: string;
+  lastExitCode: number | null;
+  lastFinishedAt: string | null;
+};
+
 function PrdBlock({
   goal,
   prd,
@@ -547,17 +561,181 @@ function PrdBlock({
         )}
       </ul>
 
-      <div className="flex items-center justify-between border-t border-cyan-500/10 pt-2 text-[10px] text-muted-foreground">
-        <span>
-          runner:{" "}
-          <span className={MODEL_TONE[goal.model].split(" ")[1]}>
-            {goal.model}
+      <RalphRunner goal={goal} prdProgressPct={pct} />
+    </div>
+  );
+}
+
+function RalphRunner({
+  goal,
+  prdProgressPct,
+}: {
+  goal: Goal;
+  prdProgressPct: number;
+}) {
+  const status = useSWR<RalphRunState>(
+    `/api/goals/${goal.id}/ralph/status`,
+    fetcher,
+    {
+      // Poll fast while running, slow when idle
+      refreshInterval: (latest) =>
+        latest?.state === "running" ? 3_000 : 15_000,
+    }
+  );
+
+  const [busy, setBusy] = useState(false);
+  const [logExpanded, setLogExpanded] = useState(false);
+  const [runError, setRunError] = useState<string | null>(null);
+
+  const state = status.data;
+  const running = state?.state === "running";
+
+  async function run() {
+    if (running || busy) return;
+    const confirmText =
+      goal.model === "claude" || goal.model === "hermes"
+        ? `Spawn Ralph (${goal.model} runner → claude-code) on "${goal.title}"?\n\nClaude Pro quota will be consumed per iteration. The loop runs up to 20 iterations by default.`
+        : `Spawn Ralph (${goal.model} runner) on "${goal.title}"?`;
+    if (!confirm(confirmText)) return;
+    setBusy(true);
+    setRunError(null);
+    try {
+      const res = await fetch(`/api/goals/${goal.id}/ralph/run`, {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({}),
+      });
+      const data = (await res.json()) as { error?: string };
+      if (!res.ok) {
+        setRunError(data.error ?? `HTTP ${res.status}`);
+      }
+      await status.mutate();
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  async function stop() {
+    if (!running || busy) return;
+    if (!confirm("Stop the running Ralph loop?")) return;
+    setBusy(true);
+    setRunError(null);
+    try {
+      const res = await fetch(`/api/goals/${goal.id}/ralph/stop`, {
+        method: "POST",
+      });
+      const data = (await res.json()) as { error?: string };
+      if (!res.ok) setRunError(data.error ?? `HTTP ${res.status}`);
+      await status.mutate();
+    } finally {
+      setBusy(false);
+    }
+  }
+
+  const elapsedLabel = state?.runForSeconds
+    ? state.runForSeconds < 60
+      ? `${state.runForSeconds}s`
+      : state.runForSeconds < 3600
+        ? `${Math.floor(state.runForSeconds / 60)}m ${state.runForSeconds % 60}s`
+        : `${Math.floor(state.runForSeconds / 3600)}h ${Math.floor((state.runForSeconds % 3600) / 60)}m`
+    : null;
+
+  return (
+    <div className="space-y-2 border-t border-cyan-500/10 pt-2">
+      <div className="flex flex-wrap items-center justify-between gap-2 text-[10px] text-muted-foreground">
+        <div className="flex items-center gap-2">
+          <span>
+            runner:{" "}
+            <span className={MODEL_TONE[goal.model].split(" ")[1]}>
+              {goal.model}
+            </span>
           </span>
-        </span>
-        <span title="Spawning Ralph from the dashboard ships in Phase B">
-          ▶ Run Ralph <span className="ml-0.5 opacity-50">(Phase B)</span>
-        </span>
+          {running && (
+            <>
+              <Separator orientation="vertical" className="h-3" />
+              <span className="flex items-center gap-1.5 font-mono text-emerald-300">
+                <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_6px] shadow-emerald-400/60" />
+                running · {elapsedLabel}
+                {state?.maxIterations ? ` · max ${state.maxIterations} iter` : ""}
+              </span>
+            </>
+          )}
+          {!running && state?.lastFinishedAt && (
+            <>
+              <Separator orientation="vertical" className="h-3" />
+              <span className="font-mono text-[10px] text-muted-foreground/80">
+                last finished{" "}
+                {new Date(state.lastFinishedAt).toLocaleTimeString(undefined, {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+                {state.lastExitCode !== null && (
+                  <span
+                    className={cn(
+                      "ml-1",
+                      state.lastExitCode === 0
+                        ? "text-emerald-300"
+                        : "text-rose-300"
+                    )}
+                  >
+                    (exit {state.lastExitCode})
+                  </span>
+                )}
+              </span>
+            </>
+          )}
+        </div>
+        <div className="flex items-center gap-1">
+          {running ? (
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={stop}
+              disabled={busy}
+              className="h-6 border-rose-500/40 px-2 text-[10px] text-rose-300 hover:bg-rose-500/10"
+            >
+              ■ Stop
+            </Button>
+          ) : (
+            <Button
+              size="sm"
+              variant="outline"
+              onClick={run}
+              disabled={busy || prdProgressPct >= 100 || goal.model === "antigravity"}
+              className="h-6 border-cyan-500/40 px-2 text-[10px] text-cyan-300 hover:bg-cyan-500/10 disabled:opacity-40"
+              title={
+                prdProgressPct >= 100
+                  ? "All stories pass — nothing for Ralph to do"
+                  : goal.model === "antigravity"
+                    ? "agy runner ships in Phase C"
+                    : "Spawn ralph.sh in the goal's workspace"
+              }
+            >
+              ▶ Run Ralph
+            </Button>
+          )}
+          {(state?.logTail || running) && (
+            <Button
+              size="sm"
+              variant="ghost"
+              onClick={() => setLogExpanded((v) => !v)}
+              className="h-6 px-2 text-[10px] text-muted-foreground"
+            >
+              {logExpanded ? "hide log" : "show log"}
+            </Button>
+          )}
+        </div>
       </div>
+
+      {runError && (
+        <p className="text-[10px] text-rose-300">{runError}</p>
+      )}
+
+      {logExpanded && (
+        <pre className="max-h-48 overflow-auto rounded bg-background/60 p-2 font-mono text-[10px] leading-snug text-muted-foreground">
+          {state?.logTail || "(no log output yet)"}
+        </pre>
+      )}
     </div>
   );
 }
