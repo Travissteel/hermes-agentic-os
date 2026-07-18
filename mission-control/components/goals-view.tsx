@@ -33,7 +33,7 @@ const MODEL_HINT: Record<GoalModel, string> = {
   hermes: "Hermes orchestrates ralph.sh + posts progress (default supervisor)",
   claude: "Direct ralph.sh --tool claude — fastest, uses Claude Pro quota",
   amp: "Direct ralph.sh --tool amp — separate billing",
-  antigravity: "agy-driven loop (Phase B — not yet wired)",
+  antigravity: "agy-driven loop (Phase C — not yet wired)",
 };
 
 const STATUS_NEXT: Record<GoalStatus, GoalStatus[]> = {

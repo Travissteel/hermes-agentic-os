@@ -30,9 +30,9 @@ Both Hermes and Claude Code read and write these files:
 
 ## The Hermes Stack
 
-- **Install:** `~/.hermes/hermes-agent/` (v0.13.0, 230 commits behind — `hermes update` available)
+- **Install:** `~/.hermes/hermes-agent/` (v0.18.2 as of 2026-07-18 — `hermes update` drains + restarts the gateway automatically)
 - **Config:** `~/.hermes/config.yaml`
-- **Model:** `gpt-5.2` via `openai-codex` provider (OpenAI subscription OAuth)
+- **Model:** `gpt-5.4` via `openai-codex` provider (OpenAI subscription OAuth); `gpt-5.5` on demand for coding
 - **Gateway:** `hermes-gateway.service` (systemd user unit) — Telegram bot, allowed user `1518423327`
 - **WebUI:** `hermes-webui.service` at `http://127.0.0.1:8787` (three-panel: sessions / chat / workspace)
 - **Skills enabled:** claude-code, codex, hermes-agent, opencode, claude-design, codebase-inspection, github-code-review, requesting-code-review
@@ -53,7 +53,7 @@ Both Hermes and Claude Code read and write these files:
 
 ---
 
-## Active Hermes Crons (9 jobs)
+## Active Hermes Crons (12 jobs)
 
 | Name | Schedule | Script | Mode | Purpose |
 |---|---|---|---|---|
@@ -66,6 +66,9 @@ Both Hermes and Claude Code read and write these files:
 | `content-weekly-synthesis` | 6:30am Sun | `content_weekly_synthesis.py` | no-agent | Weekly content synthesis |
 | `Weekly draft generator` | 7am Sun | (agent) | agent | Generates draft posts for approval |
 | `Weekly post scheduler` | 3pm Sun | `schedule_approved_drafts.py` | script | Schedules approved drafts to Postiz |
+| `morning-goal-triage` | 7am daily | (agent) | agent | Triages active goals (workdir `~/antigravity`) |
+| `x-direct-publisher` | every 10m | `x_publish_queue.py` | no-agent | Publishes queued X posts directly |
+| `leadgen-nightly` | 4am daily | (agent, `leadgen` skill) | agent | One content unit for one lead gen network site |
 
 (Source of truth: `~/.hermes/cron/jobs.json`; `shared/hermes-state.md` mirrors this.)
 
@@ -75,9 +78,10 @@ Both Hermes and Claude Code read and write these files:
 
 - **X Content Automation** — n8n DM workflow on `n8n.srv849680.hstgr.cloud`, full research pipeline (daily + weekly), hook taxonomy + 3-gate slop filter, posted via Postiz
 - **BSF SEO** — business-software-finder.com, nightly Hermes cron 2am, GitHub repo for content commits
-- **HF SEO** — hypnotherapy-finder.com, nightly cron 3am, needs `HF_GITHUB_TOKEN`
+- **HF SEO** — hypnotherapy-finder.com, nightly cron 3am (`HF_GITHUB_TOKEN` configured)
 - **Beehiiv Newsletters** — connected through Postiz workflow
 - **Obsidian Brain Vault** — `~/brain/` — shared knowledge base (brand, infra, content ideas). Journal entries from the dashboard will land in `~/brain/journal/YYYY-MM-DD.md`.
+- **Lead Gen Network** — rank-and-rent micro-niche sites (service + location, AU). Pipeline at `~/antigravity/leadgen/`: `template/` (Next.js 16, config-driven, SEO+GEO built in), `scripts/new-site.ts` (scaffolder; `/new-leadgen-site` Claude skill wraps it), `sites.json` (registry), `LAUNCH-CHECKLIST.md` (full lifecycle SOP: niche research → EMD → deploy → off-page → rent). Nightly `leadgen-nightly` cron (4am, `~/.hermes/skills/leadgen/SKILL.md`) grows each `live` site toward 40–50 pages. Leads → Resend email. **Never interlink network sites.**
 
 ---
 
@@ -85,7 +89,7 @@ Both Hermes and Claude Code read and write these files:
 
 One-shot (no gateway, no session — clean stdin/stdout):
 ```bash
-hermes -p "task here"
+hermes -z "task here"
 ```
 
 Interactive session:

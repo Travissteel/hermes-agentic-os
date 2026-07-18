@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+:root {
+  /* Light, trustworthy local-service palette. --primary/--accent are
+     overridden per-site from site.config.ts theme in app/layout.tsx. */
+  --background: #ffffff;
+  --foreground: #0f172a; /* Slate 900 */
+  --muted: #475569; /* Slate 600 */
+  --border: #e2e8f0; /* Slate 200 */
+  --primary: #0f766e; /* Teal 700 — overridden by config */
+  --accent: #f59e0b; /* Amber 500 — overridden by config */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.field {
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  background: #fff;
+  color: var(--foreground);
+}
+
+.field:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 1px;
+}
+
+/* Honeypot: visually gone, still submittable by naive bots. */
+.honeypot {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.answer-block + .answer-block {
+  margin-top: 2rem;
+}

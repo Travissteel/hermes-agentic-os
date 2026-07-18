@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "southport",
+    "name": "Southport",
+    "postcode": "4215",
+    "blurb": "Southport is the Gold Coast's central business district, with a mix of older Queenslanders and high-rise apartments — both known for ageing pipework that fails without warning."
+  },
+  {
+    "slug": "surfers-paradise",
+    "name": "Surfers Paradise",
+    "postcode": "4217",
+    "blurb": "Surfers Paradise runs on high-density apartment living, where a single burst pipe or blocked stack can affect multiple units fast."
+  },
+  {
+    "slug": "burleigh-heads",
+    "name": "Burleigh Heads",
+    "postcode": "4220",
+    "blurb": "Burleigh Heads mixes beachside homes and hillside properties, where tree-root intrusion into sewer lines is a common cause of blocked drains."
+  }
+]
