@@ -1,0 +1,4 @@
+To launch your first site
+Run /new-leadgen-site here (or the scaffolder directly), after doing the Phase-0 research in the checklist: pick a high-ticket urgent niche, an AU town of 60–400k, pass the green-light SERP test, and grab the exact-match .com. After scaffolding, the manual steps are: deploy to Cloudflare Workers (`bun leadgen/scripts/batch-new-sites.ts --deploy --only <slug>`, or `cd ~/sites/<slug> && bun run deploy` — needs CF_API_TOKEN + CF_ACCOUNT_ID in ~/.hermes/.env; the deploy sets RESEND_API_KEY + LEAD_TO_EMAIL as Worker secrets) → add the custom domain to the Worker in the Cloudflare dashboard (www primary) → flip the site to live in sites.json → submit the sitemap in Search Console and add the GSC service account (antigravity-gsc-connect@hypnotherapy-finder.iam.gserviceaccount.com) as a Restricted user so the crons can read coverage. The cron takes it from there.
+
+Full detail: leadgen/LAUNCH-CHECKLIST.md Phase 2.
