@@ -13,6 +13,32 @@ export interface SubService {
   slug: string;
   name: string;
   blurb: string;
+
+  /**
+   * These are the MONEY PAGES — the pages buyers search for and the ones that
+   * have to rank. Everything below is optional so the template still builds,
+   * but shipping a sub-service on `blurb` alone is what produced the network's
+   * indexation problem: measured 2026-08-19, service pages were ~180 words and
+   * 54% identical to their siblings, and Google left them uncrawled.
+   *
+   * Write only what is TRUE and specific to this sub-service. Generic trade
+   * copy that would fit any of them is worse than leaving the field out.
+   */
+
+  /** What the job actually involves, in plain terms. 100-200 words. */
+  whatItInvolves?: string;
+
+  /** Concrete situations that call for this specific sub-service. */
+  whenYouNeedIt?: string[];
+
+  /** How the job runs start to finish. */
+  process?: { step: string; detail: string }[];
+
+  /** Honest price framing — ranges and what moves them. Never invent figures. */
+  priceGuide?: string;
+
+  /** 2-4 questions buyers ask about THIS sub-service, not the trade generally. */
+  faqs?: FAQ[];
 }
 
 export interface FAQ {

@@ -1,0 +1,21 @@
+{
+  // Cloudflare Workers deploy config (via the OpenNext adapter).
+  // The scaffolder (~/antigravity/leadgen/scripts/lib/scaffold.ts) rewrites
+  // "name" to the site slug for each new site. Everything else is shared.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "leadgen-site",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-07-27",
+  // nodejs_compat is required by the OpenNext worker runtime.
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  }
+  // Runtime secrets (RESEND_API_KEY, LEAD_TO_EMAIL, LEAD_FROM_EMAIL) are NOT
+  // stored here — they are set per-site via `wrangler secret put` by
+  // scripts/lib/deploy.ts. Never commit secrets to this file.
+}

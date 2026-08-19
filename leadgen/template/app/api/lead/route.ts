@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 import { SITE } from "@/site.config";
+import { getAllAreas } from "@/lib/locations";
+import { scoreLead } from "@/lib/spam-filter";
+import { LEAD_LIMITS } from "@/lib/lead-form";
 
 export const dynamic = "force-dynamic";
 
@@ -30,16 +33,30 @@ export async function POST(request: Request) {
   }
 
   const lead = {
-    name: clean(body.name, 100),
-    phone: clean(body.phone, 20),
-    suburb: clean(body.suburb, 80),
-    message: clean(body.message, 2000),
-    sourcePage: clean(body.sourcePage, 200),
+    name: clean(body.name, LEAD_LIMITS.name),
+    phone: clean(body.phone, LEAD_LIMITS.phone),
+    suburb: clean(body.suburb, LEAD_LIMITS.suburb),
+    message: clean(body.message, LEAD_LIMITS.message),
+    sourcePage: clean(body.sourcePage, LEAD_LIMITS.sourcePage),
     receivedAt: new Date().toISOString(),
   };
   if (!lead.name || !lead.phone || !lead.message) {
     return NextResponse.json({ error: "missing fields" }, { status: 400 });
   }
+
+  // Advisory only — flagged leads are still delivered, just marked. The counts
+  // logged here are what `wrangler tail` / Workers Logs can be queried on to
+  // compare spam volume against real volume.
+  const verdict = scoreLead(lead, getAllAreas(), SITE.brandName);
+  console.log(
+    verdict.isSpam ? "[lead:flagged]" : "[lead:clean]",
+    JSON.stringify({
+      score: verdict.score,
+      reasons: verdict.reasons,
+      suburb: lead.suburb,
+      sourcePage: lead.sourcePage,
+    }),
+  );
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.LEAD_TO_EMAIL;
@@ -56,13 +73,26 @@ export async function POST(request: Request) {
     from: process.env.LEAD_FROM_EMAIL ?? "leads@resend.dev",
     to,
     replyTo: SITE.email,
-    subject: `New lead — ${lead.suburb} — ${SITE.brandName}`,
+    subject: verdict.isSpam
+      ? `[SUSPECTED SPAM] ${lead.suburb} — ${SITE.brandName}`
+      : `New lead — ${lead.suburb} — ${SITE.brandName}`,
     html: [
+      verdict.isSpam
+        ? [
+            `<div style="border:2px solid #b91c1c;background:#fef2f2;padding:12px;margin-bottom:16px">`,
+            `<p style="margin:0 0 6px;font-weight:bold;color:#b91c1c">Suspected spam (score ${verdict.score})</p>`,
+            `<ul style="margin:0;padding-left:18px;color:#7f1d1d">`,
+            ...verdict.reasons.map((r) => `<li>${escapeHtml(r)}</li>`),
+            `</ul></div>`,
+          ].join("")
+        : "",
       `<h2>New quote request via ${SITE.brandName}</h2>`,
       `<p><strong>Name:</strong> ${escapeHtml(lead.name)}</p>`,
       `<p><strong>Phone:</strong> ${escapeHtml(lead.phone)}</p>`,
       `<p><strong>Suburb:</strong> ${escapeHtml(lead.suburb)}</p>`,
-      `<p><strong>Job:</strong> ${escapeHtml(lead.message)}</p>`,
+      // pre-wrap so paragraph breaks in a long enquiry survive into the email.
+      `<p><strong>Job:</strong></p>`,
+      `<p style="white-space:pre-wrap;margin:0 0 12px">${escapeHtml(lead.message)}</p>`,
       `<p><strong>Page:</strong> ${escapeHtml(lead.sourcePage)}</p>`,
       `<p><strong>Received:</strong> ${lead.receivedAt}</p>`,
     ].join("\n"),

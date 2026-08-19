@@ -4,7 +4,7 @@ import { SITE } from "@/site.config";
 import { pageMetadata } from "@/lib/seo";
 import { QuoteForm } from "@/components/quote-form";
 import { AnswerBlock } from "@/components/answer-block";
-import { BreadcrumbSchema, ServiceSchema } from "@/components/seo";
+import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo";
 
 export function generateStaticParams() {
   return SITE.subServices.map((s) => ({ slug: s.slug }));
@@ -44,17 +44,94 @@ export default async function SubServicePage({
           { name: sub.name, path: `/services/${sub.slug}` },
         ]}
       />
+      {sub.faqs && sub.faqs.length > 0 && <FAQSchema faqs={sub.faqs} />}
       <section className="grid gap-10 py-12 md:grid-cols-2">
         <div>
           <h1 className="text-3xl font-bold text-foreground">
             {sub.name} in {SITE.location.city}
           </h1>
           <p className="mt-4 text-muted">{sub.blurb}</p>
+
+          {/*
+            Substance sections for the money page. Previously this rendered
+            `blurb` plus a hardcoded answer block — ~180 words, 54% identical
+            to sibling services. Each block renders only when written.
+          */}
+
+          {sub.whatItInvolves && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold text-foreground">
+                What {sub.name.toLowerCase()} involves
+              </h2>
+              <p className="mt-3 text-muted">{sub.whatItInvolves}</p>
+            </div>
+          )}
+
+          {sub.whenYouNeedIt && sub.whenYouNeedIt.length > 0 && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold text-foreground">
+                When you need {sub.name.toLowerCase()}
+              </h2>
+              <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
+                {sub.whenYouNeedIt.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {sub.process && sub.process.length > 0 && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold text-foreground">
+                How the job runs
+              </h2>
+              <ol className="mt-3 space-y-4">
+                {sub.process.map((p, i) => (
+                  <li key={p.step} className="flex gap-3">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
+                      {i + 1}
+                    </span>
+                    <div>
+                      <h3 className="font-semibold text-foreground">{p.step}</h3>
+                      <p className="mt-1 text-sm text-muted">{p.detail}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          )}
+
+          {sub.priceGuide && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold text-foreground">
+                What {sub.name.toLowerCase()} costs in {SITE.location.city}
+              </h2>
+              <p className="mt-3 text-muted">{sub.priceGuide}</p>
+            </div>
+          )}
+
           <AnswerBlock
             question={`How do I get ${sub.name.toLowerCase()} quotes in ${SITE.location.city}?`}
             answer={`Submit your job details through ${SITE.brandName} and local ${SITE.service.phrase} professionals who handle ${sub.name.toLowerCase()} will contact you directly with quotes. The service is free and there is no obligation to accept any quote.`}
           />
-          <p className="mt-6 text-sm text-muted">
+
+          {sub.faqs && sub.faqs.length > 0 && (
+            <div className="mt-8">
+              <h2 className="text-xl font-semibold text-foreground">
+                {sub.name} questions
+              </h2>
+              <div className="mt-3 space-y-5">
+                {sub.faqs.map((f) => (
+                  <div key={f.question}>
+                    <h3 className="font-semibold text-foreground">{f.question}</h3>
+                    <p className="mt-1 text-muted">{f.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <p className="mt-8 text-sm text-muted">
             Also need something else? See all{" "}
             <Link href="/services" className="text-primary underline">
               {SITE.service.phrase} services

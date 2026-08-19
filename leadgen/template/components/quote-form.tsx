@@ -1,6 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import {
+  COUNTER_VISIBLE_FROM,
+  COUNTER_WARN_FROM,
+  LEAD_LIMITS,
+} from "@/lib/lead-form";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
@@ -10,6 +15,11 @@ type FormState = "idle" | "sending" | "sent" | "error";
  */
 export function QuoteForm({ sourcePage }: { sourcePage: string }) {
   const [state, setState] = useState<FormState>("idle");
+  const [messageLength, setMessageLength] = useState(0);
+
+  const remaining = LEAD_LIMITS.message - messageLength;
+  const showCounter = messageLength >= COUNTER_VISIBLE_FROM;
+  const warn = messageLength >= COUNTER_WARN_FROM;
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,6 +35,7 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setState("sent");
       form.reset();
+      setMessageLength(0);
     } catch {
       setState("error");
     }
@@ -46,7 +57,7 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
       <input
         name="name"
         required
-        maxLength={100}
+        maxLength={LEAD_LIMITS.name}
         placeholder="Your name"
         className="field"
         autoComplete="name"
@@ -54,7 +65,7 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
       <input
         name="phone"
         required
-        maxLength={20}
+        maxLength={LEAD_LIMITS.phone}
         placeholder="Phone number"
         className="field"
         autoComplete="tel"
@@ -63,19 +74,34 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
       <input
         name="suburb"
         required
-        maxLength={80}
+        maxLength={LEAD_LIMITS.suburb}
         placeholder="Suburb"
         className="field"
         autoComplete="address-level2"
       />
-      <textarea
-        name="message"
-        required
-        maxLength={2000}
-        rows={3}
-        placeholder="What do you need done?"
-        className="field"
-      />
+      <div>
+        <textarea
+          name="message"
+          required
+          maxLength={LEAD_LIMITS.message}
+          rows={4}
+          placeholder="What do you need done?"
+          className="field resize-y"
+          onChange={(e) => setMessageLength(e.target.value.length)}
+          aria-describedby="message-counter"
+        />
+        {/* Stays hidden until the cap is actually in sight, so a short
+            enquiry never sees a limit it will not reach. */}
+        <p
+          id="message-counter"
+          aria-live="polite"
+          className={`mt-1 text-right text-xs ${
+            showCounter ? (warn ? "text-amber-600" : "text-muted") : "invisible"
+          }`}
+        >
+          {remaining.toLocaleString()} characters left
+        </p>
+      </div>
       <input
         name="company_website"
         tabIndex={-1}

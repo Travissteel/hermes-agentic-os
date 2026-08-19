@@ -16,8 +16,9 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Note: www/non-www redirects are handled by Vercel domain settings.
-  // Canonical URLs always use the www host — see lib/seo.ts.
+  // Note: apex→www redirect is a per-zone Cloudflare Redirect Rule (set when
+  // the custom domain is attached — see LAUNCH-CHECKLIST.md). Canonical URLs
+  // always use the www host — see lib/seo.ts.
 };
 
 export default nextConfig;
