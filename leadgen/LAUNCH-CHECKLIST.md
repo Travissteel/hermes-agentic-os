@@ -1,8 +1,43 @@
 # Lead Gen Site — Launch Checklist
 
-The full lifecycle for one micro-niche site, from niche research to rent.
-Scaffolding itself is one command (`bun ~/antigravity/leadgen/scripts/new-site.ts …`
-or `/new-leadgen-site` in Claude Code).
+The full lifecycle for a micro-niche site, from niche research to rent.
+Two ways in:
+
+- **Single site:** `bun ~/antigravity/leadgen/scripts/new-site.ts …` or
+  `/new-leadgen-site` in Claude Code.
+- **Batch (recommended for the ≥10 sites the strategy calls for):** see the
+  **Batch workflow** section below.
+
+Hosting is standardised on **Cloudflare Workers** (via the OpenNext adapter) —
+free tier, no per-site cost, no commercial-use restriction. Domains and Resend
+are the only per-site costs.
+
+## Batch workflow (build many at once)
+
+The single-site checklist below still applies to each site — the batch tooling
+just runs the mechanical parts in bulk. The flow, and who owns each step:
+
+1. **Pick + green-light (you):** for each candidate, do Phase 0 by hand. Add a
+   minimal `seed` row (service, phrase, city, state, postcode, your green-light
+   verdict) to `leadgen/batch/candidates.json`. See `leadgen/batch/README.md`.
+2. **Draft config (AI):** run `/leadgen-batch-research` — it fills real
+   suburbs+postcodes, subservices, FAQs, facts, theme, brand, keywords, and
+   flips each row to `draft`. It never invents a green-light verdict.
+3. **Approve (you):** review each `draft`, buy/confirm the `domain`, set the
+   `email`, then set `status: "approved"`.
+4. **Scaffold the batch:** `bun leadgen/scripts/batch-new-sites.ts` — scaffolds
+   every approved row (build-verify + private repo + push + register),
+   continue-on-error, prints a summary. `--dry-run` to test without pushing.
+5. **Deploy the batch:** after domains are bought,
+   `bun leadgen/scripts/batch-new-sites.ts --deploy` (needs `CF_API_TOKEN` +
+   `CF_ACCOUNT_ID` in `~/.hermes/.env`). Attach each domain in Cloudflare, flip
+   `status: "live"`.
+6. **Cook in parallel:** the `leadgen-launch` cron front-loads launch content
+   across every launching site; each graduates to the `leadgen-nightly`
+   maintenance rotation once it hits its `launchTarget` (default 15 pages).
+
+**Never interlink network sites** — no shared content, footers, cross-links, or
+Search Console property, ever. This is absolute across the whole batch.
 
 ## Phase 0 — Niche & location research (before buying anything)
 
@@ -25,30 +60,46 @@ or `/new-leadgen-site` in Claude Code).
    currently rank in the top 10 — if weak sites rank, yours can outrank them.
    Manually check the top results for intent (content type / format / angle)
    so the site's money pages match what Google rewards.
-5. **One site at a time.** Finish and rent one before scaffolding the next.
+5. **Green-light before you approve.** The strategy calls for a batch of ≥10
+   (some will always fail to rank), so research a batch together — but a site
+   only earns `approved` status once *its own* Phase 0 checks pass. Never
+   scaffold a candidate you haven't green-lit.
 
 ## Phase 1 — Domain
 
 - Exact-match domain: `<service><location>.com` (e.g. emergencyplumbergoldcoast.com)
 - .com preferred; keep it under ~$30; www is the canonical host
 
-## Phase 2 — Scaffold & deploy
+## Phase 2 — Scaffold & deploy (Cloudflare Workers)
 
-- [ ] Run the scaffolder (creates site + private GitHub repo, verified build)
-- [ ] Vercel → **Import Git Repository** → select the new repo
-- [ ] Vercel env vars: `RESEND_API_KEY`, `LEAD_TO_EMAIL` (your inbox),
-      `LEAD_FROM_EMAIL` (once the domain is verified in Resend)
-- [ ] Attach domain; set **www** as primary, apex redirects to www
+**One-time setup:** add `CF_API_TOKEN` (a token with the *Edit Workers* +
+*Workers Scripts* permissions) and `CF_ACCOUNT_ID` to `~/.hermes/.env`
+(chmod 600). Without them the scaffold + push still work; only `--deploy` is
+gated. Also set `RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL` in
+`~/.hermes/.env` — the deploy step reads them and sets them as Worker secrets.
+
+- [ ] Run the scaffolder (creates site + private GitHub repo, verified build,
+      writes the per-site `wrangler.jsonc` worker name)
+- [ ] Deploy: `bun leadgen/scripts/batch-new-sites.ts --deploy --only <slug>`
+      (or `cd ~/sites/<slug> && bun run deploy`). This runs the OpenNext
+      Cloudflare build, deploys the Worker, and sets the `RESEND_API_KEY` /
+      `LEAD_TO_EMAIL` / `LEAD_FROM_EMAIL` secrets from `~/.hermes/.env`
+- [ ] In the Cloudflare dashboard: add the custom domain to the Worker as
+      **www** (canonical), and add a **Redirect Rule** apex → www (301)
 - [ ] Set the site's `status: "live"` + `launchedAt` in `leadgen/sites.json`
-      (the nightly cron only works `live` sites)
+      (the launch/nightly crons only work `live` sites)
 - [ ] Google Search Console: verify property, submit `/sitemap.xml`
 - [ ] Submit a test lead on the live site and confirm the email arrives
 
 ## Phase 3 — Let it cook (3–6 months)
 
-- The `leadgen-nightly` Hermes cron grows the site toward 40–50 pages:
-  dedicated service pages, suburb pages, and the FAQ colony (PAA questions →
-  ~120-word answers → internal links funnelling authority to money pages)
+- Two Hermes crons grow content (both use the `leadgen` skill):
+  - `leadgen-launch` (3×/day) front-loads new live sites — one unit per
+    launching site each run — until each reaches its `launchTarget` (~15 pages).
+  - `leadgen-nightly` (4am) then maintains, growing the oldest live site toward
+    40–50 pages: service pages, suburb pages, and the FAQ colony (PAA questions
+    → ~120-word answers → internal links funnelling authority to money pages).
+- A site graduates launch → maintenance automatically at `launchTarget`.
 - Be patient — indexing and trust take months. Check Search Console monthly.
 - **Never interlink sites in the network.** No shared footers, no cross-links,
   no shared Search Console property.

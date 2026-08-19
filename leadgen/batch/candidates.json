@@ -1,0 +1,447 @@
+{
+  "candidates": [
+    {
+      "status": "scaffolded",
+      "service": "Restumping",
+      "phrase": "restumping",
+      "city": "Ballarat",
+      "state": "Victoria",
+      "stateAbbr": "VIC",
+      "postcode": "3350",
+      "population": 113000,
+      "greenLight": {
+        "verdict": "green",
+        "notes": "Travis's competitor audit: rank1 restumpingballarat.com = thin EMD bridge page, no topical SILO or deep content; rank2 smythesdalereblocking.com.au = dated legacy trade site (weak mobile, generic text lists, no per-service URLs, weak CTAs); rank3 eurekarestumping.com.au = templated/keyword-stuffed subfloor/underpinning pages, poor internal linking, weak local schema + geo depth. Beatable with a deep, natural SILO (subfloor repairs, underpinning, re-levelling, concrete vs steel stumps) + suburb pages + strong local schema. NOTE: restumpingballarat.com is an existing EMD (reversed word order) \u2014 win on topical depth."
+      },
+      "brand": "Ballarat Restumping Quotes",
+      "domain": "www.ballaratrestumping.com",
+      "email": "quotes@ballaratrestumping.com",
+      "phone": "",
+      "theme": {
+        "primary": "#1e3a5f",
+        "accent": "#f59e0b"
+      },
+      "launchTarget": 15,
+      "targetKeywords": [
+        "restumping ballarat",
+        "reblocking ballarat",
+        "restumping cost ballarat",
+        "house restumping ballarat",
+        "restumping quotes ballarat"
+      ],
+      "suburbs": [
+        {
+          "name": "Wendouree",
+          "postcode": "3355"
+        },
+        {
+          "name": "Sebastopol",
+          "postcode": "3356"
+        },
+        {
+          "name": "Delacombe",
+          "postcode": "3356"
+        },
+        {
+          "name": "Alfredton",
+          "postcode": "3350"
+        },
+        {
+          "name": "Buninyong",
+          "postcode": "3357"
+        }
+      ],
+      "subServices": [
+        {
+          "slug": "full-house-restumping",
+          "name": "Full House Restumping",
+          "blurb": "Replacing every failing stump under the house to stop sinking floors and cracking plaster \u2014 common in Ballarat's older weatherboard homes on original timber stumps."
+        },
+        {
+          "slug": "partial-reblocking",
+          "name": "Partial Reblocking",
+          "blurb": "When only one section has dropped, get connected with pros who replace just the affected stumps and re-level that part of the floor."
+        },
+        {
+          "slug": "house-re-levelling-and-laser-levelling",
+          "name": "House Re-Levelling & Laser Levelling",
+          "blurb": "Laser-measuring the subfloor and adjusting or replacing stumps to bring bouncy, sloping floors back to true \u2014 the fix for doors and windows that have started to stick."
+        },
+        {
+          "slug": "subfloor-repairs",
+          "name": "Subfloor Repairs",
+          "blurb": "Replacing rotten bearers and joists and treating damaged timber beneath the floor, often uncovered once failing stumps are exposed in Ballarat's damp conditions."
+        },
+        {
+          "slug": "underpinning",
+          "name": "Underpinning",
+          "blurb": "For homes on slabs or masonry footings that have moved, connect with pros who underpin and stabilise the foundation \u2014 a different fix to stump reblocking."
+        },
+        {
+          "slug": "concrete-and-steel-stumps",
+          "name": "Concrete & Steel Stump Replacement",
+          "blurb": "Swapping rotted timber and crumbling old stumps for new galvanised concrete or steel-adjustable stumps rated for the region's cold, damp, reactive ground."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How much does restumping cost in Ballarat?",
+          "answer": "Restumping in the Ballarat area typically runs about $400\u2013$700 per stump. A smaller weatherboard home with around 50 stumps often lands near $8,000\u2013$9,000, while larger homes with 100+ stumps can exceed $16,000. Levelling floors or replacing damaged joists adds to the total, so comparing a few local quotes is the best way to price your job."
+        },
+        {
+          "question": "How do I know if my Ballarat home needs restumping?",
+          "answer": "Tell-tale signs include sloping or bouncy floors, doors and windows that stick, cracks in plaster or cornices, and gaps opening between walls and skirting. Older homes on original timber stumps are most at risk in the region's cold, damp conditions."
+        },
+        {
+          "question": "Do I need a building permit to restump a house in Victoria?",
+          "answer": "Yes. Restumping (reblocking) is building work in Victoria and requires a building permit through a registered building surveyor. A registered restumping contractor will normally arrange the permit and inspections as part of the job."
+        },
+        {
+          "question": "Is this a restumping company?",
+          "answer": "No. We're a free quote-matching service. We take your job details and connect you with licensed local restumping and reblocking contractors who then contact you directly with quotes."
+        }
+      ],
+      "facts": [
+        {
+          "label": "Service area",
+          "value": "Ballarat, VIC and surrounding suburbs"
+        },
+        {
+          "label": "Cost of a quote",
+          "value": "Free \u2014 no obligation"
+        },
+        {
+          "label": "Typical cost",
+          "value": "About $400\u2013$700 per stump; most homes total $8,000\u2013$20,000+"
+        }
+      ]
+    },
+    {
+      "status": "scaffolded",
+      "service": "Restumping",
+      "phrase": "restumping",
+      "city": "Bendigo",
+      "state": "Victoria",
+      "stateAbbr": "VIC",
+      "postcode": "3550",
+      "population": 100000,
+      "greenLight": {
+        "verdict": "green",
+        "notes": "Travis's competitor audit: rank1 restumpingbendigo.com.au (Goforth Building Group) = EMD + registered builder but shallow topical depth, no SILO subpages, weak suburb coverage; rank2 centrestaterestumping.com.au = 25yr operator with dated UI + no interactive lead capture; rank3 downunderrestumping.com.au = old sole-operator site, thin content, poor technical SEO. Beatable with a full SILO (reblocking/underpinning, subfloor inspection, steel vs concrete stumps, laser levelling), heritage-suburb pages (Eaglehawk, Quarry Hill, Golden Square, Flora Hill, Spring Gully), and a reactive-clay homepage angle."
+      },
+      "brand": "Bendigo Restumping Quotes",
+      "domain": "www.bendigorestumping.com",
+      "email": "quotes@bendigorestumping.com",
+      "phone": "",
+      "theme": {
+        "primary": "#374151",
+        "accent": "#d97706"
+      },
+      "launchTarget": 15,
+      "targetKeywords": [
+        "restumping bendigo",
+        "reblocking bendigo",
+        "restumping cost bendigo",
+        "house restumping bendigo",
+        "restumping quotes bendigo"
+      ],
+      "suburbs": [
+        {
+          "name": "Eaglehawk",
+          "postcode": "3556"
+        },
+        {
+          "name": "Quarry Hill",
+          "postcode": "3550"
+        },
+        {
+          "name": "Golden Square",
+          "postcode": "3555"
+        },
+        {
+          "name": "Flora Hill",
+          "postcode": "3550"
+        },
+        {
+          "name": "Spring Gully",
+          "postcode": "3550"
+        },
+        {
+          "name": "Kangaroo Flat",
+          "postcode": "3555"
+        }
+      ],
+      "subServices": [
+        {
+          "slug": "full-house-restumping",
+          "name": "Full House Restumping",
+          "blurb": "Replacing all the stumps beneath a home that's shifting on Bendigo's reactive clay soils, restoring a solid, level floor to gold-era timber houses."
+        },
+        {
+          "slug": "reblocking-and-underpinning",
+          "name": "Reblocking & Underpinning",
+          "blurb": "Reblocking replaces failing stumps under a timber floor; underpinning stabilises footings under slabs or masonry. Get matched with pros who diagnose which your home needs."
+        },
+        {
+          "slug": "subfloor-inspection-and-stump-repairs",
+          "name": "Subfloor Inspection & Stump Repairs",
+          "blurb": "A crawl-through inspection of stumps, bearers and joists to pinpoint rot and movement before it worsens \u2014 then targeted repairs to the affected timbers."
+        },
+        {
+          "slug": "steel-vs-concrete-stumps",
+          "name": "Steel vs Concrete Stumps",
+          "blurb": "Adjustable steel stumps make future re-levelling easy on Bendigo's shifting clay; galvanised concrete stumps are the durable standard. Local pros advise which suits your home."
+        },
+        {
+          "slug": "laser-house-levelling-and-jacking",
+          "name": "Laser House Levelling & Jacking",
+          "blurb": "Laser-measuring the subfloor and jacking the house back to true \u2014 the fix for sloping floors, cracked plaster and doors that have stopped closing."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How much does restumping cost in Bendigo?",
+          "answer": "Expect roughly $400\u2013$700 per stump in the Bendigo area. A modest home with about 50 stumps commonly totals $8,000\u2013$9,000, and larger or two-storey homes with 100+ stumps can pass $16,000. Extra floor levelling or joist repairs push the price up, so it pays to compare a few local quotes."
+        },
+        {
+          "question": "Why do Bendigo homes need restumping so often?",
+          "answer": "Central Victoria's reactive clay soils swell in winter and shrink in Bendigo's hot, dry summers, and that constant movement lifts and drops house stumps over time. Combined with ageing timber stumps in the region's older homes, it's a common cause of uneven, cracking floors."
+        },
+        {
+          "question": "Is restumping the same as underpinning?",
+          "answer": "Not quite. Restumping (reblocking) replaces the stumps a timber-floored house sits on, while underpinning strengthens the footings beneath a slab or masonry wall. A local contractor can advise which your home actually needs after an inspection."
+        },
+        {
+          "question": "Does this website carry out the restumping?",
+          "answer": "No \u2014 it's a free quote-matching service. Send your job details and licensed local restumping and reblocking contractors around Bendigo will get in touch with their quotes."
+        }
+      ],
+      "facts": [
+        {
+          "label": "Service area",
+          "value": "Bendigo, VIC and surrounding suburbs"
+        },
+        {
+          "label": "Cost of a quote",
+          "value": "Free \u2014 no obligation"
+        },
+        {
+          "label": "Typical cost",
+          "value": "About $400\u2013$700 per stump; most homes total $8,000\u2013$20,000+"
+        }
+      ]
+    },
+    {
+      "status": "scaffolded",
+      "service": "NDIS Home Modifications",
+      "phrase": "NDIS home modifications",
+      "city": "Townsville",
+      "state": "Queensland",
+      "stateAbbr": "QLD",
+      "postcode": "4810",
+      "population": 180000,
+      "greenLight": {
+        "verdict": "green",
+        "notes": "Travis's competitor audit: rank1 ausnorth.net.au = generic wide-net Cairns/NQ contractor, no local depth; rank2 advancedisabilitymanagement.com.au = care agency blog post (no building capability); rank3 ikbuildingandconstruction.com.au = dated Weebly builder with a thin /ndis subpage. Beatable with a hyper-local, topically deep NDIS-mods silo (bathroom mods, ramps, home renos, aged-care mods) + dual CTAs for participants and OTs/plan managers."
+      },
+      "brand": "Townsville NDIS Home Modification Quotes",
+      "domain": "www.townsvillendismods.com",
+      "email": "quotes@townsvillendismods.com",
+      "phone": "",
+      "theme": {
+        "primary": "#5b21b6",
+        "accent": "#0d9488"
+      },
+      "launchTarget": 15,
+      "targetKeywords": [
+        "ndis home modifications townsville",
+        "ndis bathroom modifications townsville",
+        "wheelchair ramp builders townsville",
+        "disability home renovations townsville",
+        "aged care home modifications townsville"
+      ],
+      "suburbs": [
+        {
+          "name": "Aitkenvale",
+          "postcode": "4814"
+        },
+        {
+          "name": "Kirwan",
+          "postcode": "4817"
+        },
+        {
+          "name": "North Ward",
+          "postcode": "4810"
+        },
+        {
+          "name": "Annandale",
+          "postcode": "4814"
+        },
+        {
+          "name": "Douglas",
+          "postcode": "4814"
+        }
+      ],
+      "subServices": [
+        {
+          "slug": "ndis-bathroom-modifications",
+          "name": "NDIS Bathroom Modifications",
+          "blurb": "Level-access showers, grab rails, slip-resistant flooring and accessible vanities \u2014 the most requested NDIS modification. Connect with Townsville builders experienced in accessible bathrooms."
+        },
+        {
+          "slug": "wheelchair-ramps",
+          "name": "Wheelchair Ramps & Access",
+          "blurb": "Modular and custom ramps, handrails and step-free entries \u2014 including safe access solutions for Townsville's high-set Queenslander homes."
+        },
+        {
+          "slug": "disability-home-renovations",
+          "name": "Disability Home Renovations",
+          "blurb": "Doorway widening, accessible kitchens and whole-of-home access changes so a participant can move safely through every room."
+        },
+        {
+          "slug": "aged-care-home-modifications",
+          "name": "Aged Care Home Modifications",
+          "blurb": "Rails, ramps and bathroom safety upgrades for older Townsville residents, whether funded through the NDIS or aged-care support."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How much do NDIS home modifications cost in Townsville?",
+          "answer": "It depends on the work. Minor (Category A) modifications like grab rails and ramps are under $10,000; Category B minor works run $10,000\u2013$20,000; and complex or structural changes such as a full accessible bathroom are $20,000 and up and need building approval. When approved in your plan, eligible modifications are funded by the NDIS rather than paid out of pocket."
+        },
+        {
+          "question": "Do I need an occupational therapist assessment first?",
+          "answer": "Yes. NDIS home modifications start with an OT assessment \u2014 an AHPRA-registered occupational therapist assesses your needs and recommends the works, and complex modifications need a specialist home-modification assessor. We can pass your details to local builders who work alongside OTs."
+        },
+        {
+          "question": "Can OTs or plan managers request quotes on a participant's behalf?",
+          "answer": "Yes. Occupational therapists, support coordinators and plan managers are welcome to request quotes here \u2014 we forward the job to local builders who provide fast quote turnarounds for OT assessments and reports."
+        },
+        {
+          "question": "Are you an NDIS provider or builder?",
+          "answer": "No. We're a free quote-matching service. We connect NDIS participants, OTs and plan managers with local Townsville builders experienced in home modifications \u2014 we don't assess eligibility or carry out the building work ourselves."
+        }
+      ],
+      "facts": [
+        {
+          "label": "Service area",
+          "value": "Townsville, QLD and surrounding suburbs"
+        },
+        {
+          "label": "Cost of a quote",
+          "value": "Free \u2014 no obligation"
+        },
+        {
+          "label": "Modification categories",
+          "value": "Minor (Category A) under $10,000; complex structural mods $20,000+"
+        }
+      ]
+    },
+    {
+      "status": "scaffolded",
+      "service": "Deceased Estate Cleanouts",
+      "phrase": "deceased estate cleanouts",
+      "city": "Bendigo",
+      "state": "Victoria",
+      "stateAbbr": "VIC",
+      "postcode": "3550",
+      "population": 100000,
+      "greenLight": {
+        "verdict": "green",
+        "notes": "Travis's competitor audit: rank1 yourrubbishremovedbendigo.com.au = rubbish-dumping angle only ($65\u2013220/m\u00b3), misses sorting/donations/executor intent; rank2 bbtpropertymaintenance.com = handyman with a dropdown item, no topical depth; rank3 greencleanteam.com.au = generic multi-service cleaner, weak local intent. Beatable by targeting probate/executor intent + compassionate full-service positioning (sorting, donations, pre-sale prep, executor invoicing)."
+      },
+      "brand": "Bendigo Estate Cleanout Quotes",
+      "domain": "www.bendigoestatecleanouts.com",
+      "email": "quotes@bendigoestatecleanouts.com",
+      "phone": "",
+      "theme": {
+        "primary": "#475569",
+        "accent": "#0f766e"
+      },
+      "launchTarget": 15,
+      "targetKeywords": [
+        "deceased estate cleanout bendigo",
+        "estate clearance bendigo",
+        "deceased estate cleanout cost bendigo",
+        "estate cleanout for executors bendigo",
+        "property clearance bendigo"
+      ],
+      "suburbs": [
+        {
+          "name": "Strathdale",
+          "postcode": "3550"
+        },
+        {
+          "name": "Kangaroo Flat",
+          "postcode": "3555"
+        },
+        {
+          "name": "Eaglehawk",
+          "postcode": "3556"
+        },
+        {
+          "name": "Golden Square",
+          "postcode": "3555"
+        },
+        {
+          "name": "Kennington",
+          "postcode": "3550"
+        }
+      ],
+      "subServices": [
+        {
+          "slug": "estate-sorting-and-donations",
+          "name": "Estate Sorting, Cataloguing & Charity Donations",
+          "blurb": "More than a tip run \u2014 belongings are carefully sorted so the family keeps what matters, valuables are catalogued, and usable items go to local Bendigo charities."
+        },
+        {
+          "slug": "pre-sale-property-clearing",
+          "name": "Pre-Sale Cleaning & Garden Tidy-Up",
+          "blurb": "Getting the property real-estate-ready: a full clear-out, interior clean and garden tidy so executors can list the home for sale."
+        },
+        {
+          "slug": "hoarder-and-complex-clearance",
+          "name": "Hoarder & Complex Clearance",
+          "blurb": "Sensitive, discreet clearance of heavily cluttered or hoarded homes, handled respectfully and safely by experienced local crews."
+        },
+        {
+          "slug": "executor-and-solicitor-clearance",
+          "name": "Clearances for Executors & Solicitors",
+          "blurb": "Full-service estate clearance with direct-invoicing options for executors and legal representatives managing a deceased estate."
+        }
+      ],
+      "faqs": [
+        {
+          "question": "How much does a deceased estate cleanout cost in Bendigo?",
+          "answer": "In regional Victoria a deceased estate cleanout typically runs about $800\u2013$5,000 depending on the size of the property and the volume of belongings. Pricing is often based on volume (roughly $75 per cubic metre) or the crew's time ($150\u2013$250 per hour for a lead). Sorting, donations and a pre-sale clean can affect the final figure, so it's worth comparing a couple of local quotes."
+        },
+        {
+          "question": "What happens to belongings during an estate clearance?",
+          "answer": "A good clearance works to the family's instructions: heirlooms and documents are set aside, usable furniture and goods are donated to charity or sold, and only the remainder is removed and disposed of. Nothing of value is thrown out without your say-so."
+        },
+        {
+          "question": "Can the estate or solicitor be invoiced directly?",
+          "answer": "Yes \u2014 many local clearance providers offer direct invoicing to executors and legal representatives, which makes managing a deceased estate simpler. Let us know and we'll match you with a provider who does."
+        },
+        {
+          "question": "Is this a rubbish-removal company?",
+          "answer": "No. We're a free quote-matching service. We connect you with local Bendigo estate-clearance and property-clearing professionals \u2014 we don't carry out the work ourselves."
+        }
+      ],
+      "facts": [
+        {
+          "label": "Service area",
+          "value": "Bendigo, VIC and surrounding suburbs"
+        },
+        {
+          "label": "Cost of a quote",
+          "value": "Free \u2014 no obligation"
+        },
+        {
+          "label": "Typical cost",
+          "value": "Regional estate cleanouts usually run $800\u2013$5,000 depending on size and volume"
+        }
+      ]
+    }
+  ]
+}

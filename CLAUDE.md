@@ -19,6 +19,11 @@ Both Hermes and Claude Code read and write these files:
 | `shared/activity-log.md` | Append-only log of every file Claude Code edits + Hermes deliveries | Claude Code (PostToolUse hook) + Hermes (when applicable) |
 | `shared/notes.md` | Freeform shared scratchpad — decisions, context, ideas | Both agents |
 | `shared/goals.json` | Active goals with progress (used by dashboard) | Both agents |
+| `shared/hf-gsc-worklist.md` | HF nightly work queue, ranked from Search Console | `hf_gsc_worklist.py` (cron runs it) |
+| `shared/hf-gsc-latest.json` | HF Search Console snapshot | `hf_gsc_report.py` |
+| `shared/leadgen-gsc-latest.md` | Lead gen network coverage + index-state report | `leadgen_gsc_report.py` |
+
+The three GSC files are gitignored — regenerated before every run.
 
 **Refresh Hermes state:** `bash ~/antigravity/scripts/refresh-hermes-state.sh`
 
@@ -53,7 +58,7 @@ Both Hermes and Claude Code read and write these files:
 
 ---
 
-## Active Hermes Crons (12 jobs)
+## Active Hermes Crons (13 jobs)
 
 | Name | Schedule | Script | Mode | Purpose |
 |---|---|---|---|---|
@@ -68,9 +73,34 @@ Both Hermes and Claude Code read and write these files:
 | `Weekly post scheduler` | 3pm Sun | `schedule_approved_drafts.py` | script | Schedules approved drafts to Postiz |
 | `morning-goal-triage` | 7am daily | (agent) | agent | Triages active goals (workdir `~/antigravity`) |
 | `x-direct-publisher` | every 10m | `x_publish_queue.py` | no-agent | Publishes queued X posts directly |
-| `leadgen-nightly` | 4am daily | (agent, `leadgen` skill) | agent | One content unit for one lead gen network site |
+| `leadgen-nightly` | 4am daily | (agent, `leadgen` skill) | agent | Maintenance: one content unit for the oldest `live` lead gen site |
+| `leadgen-launch` | 8am/1pm/6pm daily | (agent, `leadgen` skill) | agent | Launch-burst: one unit per "launching" site (`live` + under `launchTarget`) |
 
 (Source of truth: `~/.hermes/cron/jobs.json`; `shared/hermes-state.md` mirrors this.)
+
+### SEO crons are Search Console-driven (since 2026-08-19)
+
+`hf-nightly-seo` and both `leadgen-*` crons no longer choose their own work. Each
+regenerates a queue from real Search Console data and takes the top item.
+
+| Piece | Path |
+|---|---|
+| Service account | `antigravity-gsc-connect@hypnotherapy-finder.iam.gserviceaccount.com` |
+| Key (chmod 600) | `~/.hermes/keys/gsc-service-account.json` |
+| Python env | `~/.hermes/venvs/gsc/bin/python` (uv-created; system python has no pip) |
+| HF worklist | `~/.hermes/scripts/hf_gsc_worklist.py` — T1 consolidate → T2 deepen → T3 snippet → T4 new content |
+| HF snapshot | `~/.hermes/scripts/hf_gsc_report.py` |
+| Lead gen coverage | `~/.hermes/scripts/leadgen_gsc_report.py` — indexation gap + URL Inspection state |
+| Lead gen quality gate | `~/.hermes/scripts/leadgen_page_quality.py <site-dir> --strict` — blocks commits on thin/duplicate pages |
+
+Covers 6 properties: 4 leadgen `sc-domain:` + hypnotherapy-finder + business-software-finder.
+
+**API trap:** summing clicks over a `query`-dimension result undercounts badly
+(GSC omits anonymized rare queries). Totals must come from a `date`-dimension query.
+
+**Model note:** leadgen crons run `gpt-5.6-terra`, HF runs `gpt-5.5`, everything
+else inherits the `gpt-5.4` default. Never set `gpt-5.5-pro` on a cron — it
+prompts for confirmation and will hang an unattended run.
 
 ---
 
@@ -81,7 +111,7 @@ Both Hermes and Claude Code read and write these files:
 - **HF SEO** — hypnotherapy-finder.com, nightly cron 3am (`HF_GITHUB_TOKEN` configured)
 - **Beehiiv Newsletters** — connected through Postiz workflow
 - **Obsidian Brain Vault** — `~/brain/` — shared knowledge base (brand, infra, content ideas). Journal entries from the dashboard will land in `~/brain/journal/YYYY-MM-DD.md`.
-- **Lead Gen Network** — rank-and-rent micro-niche sites (service + location, AU). Pipeline at `~/antigravity/leadgen/`: `template/` (Next.js 16, config-driven, SEO+GEO built in), `scripts/new-site.ts` (scaffolder; `/new-leadgen-site` Claude skill wraps it), `sites.json` (registry), `LAUNCH-CHECKLIST.md` (full lifecycle SOP: niche research → EMD → deploy → off-page → rent). Nightly `leadgen-nightly` cron (4am, `~/.hermes/skills/leadgen/SKILL.md`) grows each `live` site toward 40–50 pages. Leads → Resend email. **Never interlink network sites.**
+- **Lead Gen Network** — rank-and-rent micro-niche sites (service + location, AU). Pipeline at `~/antigravity/leadgen/`: `template/` (Next.js 16, config-driven, SEO+GEO built in, deploys to **Cloudflare Workers** via OpenNext), `scripts/new-site.ts` (single-site CLI) + `scripts/batch-new-sites.ts` (batch scaffolder/deployer) sharing `scripts/lib/scaffold.ts` + `lib/deploy.ts`, `sites.json` (registry, each site has a `launchTarget`), `batch/candidates.json` (batch input), `LAUNCH-CHECKLIST.md` (full lifecycle SOP + batch workflow). **Batch flow:** you pick+green-light niches → `/leadgen-batch-research` drafts config → you approve → `batch-new-sites.ts` scaffolds all → `--deploy` ships to Cloudflare. **Content throughput:** `leadgen-launch` cron front-loads new live sites; `leadgen-nightly` maintains toward 40–50 pages (both use `~/.hermes/skills/leadgen/SKILL.md`, which has launch vs maintenance modes). Deploy needs `CF_API_TOKEN` + `CF_ACCOUNT_ID` in `~/.hermes/.env`. Leads → Resend email. **Never interlink network sites.**
 
 ---
 

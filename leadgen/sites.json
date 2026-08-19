@@ -1,3 +1,56 @@
 {
-  "sites": []
+  "sites": [
+    {
+      "slug": "ballaratrestumping",
+      "domain": "https://www.ballaratrestumping.com",
+      "repo": "https://github.com/Travissteel/ballaratrestumping",
+      "localPath": "/home/travissteel/sites/ballaratrestumping",
+      "service": "Restumping",
+      "location": "Ballarat, VIC",
+      "status": "live",
+      "launchTarget": 15,
+      "launchedAt": "2026-07-27T16:52:15+10:00",
+      "lastWorkedAt": "2026-08-16T04:02:31+10:00",
+      "notes": "Preview: https://ballaratrestumping.abundancewithtravis.workers.dev (workers.dev — pre-domain). Resend delivery verified 2026-07-31; sends from leads@hypnotherapy-finder.com until this site's own domain is verified in Resend."
+    },
+    {
+      "slug": "bendigorestumping",
+      "domain": "https://www.bendigorestumping.com",
+      "repo": "https://github.com/Travissteel/bendigorestumping",
+      "localPath": "/home/travissteel/sites/bendigorestumping",
+      "service": "Restumping",
+      "location": "Bendigo, VIC",
+      "status": "live",
+      "launchTarget": 15,
+      "launchedAt": "2026-07-27T16:52:15+10:00",
+      "lastWorkedAt": "2026-08-17T04:02:51+10:00",
+      "notes": "Preview: https://bendigorestumping.abundancewithtravis.workers.dev (workers.dev — pre-domain). Resend delivery verified 2026-07-31; sends from leads@hypnotherapy-finder.com until this site's own domain is verified in Resend."
+    },
+    {
+      "slug": "townsvillendismods",
+      "domain": "https://www.townsvillendismods.com",
+      "repo": "https://github.com/Travissteel/townsvillendismods",
+      "localPath": "/home/travissteel/sites/townsvillendismods",
+      "service": "NDIS Home Modifications",
+      "location": "Townsville, QLD",
+      "status": "live",
+      "launchTarget": 15,
+      "launchedAt": "2026-07-27T16:52:15+10:00",
+      "lastWorkedAt": "2026-08-18T04:02:48+10:00",
+      "notes": "Preview: https://townsvillendismods.abundancewithtravis.workers.dev (workers.dev — pre-domain). Resend delivery verified 2026-07-31; sends from leads@hypnotherapy-finder.com until this site's own domain is verified in Resend."
+    },
+    {
+      "slug": "bendigoestatecleanouts",
+      "domain": "https://www.bendigoestatecleanouts.com",
+      "repo": "https://github.com/Travissteel/bendigoestatecleanouts",
+      "localPath": "/home/travissteel/sites/bendigoestatecleanouts",
+      "service": "Deceased Estate Cleanouts",
+      "location": "Bendigo, VIC",
+      "status": "live",
+      "launchTarget": 15,
+      "launchedAt": "2026-07-27T16:52:15+10:00",
+      "lastWorkedAt": "2026-08-19T04:03:51+10:00",
+      "notes": "Preview: https://bendigoestatecleanouts.abundancewithtravis.workers.dev (workers.dev — pre-domain). Resend delivery verified 2026-07-31; sends from leads@hypnotherapy-finder.com until this site's own domain is verified in Resend."
+    }
+  ]
 }
