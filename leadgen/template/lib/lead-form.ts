@@ -10,6 +10,8 @@ export const LEAD_LIMITS = {
   suburb: 80,
   message: 4000,
   sourcePage: 200,
+  /** Per-answer cap for config-driven qualifiers (see SITE.qualifiers). */
+  qualifier: 120,
 } as const;
 
 /** Show the character counter once the message gets within this of the cap. */

@@ -13,10 +13,30 @@ interface LeadPayload {
   message?: string;
   sourcePage?: string;
   company_website?: string; // honeypot
+  /** Config-driven qualifier answers, keyed by SITE.qualifiers[].name. */
+  [key: string]: unknown;
 }
 
 function clean(value: unknown, max: number): string {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
+}
+
+/**
+ * Pull qualifier answers off the payload, driven entirely by SITE.qualifiers.
+ *
+ * Keys not declared in the config are ignored, and `select` answers must match
+ * a declared option exactly. Without that whitelist a crafted POST could put
+ * arbitrary attacker-chosen text into an email you read and act on.
+ */
+function collectQualifiers(body: LeadPayload): { label: string; value: string }[] {
+  const answers: { label: string; value: string }[] = [];
+  for (const q of SITE.qualifiers ?? []) {
+    const raw = clean(body[q.name], LEAD_LIMITS.qualifier);
+    if (!raw) continue;
+    if (q.type === "select" && !q.options?.includes(raw)) continue;
+    answers.push({ label: q.label, value: raw });
+  }
+  return answers;
 }
 
 export async function POST(request: Request) {
@@ -41,6 +61,14 @@ export async function POST(request: Request) {
     receivedAt: new Date().toISOString(),
   };
   if (!lead.name || !lead.phone || !lead.message) {
+    return NextResponse.json({ error: "missing fields" }, { status: 400 });
+  }
+
+  const qualifiers = collectQualifiers(body);
+  const missingRequired = (SITE.qualifiers ?? [])
+    .filter((q) => q.required)
+    .filter((q) => !qualifiers.some((a) => a.label === q.label));
+  if (missingRequired.length) {
     return NextResponse.json({ error: "missing fields" }, { status: 400 });
   }
 
@@ -90,6 +118,19 @@ export async function POST(request: Request) {
       `<p><strong>Name:</strong> ${escapeHtml(lead.name)}</p>`,
       `<p><strong>Phone:</strong> ${escapeHtml(lead.phone)}</p>`,
       `<p><strong>Suburb:</strong> ${escapeHtml(lead.suburb)}</p>`,
+      // Boxed so the whole block can be forwarded to an operator as-is — this
+      // is the part they price the job from.
+      qualifiers.length
+        ? [
+            `<div style="border:1px solid #d4d4d8;border-radius:6px;padding:12px;margin:12px 0">`,
+            `<p style="margin:0 0 8px;font-weight:bold">Job details</p>`,
+            ...qualifiers.map(
+              (a) =>
+                `<p style="margin:0 0 4px">${escapeHtml(a.label)}: <strong>${escapeHtml(a.value)}</strong></p>`,
+            ),
+            `</div>`,
+          ].join("")
+        : "",
       // pre-wrap so paragraph breaks in a long enquiry survive into the email.
       `<p><strong>Job:</strong></p>`,
       `<p style="white-space:pre-wrap;margin:0 0 12px">${escapeHtml(lead.message)}</p>`,

@@ -6,6 +6,7 @@ import {
   COUNTER_WARN_FROM,
   LEAD_LIMITS,
 } from "@/lib/lead-form";
+import { SITE } from "@/site.config";
 
 type FormState = "idle" | "sending" | "sent" | "error";
 
@@ -79,13 +80,55 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
         className="field"
         autoComplete="address-level2"
       />
+      {/* Config-driven qualifying questions. Two columns from `sm` up so a
+          handful of dropdowns doesn't read as a long form — the perceived
+          length is what drives abandonment, not the field count. */}
+      {SITE.qualifiers?.length ? (
+        <div className="grid gap-3 sm:grid-cols-2">
+          {SITE.qualifiers.map((q) => (
+            <label key={q.name} className="grid gap-1 text-sm">
+              <span className="font-medium text-foreground">
+                {q.label}
+                {!q.required && (
+                  <span className="ml-1 font-normal text-muted">(optional)</span>
+                )}
+              </span>
+              {q.type === "select" ? (
+                <select
+                  name={q.name}
+                  required={q.required}
+                  defaultValue=""
+                  className="field"
+                >
+                  <option value="" disabled>
+                    Choose…
+                  </option>
+                  {q.options?.map((opt) => (
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
+                  ))}
+                </select>
+              ) : (
+                <input
+                  name={q.name}
+                  required={q.required}
+                  maxLength={LEAD_LIMITS.qualifier}
+                  placeholder={q.placeholder}
+                  className="field"
+                />
+              )}
+            </label>
+          ))}
+        </div>
+      ) : null}
       <div>
         <textarea
           name="message"
           required
           maxLength={LEAD_LIMITS.message}
           rows={4}
-          placeholder="What do you need done?"
+          placeholder={SITE.messagePrompt ?? "What do you need done?"}
           className="field resize-y"
           onChange={(e) => setMessageLength(e.target.value.length)}
           aria-describedby="message-counter"

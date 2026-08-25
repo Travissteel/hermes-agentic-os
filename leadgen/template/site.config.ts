@@ -39,6 +39,41 @@ export interface SubService {
 
   /** 2-4 questions buyers ask about THIS sub-service, not the trade generally. */
   faqs?: FAQ[];
+
+  /** Illustrative image for the service card and page header. Optional. */
+  image?: SiteImage;
+}
+
+/**
+ * An image shipped in public/images.
+ *
+ * VOICE RULE APPLIES TO IMAGERY. This brand is a quote-matching service, not
+ * the trade. An image — or an alt text — that reads as "our team" or "our work"
+ * is the same Gate 1 fabrication as an invented review or licence number.
+ *
+ * So: photograph the WORK and the PLACE, never people presented as ours.
+ * A switchboard, an engine bay, a hand tool, a streetscape. No smiling
+ * tradespeople in branded hi-vis, no "meet the team", no before/after shots
+ * implying we did the job.
+ *
+ * Stock imagery earns trust and conversion. It earns no ranking — these files
+ * appear on thousands of other sites and Google knows it. Treat them as
+ * conversion furniture, never as an SEO investment, and never let one push the
+ * money copy below the fold.
+ */
+export interface SiteImage {
+  /** Filename under public/images, e.g. "hero.webp" — not a full path. */
+  src: string;
+  /**
+   * Describes what is literally shown, for screen readers and image search.
+   * Describe the object or place. Never assert who owns or did the work.
+   */
+  alt: string;
+  /** Intrinsic pixel dimensions. Required — they are what prevent layout shift. */
+  width: number;
+  height: number;
+  /** Source + licence, kept on record even where attribution isn't required. */
+  credit?: string;
 }
 
 export interface FAQ {
@@ -49,6 +84,37 @@ export interface FAQ {
 export interface Fact {
   label: string;
   value: string;
+}
+
+/**
+ * A qualifying question shown under the main lead fields.
+ *
+ * These exist so the operator you forward the lead to can price the job
+ * without a site visit — the difference between "2 bed unit, please quote"
+ * and a lead they can put a number against over the phone.
+ *
+ * Design rules, learned the expensive way:
+ * - Keep it to ~5. Every extra field costs conversion, and a form that looks
+ *   like paperwork gets abandoned by exactly the distressed customer you most
+ *   want to reach.
+ * - Prefer `select` over `text`. Tapping a dropdown is far cheaper than
+ *   typing, and it gives you clean comparable values instead of prose.
+ * - Always include a "Not sure" option. Someone clearing a late parent's unit
+ *   often genuinely does not know, and forcing a guess makes them bounce.
+ * - Leave `required` off unless the job cannot be priced without it. The four
+ *   core fields (name, phone, suburb, message) are the only hard gates.
+ */
+export interface Qualifier {
+  /** Payload key + form field name. Must be unique within the site. */
+  name: string;
+  /** Shown above the control. Short and conversational. */
+  label: string;
+  type: "select" | "text";
+  /** Required for `select`, ignored for `text`. */
+  options?: string[];
+  /** Placeholder for `text`. */
+  placeholder?: string;
+  required?: boolean;
 }
 
 export interface SiteConfig {
@@ -76,8 +142,28 @@ export interface SiteConfig {
   };
   subServices: SubService[];
   faqs: FAQ[];
+  /**
+   * Optional imagery. Omit entirely and every page renders exactly as it did
+   * before the image layer existed — text-only is a supported state, not a
+   * broken one.
+   */
+  images?: {
+    /**
+     * Wide contextual shot behind the hero. This is the page's LCP element,
+     * so it renders with `priority` and must be pre-sized (~1600px wide max)
+     * and compressed. A heavy hero is worse than no hero.
+     */
+    hero?: SiteImage;
+  };
   /** Short, true, citable facts — rendered in the facts strip and llms.txt (GEO). */
   facts: Fact[];
+  /** Omit or leave empty and the form renders with the core fields only. */
+  qualifiers?: Qualifier[];
+  /**
+   * Overrides the message textarea placeholder. Use it to prompt for details
+   * that matter to this trade but don't warrant a field of their own.
+   */
+  messagePrompt?: string;
 }
 
 // EXAMPLE CONFIG — the template must always build; the scaffolder replaces this.

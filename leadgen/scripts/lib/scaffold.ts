@@ -37,6 +37,26 @@ export interface SubService {
   slug: string;
   name: string;
   blurb: string;
+  /** Optional depth fields — see the emitted site.config.ts for the contract. */
+  whatItInvolves?: string;
+  whenYouNeedIt?: string[];
+  process?: { step: string; detail: string }[];
+  priceGuide?: string;
+  faqs?: FAQ[];
+  image?: SiteImage;
+}
+
+/**
+ * See the SiteImage docblock in the emitted site.config.ts, and
+ * template/public/images/README.md for the sourcing + sizing rules.
+ * Objects and places only — never people presented as ours.
+ */
+export interface SiteImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  credit?: string;
 }
 
 export interface FAQ {
@@ -47,6 +67,16 @@ export interface FAQ {
 export interface Fact {
   label: string;
   value: string;
+}
+
+/** See the Qualifier docblock in the emitted site.config.ts. */
+export interface Qualifier {
+  name: string;
+  label: string;
+  type: "select" | "text";
+  options?: string[];
+  placeholder?: string;
+  required?: boolean;
 }
 
 export interface ScaffoldOpts {
@@ -71,6 +101,18 @@ export interface ScaffoldOpts {
   subServices?: SubService[];
   faqs?: FAQ[];
   facts?: Fact[];
+  /**
+   * Optional imagery. Files themselves are added to the site's public/images
+   * by hand after scaffolding — this only carries the config that points at
+   * them. Omitted → the site renders text-only.
+   */
+  images?: { hero?: SiteImage };
+  /**
+   * Niche-specific qualifying questions for the lead form. Omitted → the form
+   * ships with the four core fields only, which is a fine starting point.
+   */
+  qualifiers?: Qualifier[];
+  messagePrompt?: string;
   /** Skip GitHub repo creation + push (dry run). */
   noPush?: boolean;
   launchTarget?: number;
@@ -205,6 +247,40 @@ export interface SubService {
   slug: string;
   name: string;
   blurb: string;
+
+  /**
+   * These are the MONEY PAGES. Everything below is optional so the site still
+   * builds, but shipping a sub-service on \`blurb\` alone is what produced the
+   * network's indexation problem — write only what is TRUE and specific.
+   */
+  whatItInvolves?: string;
+  whenYouNeedIt?: string[];
+  process?: { step: string; detail: string }[];
+  priceGuide?: string;
+  faqs?: FAQ[];
+  image?: SiteImage;
+}
+
+/**
+ * An image shipped in public/images. Referenced by filename only.
+ *
+ * VOICE RULE APPLIES TO IMAGERY. This brand is a quote-matching service, not
+ * the trade. An image — or an alt text — that reads as "our team" or "our
+ * work" is the same fabrication as an invented review or licence number.
+ * Photograph the WORK and the PLACE: a switchboard, an engine bay, a
+ * streetscape. Never people presented as ours.
+ *
+ * width/height are load-bearing. Images are unoptimised (Next's optimiser
+ * needs paid Cloudflare Images on Workers), so these values are the only
+ * thing reserving space before the file loads. See public/images/README.md
+ * for sourcing licences and the resize/compress step.
+ */
+export interface SiteImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  credit?: string;
 }
 
 export interface FAQ {
@@ -215,6 +291,23 @@ export interface FAQ {
 export interface Fact {
   label: string;
   value: string;
+}
+
+/**
+ * A qualifying question shown under the main lead fields, so the operator you
+ * forward the lead to can price the job without a site visit.
+ *
+ * Keep it to ~5, prefer \`select\` over \`text\`, always offer a "Not sure"
+ * option, and leave \`required\` off unless the job cannot be priced without
+ * it. Every extra field costs conversion.
+ */
+export interface Qualifier {
+  name: string;
+  label: string;
+  type: "select" | "text";
+  options?: string[];
+  placeholder?: string;
+  required?: boolean;
 }
 
 export interface SiteConfig {
@@ -228,6 +321,13 @@ export interface SiteConfig {
   subServices: SubService[];
   faqs: FAQ[];
   facts: Fact[];
+  /** Optional. Omit and every page renders text-only, as before. */
+  images?: {
+    /** Wide contextual shot behind the hero — the LCP element. ~1600px max. */
+    hero?: SiteImage;
+  };
+  qualifiers?: Qualifier[];
+  messagePrompt?: string;
 }
 
 export const SITE: SiteConfig = ${JSON.stringify(
@@ -247,6 +347,9 @@ export const SITE: SiteConfig = ${JSON.stringify(
       subServices,
       faqs,
       facts,
+      ...(opts.images?.hero ? { images: opts.images } : {}),
+      ...(opts.qualifiers?.length ? { qualifiers: opts.qualifiers } : {}),
+      ...(opts.messagePrompt ? { messagePrompt: opts.messagePrompt } : {}),
     },
     null,
     2

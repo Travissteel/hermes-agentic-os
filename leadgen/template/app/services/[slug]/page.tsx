@@ -4,6 +4,7 @@ import { SITE } from "@/site.config";
 import { pageMetadata } from "@/lib/seo";
 import { QuoteForm } from "@/components/quote-form";
 import { AnswerBlock } from "@/components/answer-block";
+import { SiteImage } from "@/components/site-image";
 import { BreadcrumbSchema, ServiceSchema, FAQSchema } from "@/components/seo";
 
 export function generateStaticParams() {
@@ -45,6 +46,20 @@ export default async function SubServicePage({
         ]}
       />
       {sub.faqs && sub.faqs.length > 0 && <FAQSchema faqs={sub.faqs} />}
+      {/*
+        Sub-service header image. Sits above the h1 rather than behind it —
+        this is a money page, and the copy below is what has to rank, so the
+        image gets a fixed band and no more. `priority` because on this route
+        it is the LCP element.
+      */}
+      {sub.image && (
+        <SiteImage
+          image={sub.image}
+          priority
+          sizes="(max-width: 1024px) 100vw, 1024px"
+          className="mt-8 h-48 w-full rounded-2xl object-cover md:h-64"
+        />
+      )}
       <section className="grid gap-10 py-12 md:grid-cols-2">
         <div>
           <h1 className="text-3xl font-bold text-foreground">
