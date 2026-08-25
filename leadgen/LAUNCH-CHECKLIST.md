@@ -84,8 +84,18 @@ gated. Also set `RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL` in
       (or `cd ~/sites/<slug> && bun run deploy`). This runs the OpenNext
       Cloudflare build, deploys the Worker, and sets the `RESEND_API_KEY` /
       `LEAD_TO_EMAIL` / `LEAD_FROM_EMAIL` secrets from `~/.hermes/.env`
-- [ ] In the Cloudflare dashboard: add the custom domain to the Worker as
-      **www** (canonical), and add a **Redirect Rule** apex → www (301)
+- [ ] Point the domain's nameservers at Cloudflare, then attach **both**
+      `www.<domain>` (canonical) **and the bare apex** as Custom Domains on the
+      Worker. `middleware.ts` 301s the apex to www, preserving path and query —
+      **no Cloudflare Redirect Rule is needed**, and none should be added.
+      Both can be attached via the API; `CF_API_TOKEN` has Workers-domains and
+      DNS edit but *not* Rules edit, which is another reason the middleware
+      approach is the supported one.
+- [ ] **If the registrar was Porkbun (or any host with parking):** Cloudflare
+      imports the existing DNS on zone creation. Delete the parked apex `A`
+      records, the `www` CNAME, **and any wildcard `*` CNAME** — the wildcard
+      silently catches every undefined subdomain and will keep serving the
+      registrar's parking page. Keep MX/SPF if you use email forwarding.
 - [ ] Set the site's `status: "live"` + `launchedAt` in `leadgen/sites.json`
       (the launch/nightly crons only work `live` sites)
 - [ ] Google Search Console: verify property, submit `/sitemap.xml`

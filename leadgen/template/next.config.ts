@@ -28,9 +28,12 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  // Note: apex→www redirect is a per-zone Cloudflare Redirect Rule (set when
-  // the custom domain is attached — see LAUNCH-CHECKLIST.md). Canonical URLs
-  // always use the www host — see lib/seo.ts.
+  // Note: apex→www is handled in middleware.ts, NOT by a Cloudflare Redirect
+  // Rule. Attach BOTH www and the apex as Custom Domains on the Worker and the
+  // middleware 301s the apex, preserving path and query. This is deliberate:
+  // it needs no dashboard step and no Rules scope on CF_API_TOKEN, and it
+  // ships with the code so every site in the network behaves identically.
+  // Canonical URLs always use the www host — see lib/seo.ts.
 };
 
 export default nextConfig;
