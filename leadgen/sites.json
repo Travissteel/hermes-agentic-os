@@ -50,7 +50,33 @@
       "launchTarget": 15,
       "launchedAt": "2026-07-27T16:52:15+10:00",
       "lastWorkedAt": "2026-08-19T04:03:51+10:00",
-      "notes": "Preview: https://bendigoestatecleanouts.abundancewithtravis.workers.dev (workers.dev — pre-domain). Resend delivery verified 2026-07-31; sends from leads@hypnotherapy-finder.com until this site's own domain is verified in Resend."
+      "notes": "Preview: https://bendigoestatecleanouts.abundancewithtravis.workers.dev (workers.dev — pre-domain). Resend delivery verified 2026-07-31; sends from leads@hypnotherapy-finder.com until this site's own domain is verified in Resend. FIRST LEAD IN THE NETWORK 2026-08-25 (2br unit cleanout quote request) — validates the model. NO FULFILMENT PARTNER YET: Travis is manual middleman, sourcing Bendigo estate-clearance operators per PARTNER-OUTREACH.md; buying a phone number to route to the eventual rent partner. Lead form gained 5 estate-specific qualifiers 2026-08-25 (size / fullness / access / timing / who's arranging)."
+    },
+    {
+      "slug": "mobilemechanictownsville",
+      "domain": "https://www.mobilemechanictownsville.com",
+      "repo": "https://github.com/Travissteel/mobilemechanictownsville",
+      "localPath": "/home/travissteel/sites/mobilemechanictownsville",
+      "service": "Mobile Mechanic",
+      "location": "Townsville, QLD",
+      "status": "scaffolded",
+      "launchTarget": 15,
+      "launchedAt": null,
+      "lastWorkedAt": null,
+      "notes": "Scaffolded 2026-08-25. Domain bought, NOT yet deployed/attached in Cloudflare. First cohort built with DEEP sub-services (5 pages, 771-831 words, 10.1% sibling overlap vs the network's old ~180w/54%). PENDING: (1) deploy to Cloudflare + attach www + apex->www redirect; (2) GSC property + sitemap; (3) test lead; (4) Resend sends from leads@hypnotherapy-finder.com until this domain is verified in Resend; (5) no phone yet - phoneDisplay:'' hides all click-to-call, Twilio number to be bought once it ranks; (6) no images yet - drop objects/places-only stock into public/images per its README, then set images.hero + per-subService image. GREEN LIGHT CAVEAT: job value $180-500 is below the Phase 0 $500+ guidance, so price rent off lead volume not per-job value. Townsville map pack never audited (Travis's competitor audit named a Victoria-only independent that does not compete here)."
+    },
+    {
+      "slug": "electricianballarat",
+      "domain": "https://www.electricianballarat.net",
+      "repo": "https://github.com/Travissteel/electricianballarat",
+      "localPath": "/home/travissteel/sites/electricianballarat",
+      "service": "Electrician",
+      "location": "Ballarat, VIC",
+      "status": "scaffolded",
+      "launchTarget": 15,
+      "launchedAt": null,
+      "lastWorkedAt": null,
+      "notes": "Scaffolded 2026-08-25. Domain bought (.net - first non-.com in the network), NOT yet deployed/attached in Cloudflare. First cohort built with DEEP sub-services (5 pages, 788-846 words, 8.9% sibling overlap). PENDING: (1) deploy to Cloudflare + attach www + apex->www redirect; (2) GSC property + sitemap; (3) test lead; (4) Resend sends from leads@hypnotherapy-finder.com until this domain is verified in Resend; (5) no phone yet - Twilio number once it ranks; (6) no images yet - see public/images/README.md. TIME-SENSITIVE CONTENT EDGE: the /services/rental-electrical-safety-checks page targets Victoria's 13 Oct 2026 deadline, when mandatory two-yearly electrical safety checks start applying to ALL rental agreements including pre-existing ones. ~7 weeks out and no ranked competitor owns it - this page should be prioritised for indexing and is the strongest early-ranking bet on the site."
     }
   ]
 }
