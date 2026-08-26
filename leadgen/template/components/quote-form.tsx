@@ -44,9 +44,26 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
 
   if (state === "sent") {
     return (
-      <div className="rounded-lg border border-primary/40 bg-primary/5 p-6 text-center">
-        <p className="text-lg font-semibold text-foreground">Request received</p>
-        <p className="mt-1 text-muted">
+      <div className="rounded-xl border border-primary/30 bg-primary/5 p-6 text-center">
+        <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-accent text-on-accent">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden
+          >
+            <path d="M20 6 9 17l-5-5" />
+          </svg>
+        </span>
+        <p className="mt-3 text-lg font-bold tracking-tight text-slate-900">
+          Request received
+        </p>
+        <p className="mt-1 text-slate-600">
           Local pros will be in touch with your quote shortly.
         </p>
       </div>
@@ -155,7 +172,7 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
       <button
         type="submit"
         disabled={state === "sending"}
-        className="rounded-lg bg-primary px-6 py-3 font-semibold text-white transition hover:opacity-90 disabled:opacity-50"
+        className="btn btn--accent w-full disabled:opacity-50"
       >
         {state === "sending" ? "Sending…" : "Get My Free Quotes"}
       </button>

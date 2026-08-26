@@ -35,7 +35,7 @@ export default async function FaqPage({
   if (!page) notFound();
 
   return (
-    <>
+    <div className="container">
       <FAQSchema faqs={[{ question: page.question, answer: page.answer }]} />
       <BreadcrumbSchema
         items={[
@@ -45,7 +45,7 @@ export default async function FaqPage({
         ]}
       />
       <article className="mx-auto max-w-3xl py-12">
-        <h1 className="text-3xl font-bold leading-tight text-foreground">
+        <h1 className="h2">
           {page.question}
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-muted">{page.answer}</p>
@@ -75,6 +75,6 @@ export default async function FaqPage({
           </div>
         </div>
       </article>
-    </>
+    </div>
   );
 }

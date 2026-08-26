@@ -36,7 +36,7 @@ export default async function AreaPage({
   if (!area) notFound();
 
   return (
-    <>
+    <div className="container">
       <ServiceSchema
         serviceName={SITE.service.name}
         description={`${SITE.service.name} quote matching for ${area.name}, ${SITE.location.stateAbbr} ${area.postcode}.`}
@@ -52,7 +52,7 @@ export default async function AreaPage({
       {area.faqs && area.faqs.length > 0 && <FAQSchema faqs={area.faqs} />}
       <section className="grid gap-10 py-12 md:grid-cols-2">
         <div>
-          <h1 className="text-3xl font-bold text-foreground">
+          <h1 className="h2">
             {SITE.service.name} in {area.name}
           </h1>
           <p className="mt-2 text-sm text-muted">
@@ -71,7 +71,7 @@ export default async function AreaPage({
 
           {area.localContext && (
             <div className="mt-8">
-              <h2 className="text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 {SITE.service.name} in {area.name}: what makes it different here
               </h2>
               <p className="mt-3 text-muted">{area.localContext}</p>
@@ -80,7 +80,7 @@ export default async function AreaPage({
 
           {area.commonIssues && area.commonIssues.length > 0 && (
             <div className="mt-8">
-              <h2 className="text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 Signs {area.name} homeowners notice
               </h2>
               <ul className="mt-3 list-disc space-y-2 pl-5 text-muted">
@@ -98,13 +98,14 @@ export default async function AreaPage({
           )}
 
           <AnswerBlock
+            className="mt-8"
             question={`How do I find a ${SITE.service.name.toLowerCase()} in ${area.name}?`}
             answer={`${SITE.brandName} matches ${area.name} residents with local ${SITE.service.phrase} professionals for free. Describe the job, and pros who service ${area.name} (${area.postcode}) will contact you with quotes — usually the same day for urgent work.`}
           />
 
           {area.faqs && area.faqs.length > 0 && (
             <div className="mt-8">
-              <h2 className="text-xl font-semibold text-foreground">
+              <h2 className="text-xl font-bold tracking-tight text-foreground">
                 {area.name} questions
               </h2>
               <div className="mt-3 space-y-5">
@@ -139,6 +140,6 @@ export default async function AreaPage({
           <QuoteForm sourcePage={`/areas/${area.slug}`} />
         </div>
       </section>
-    </>
+    </div>
   );
 }

@@ -12,7 +12,7 @@ export const metadata = pageMetadata({
 
 export default function BlogIndexPage() {
   return (
-    <>
+    <div className="container">
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },
@@ -20,7 +20,7 @@ export default function BlogIndexPage() {
         ]}
       />
       <section className="py-12">
-        <h1 className="text-3xl font-bold text-foreground">Guides &amp; advice</h1>
+        <h1 className="h1">Guides &amp; advice</h1>
         <div className="mt-8 space-y-4">
           {getAllPosts().map((p) => (
             <Link
@@ -35,6 +35,6 @@ export default function BlogIndexPage() {
           ))}
         </div>
       </section>
-    </>
+    </div>
   );
 }

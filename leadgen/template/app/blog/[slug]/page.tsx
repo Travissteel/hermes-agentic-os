@@ -45,7 +45,7 @@ export default async function BlogPostPage({
   };
 
   return (
-    <>
+    <div className="container">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
@@ -59,7 +59,7 @@ export default async function BlogPostPage({
         ]}
       />
       <article className="mx-auto max-w-3xl py-12">
-        <h1 className="text-3xl font-bold leading-tight text-foreground">
+        <h1 className="h2">
           {post.title}
         </h1>
         <p className="mt-2 text-sm text-muted">{post.publishedAt}</p>
@@ -97,6 +97,6 @@ export default async function BlogPostPage({
           </Link>
         </div>
       </article>
-    </>
+    </div>
   );
 }

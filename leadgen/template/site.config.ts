@@ -139,6 +139,21 @@ export interface SiteConfig {
   theme: {
     primary: string;
     accent: string;
+    /**
+     * Visual variant. Sites in this network must not look like each other —
+     * a shared template rendering forty identical layouts is a footprint,
+     * and each site is meant to read as an independent local business.
+     * Colour alone is not enough separation, so the variant also swaps the
+     * heading typeface, the hero composition and the corner radius.
+     *
+     *   "bold"  condensed uppercase headings, dark photographic hero with
+     *           the form beside it, tight corners. Reads trades/urgent.
+     *   "clean" Inter headings, light hero with the photo as a side card and
+     *           the form in a band below, soft corners. Reads considered.
+     *
+     * Defaults to "bold" when omitted so existing sites are unaffected.
+     */
+    variant?: "bold" | "clean";
   };
   subServices: SubService[];
   faqs: FAQ[];

@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function ContactPage() {
   return (
-    <>
+    <div className="container">
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },
@@ -19,7 +19,7 @@ export default function ContactPage() {
         ]}
       />
       <section className="mx-auto max-w-xl py-12">
-        <h1 className="text-3xl font-bold text-foreground">Get free quotes</h1>
+        <h1 className="h1">Get free quotes</h1>
         <p className="mt-3 text-muted">
           Tell us about the job and local {SITE.service.phrase} pros in{" "}
           {SITE.location.city} will be in touch.
@@ -35,6 +35,6 @@ export default function ContactPage() {
           {SITE.phoneDisplay ? ` or call ${SITE.phoneDisplay}` : ""}.
         </p>
       </section>
-    </>
+    </div>
   );
 }

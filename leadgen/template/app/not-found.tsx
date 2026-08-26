@@ -3,7 +3,8 @@ import { SITE } from "@/site.config";
 
 export default function NotFound() {
   return (
-    <section className="py-24 text-center">
+    <div className="container">
+      <section className="py-24 text-center">
       <h1 className="text-3xl font-bold text-foreground">Page not found</h1>
       <p className="mt-3 text-muted">
         That page doesn&apos;t exist — but local {SITE.service.phrase} quotes are
@@ -16,5 +17,6 @@ export default function NotFound() {
         Back to home
       </Link>
     </section>
+    </div>
   );
 }

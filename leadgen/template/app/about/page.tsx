@@ -11,7 +11,7 @@ export const metadata = pageMetadata({
 
 export default function AboutPage() {
   return (
-    <>
+    <div className="container">
       <BreadcrumbSchema
         items={[
           { name: "Home", path: "/" },
@@ -19,10 +19,10 @@ export default function AboutPage() {
         ]}
       />
       <section className="mx-auto max-w-3xl py-12">
-        <h1 className="text-3xl font-bold text-foreground">
+        <h1 className="h1">
           About {SITE.brandName}
         </h1>
-        <div className="mt-8">
+        <div className="mt-8 space-y-5">
           <AnswerBlock
             question={`What is ${SITE.brandName}?`}
             answer={`${SITE.brandName} is a free quote-matching service for ${SITE.service.phrase} in ${SITE.location.city}, ${SITE.location.state}. We don't perform the work ourselves — we take your job details and pass them to licensed local professionals who contact you directly with quotes.`}
@@ -48,6 +48,6 @@ export default function AboutPage() {
           .
         </p>
       </section>
-    </>
+    </div>
   );
 }

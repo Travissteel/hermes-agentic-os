@@ -48,6 +48,22 @@ third-party content under different terms, and a few categories (recognisable
 people, trademarks, brand logos on equipment) carry restrictions regardless of
 the base licence.
 
+### Download from the library, never from a page using the library
+
+A stock licence belongs to whoever bought it. Saving an image off someone
+else's website does not transfer it, even when that site is plainly using
+stock — and a photo lifted from a social post has no licence at all.
+
+Two tells that an image came off a search-results page rather than a library:
+a generic filename (`aus elec board.jpg`) and a file far too small to be an
+original (under ~200KB, under ~800px wide). Both showed up on 2026-08-26 and
+both were rejected.
+
+This matters more here than on a hobby site. These are commercial properties
+with a findable owner, stock agencies run reverse-image-search enforcement,
+and every subject worth having is on Pexels for free anyway. If you cannot
+name the library and the photographer to put in `credit`, do not ship it.
+
 ## Preparing files — this part matters
 
 `next.config.ts` sets `images.unoptimized`, because Next's optimiser requires
@@ -72,6 +88,14 @@ magick original.jpg -resize 1600x -quality 82 hero.webp
 # Confirm the dimensions you just produced, then copy them into site.config.ts
 magick identify hero.webp
 ```
+
+## Sub-service cards without a photo
+
+You will rarely have five photos for five sub-services. You do not need them.
+`components/card-media.tsx` renders a hatched wash of the site's own theme
+colours wherever `image` is absent, so every card in a row is the same height
+and a half-illustrated grid still reads as deliberate. Ship the two or three
+images you can source honestly and leave the rest.
 
 ## Config shape
 
