@@ -33,6 +33,31 @@ export interface SpamVerdict {
 export const SPAM_THRESHOLD = 4;
 
 /**
+ * Signal weights.
+ *
+ * Tuned 2026-08-26 after a real test lead on mobilemechanictownsville was
+ * flagged. Two classes of signal, and the split matters:
+ *
+ * STRONG — things a customer never does. Sales-pitch language alone is enough
+ * to flag, because "SEO"/"rank higher"/"backlink" has no place in a request
+ * for a quote on a broken car or a switchboard.
+ *
+ * WEAK — things a flustered human does all the time. A typo'd phone number and
+ * a suburb we happen not to list are each poor evidence of anything. Before
+ * this split they summed to 5 and flagged a perfectly real lead. Now they sum
+ * to 3 and do not, while every genuine spam pattern still clears the bar
+ * comfortably (the SEO pitch that prompted the filter scores 11).
+ */
+const W = {
+  pitchLanguage: 4,
+  urlInMessage: 2,
+  brandQuoted: 2,
+  suburbDuplicatesName: 2,
+  implausiblePhone: 2,
+  unknownSuburb: 1,
+} as const;
+
+/**
  * Australian phone numbers, after stripping formatting:
  *   04xxxxxxxx  mobile          02/03/07/08 + 8 digits  landline
  *   1300xxxxxx / 1800xxxxxx     13xxxx                  service numbers
@@ -90,50 +115,90 @@ const PITCH_PHRASES = [
   "no obligation quote for our",
 ];
 
+/**
+ * Is this suburb plausibly in our patch?
+ *
+ * The service-area list is an SEO artifact — the handful of suburbs we built
+ * pages for — not a gazetteer. Townsville has dozens of suburbs; we list seven.
+ * Matching only against those marked the city's own name, its postcode, and
+ * every unlisted-but-real suburb as suspicious.
+ *
+ * So we accept, in addition to the listed suburbs:
+ *   - the city itself ("Townsville") — what most people actually type
+ *   - any postcode we know (site postcode + each area's)
+ *   - anything CONTAINING a known name, which covers "Kirwan, Townsville",
+ *     "Ballarat East" and "North Wendouree" without needing to enumerate them
+ *
+ * A genuinely unlisted suburb ("Mount Louisa") still scores, but only 1 — weak
+ * evidence, treated weakly.
+ */
+function isKnownSuburb(
+  raw: string,
+  areas: ServiceArea[],
+  city: string,
+  postcode: string,
+): boolean {
+  const s = normalise(raw);
+  if (!s) return true;
+
+  const postcodes = new Set(
+    [postcode, ...areas.map((a) => a.postcode)].filter(Boolean).map(normalise),
+  );
+  if (postcodes.has(s)) return true;
+
+  // Names worth substring-matching. Short ones are excluded because a
+  // three-letter fragment matches far too much by accident.
+  const names = [city, ...areas.map((a) => a.name), ...areas.map((a) => a.slug)]
+    .map(normalise)
+    .filter((n) => n.length >= 4);
+
+  return names.some((n) => s === n || s.includes(n));
+}
+
 export function scoreLead(
   lead: ScoredLead,
   areas: ServiceArea[],
-  brandName: string,
+  site: { brandName: string; city: string; postcode: string },
 ): SpamVerdict {
   const reasons: string[] = [];
   let score = 0;
+  const brandName = site.brandName;
 
   if (!isPlausibleAuPhone(lead.phone)) {
-    score += 3;
+    score += W.implausiblePhone;
     reasons.push(`Phone "${lead.phone}" is not a valid AU number`);
   }
 
-  // Suburb is advisory: someone in a nearby town is still a real lead, so this
-  // alone can never cross the threshold.
-  const known = new Set(areas.flatMap((a) => [normalise(a.name), normalise(a.slug)]));
+  // Advisory: someone in a nearby suburb is still a real lead, so this can
+  // never flag on its own — nor alongside one other weak signal.
   const suburb = normalise(lead.suburb);
-  if (suburb && !known.has(suburb)) {
-    score += 2;
+  if (suburb && !isKnownSuburb(lead.suburb, areas, site.city, site.postcode)) {
+    score += W.unknownSuburb;
     reasons.push(`Suburb "${lead.suburb}" is not in the service area list`);
   }
 
   // The Townsville bot put the submitter's own name in the suburb field.
   const name = normalise(lead.name);
   if (suburb && name && (name.includes(suburb) || suburb.includes(name))) {
-    score += 2;
+    score += W.suburbDuplicatesName;
     reasons.push("Suburb field duplicates the name field");
   }
 
   const message = lead.message.toLowerCase();
   const hits = PITCH_PHRASES.filter((p) => message.includes(p));
   if (hits.length > 0) {
-    score += 3;
+    score += W.pitchLanguage;
     reasons.push(`Sales-pitch language: ${hits.slice(0, 4).join(", ")}`);
   }
 
   if (/https?:\/\/|www\.|\b[a-z0-9-]+\.(com|net|org|io|co)\b/i.test(lead.message)) {
-    score += 2;
+    score += W.urlInMessage;
     reasons.push("Message contains a URL or domain");
   }
 
   // Scrapers paraphrase the site's own copy back at you; customers don't.
   if (brandName && message.includes(brandName.toLowerCase())) {
-    score += 2;
+    score += W.brandQuoted;
     reasons.push("Message quotes the site's own brand name");
   }
 

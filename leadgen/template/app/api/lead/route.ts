@@ -75,7 +75,11 @@ export async function POST(request: Request) {
   // Advisory only — flagged leads are still delivered, just marked. The counts
   // logged here are what `wrangler tail` / Workers Logs can be queried on to
   // compare spam volume against real volume.
-  const verdict = scoreLead(lead, getAllAreas(), SITE.brandName);
+  const verdict = scoreLead(lead, getAllAreas(), {
+    brandName: SITE.brandName,
+    city: SITE.location.city,
+    postcode: SITE.location.postcode,
+  });
   console.log(
     verdict.isSpam ? "[lead:flagged]" : "[lead:clean]",
     JSON.stringify({
