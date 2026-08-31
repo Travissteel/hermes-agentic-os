@@ -96,6 +96,22 @@ gated. Also set `RESEND_API_KEY`, `LEAD_TO_EMAIL`, `LEAD_FROM_EMAIL` in
       records, the `www` CNAME, **and any wildcard `*` CNAME** — the wildcard
       silently catches every undefined subdomain and will keep serving the
       registrar's parking page. Keep MX/SPF if you use email forwarding.
+- [ ] **Unblock AI crawlers (dashboard only — there is no API for this).**
+      Cloudflare enables AI blocking by default on new free zones, which
+      silently defeats the template's GEO work. Per zone:
+      **AI Crawl Control** → turn off managed robots.txt (it injects a
+      `User-agent: ClaudeBot / Disallow: /` block plus
+      `Content-Signal: ai-train=no`, and a UA-specific group *overrides* the
+      `User-agent: *  Allow: /` from `app/robots.ts` — editing the repo cannot
+      fix it); then **Security → Bots** → turn off *Block AI Scrapers and
+      Crawlers* (matches verified bot IPs, so a curl with a spoofed UA will
+      return 200 even while it's active — don't use that to test).
+      Verify: `curl -s https://www.<domain>/robots.txt` should show only the
+      template's own three lines and the sitemap.
+      Do **not** bother minting a Cloudflare token for this: `bot_management`
+      and `rulesets` return auth errors even with *Bot Management: Edit*
+      granted, and AI Crawl Control has no public API route at all
+      (verified 2026-08-31 across all six zones).
 - [ ] Set the site's `status: "live"` + `launchedAt` in `leadgen/sites.json`
       (the launch/nightly crons only work `live` sites)
 - [ ] Google Search Console: verify property, submit `/sitemap.xml`

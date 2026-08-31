@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SITE } from "@/site.config";
 import { getAllPosts } from "@/lib/posts";
 import { pageMetadata } from "@/lib/seo";
-import { BreadcrumbSchema } from "@/components/seo";
+import { BreadcrumbSchema, ItemListSchema } from "@/components/seo";
 
 export const metadata = pageMetadata({
   title: `${SITE.service.name} Guides & Advice — ${SITE.location.city}`,
@@ -18,6 +18,13 @@ export default function BlogIndexPage() {
           { name: "Home", path: "/" },
           { name: "Guides", path: "/blog" },
         ]}
+      />
+      <ItemListSchema
+        name={`${SITE.service.name} guides — ${SITE.location.city}`}
+        items={getAllPosts().map((p) => ({
+          name: p.title,
+          path: `/blog/${p.slug}`,
+        }))}
       />
       <section className="py-12">
         <h1 className="h1">Guides &amp; advice</h1>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SITE, CORE_PHRASE } from "@/site.config";
 import { pageMetadata } from "@/lib/seo";
-import { BreadcrumbSchema } from "@/components/seo";
+import { BreadcrumbSchema, ItemListSchema } from "@/components/seo";
 import { CardMedia } from "@/components/card-media";
 
 export const metadata = pageMetadata({
@@ -18,6 +18,13 @@ export default function ServicesPage() {
           { name: "Home", path: "/" },
           { name: "Services", path: "/services" },
         ]}
+      />
+      <ItemListSchema
+        name={`${SITE.service.name} services in ${SITE.location.city}`}
+        items={SITE.subServices.map((s) => ({
+          name: s.name,
+          path: `/services/${s.slug}`,
+        }))}
       />
       <section className="band">
         <p className="eyebrow">Our services</p>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SITE } from "@/site.config";
 import { getAllFaqPages } from "@/lib/faq-pages";
 import { pageMetadata } from "@/lib/seo";
-import { BreadcrumbSchema } from "@/components/seo";
+import { BreadcrumbSchema, ItemListSchema } from "@/components/seo";
 
 export const metadata = pageMetadata({
   title: `${SITE.service.name} Questions Answered — ${SITE.location.city}`,
@@ -18,6 +18,13 @@ export default function FaqIndexPage() {
           { name: "Home", path: "/" },
           { name: "FAQ", path: "/faq" },
         ]}
+      />
+      <ItemListSchema
+        name={`${SITE.service.name} questions answered — ${SITE.location.city}`}
+        items={getAllFaqPages().map((f) => ({
+          name: f.question,
+          path: `/faq/${f.slug}`,
+        }))}
       />
       <section className="py-12">
         <h1 className="h1">

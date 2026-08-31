@@ -18,6 +18,15 @@ export interface Post {
   description: string;
   /** ISO date, e.g. "2026-07-18" */
   publishedAt: string;
+  /**
+   * ISO date of the last substantive revision. Omit on first publish — the
+   * Article schema falls back to publishedAt, so an unrevised post never
+   * claims a freshness it doesn't have.
+   *
+   * Cron rule: set this ONLY when the body actually changed. Bumping it to
+   * fake recency is the kind of signal answer engines learn to distrust.
+   */
+  updatedAt?: string;
   sections: PostSection[];
   faqs?: FAQ[];
 }

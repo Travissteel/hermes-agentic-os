@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SITE } from "@/site.config";
 import { getAllAreas } from "@/lib/locations";
 import { pageMetadata } from "@/lib/seo";
-import { BreadcrumbSchema } from "@/components/seo";
+import { BreadcrumbSchema, ItemListSchema } from "@/components/seo";
 
 export const metadata = pageMetadata({
   title: `${SITE.service.name} Service Areas — ${SITE.location.city}`,
@@ -18,6 +18,13 @@ export default function AreasPage() {
           { name: "Home", path: "/" },
           { name: "Areas", path: "/areas" },
         ]}
+      />
+      <ItemListSchema
+        name={`${SITE.service.name} service areas in ${SITE.location.city}`}
+        items={getAllAreas().map((a) => ({
+          name: `${SITE.service.name} ${a.name}`,
+          path: `/areas/${a.slug}`,
+        }))}
       />
       <section className="py-12">
         <h1 className="h1">

@@ -39,6 +39,10 @@ export default async function BlogPostPage({
     headline: post.title,
     description: post.description,
     datePublished: post.publishedAt,
+    dateModified: post.updatedAt ?? post.publishedAt,
+    // The generated OG route, not a public/images file — it always exists for
+    // every site, so this can never point at a missing asset.
+    image: absoluteUrl("/opengraph-image"),
     mainEntityOfPage: absoluteUrl(`/blog/${post.slug}`),
     author: { "@type": "Organization", name: SITE.brandName },
     publisher: { "@type": "Organization", name: SITE.brandName },
