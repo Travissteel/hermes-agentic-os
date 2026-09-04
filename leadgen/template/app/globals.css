@@ -49,6 +49,21 @@
   --heading-tracking: 0.005em;
 }
 
+/* "trade": the established-local-operator look. Warmer neutrals than the
+   other two variants (a flat slate grey reads corporate next to a photo of
+   a work site), medium corners, Poppins headings in sentence case. */
+[data-variant="trade"] {
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  --font-heading: var(--font-trade), ui-sans-serif, system-ui, sans-serif;
+  --heading-transform: none;
+  --heading-tracking: -0.01em;
+  --foreground: #1c1917; /* Stone 900 */
+  --muted: #57534e; /* Stone 600 */
+  --border: #e7e5e4; /* Stone 200 */
+  --surface: #fafaf9; /* Stone 50 */
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -97,10 +112,25 @@ body {
   background: var(--surface);
 }
 
-/* Inverted band. Redefining the palette variables here rather than
-   overriding individual utilities means every text-muted / border-border
-   inside the band flips automatically — @theme inline keeps the var()
-   reference live, so the cascade does the work. */
+/* Inverted palette. Redefining the variables here rather than overriding
+   individual utilities means every text-muted / border-border inside flips
+   automatically — @theme inline keeps the var() reference live, so the
+   cascade does the work.
+
+   Split from the background deliberately: the "trade" hero needs these token
+   overrides on a wrapper that sits ON TOP of the hero photograph, and the
+   combined version painted an opaque --primary over the image. Use .on-dark
+   when something else is providing the dark surface, .band--dark when the
+   band itself should be the site's primary colour. */
+.on-dark {
+  --foreground: #ffffff;
+  --muted: rgb(255 255 255 / 0.72);
+  --border: rgb(255 255 255 / 0.16);
+  --surface: rgb(255 255 255 / 0.06);
+  --accent-ink: var(--accent);
+  color: #fff;
+}
+
 .band--dark {
   background: var(--primary);
   --foreground: #ffffff;
@@ -301,14 +331,176 @@ h3,
   opacity: 0;
 }
 
+/* -------------------------------------------------------------- sections */
+
+/* Centred section intro — eyebrow, heading, standfirst. The eyebrow's ::before
+   rule is a left-aligned device, so it is dropped here and the flex display
+   reset to inline-flex-centred. */
+.section-head {
+  margin-inline: auto;
+  max-width: 44rem;
+  text-align: center;
+  margin-bottom: clamp(2.25rem, 4vw, 3.5rem);
+}
+
+.section-head .eyebrow::before {
+  display: none;
+}
+
+.section-head > * + * {
+  margin-top: 0.875rem;
+}
+
+/* Stats strip. auto-fit rather than a fixed count so three or five figures
+   both land evenly — these lists are config-driven and vary per site. */
+.stats-strip {
+  display: grid;
+  gap: 2rem 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  text-align: center;
+}
+
+/* Card grids for the value-card and process sections.
+
+   auto-fit rather than flex-wrap with a basis: these lists are config-driven
+   and run to three, four or six entries. Under flex-wrap the last row grew to
+   fill the width, so a four-item process rendered as three cards and one
+   full-bleed one. auto-fit keeps every card on the same track width whatever
+   the count. */
+.card-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(19rem, 100%), 1fr));
+}
+
+.stat-value {
+  font-family: var(--font-heading);
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: var(--heading-tracking);
+}
+
+/* Gallery. The first tile spans two columns and two rows on wide screens so
+   the grid reads as a composed set rather than a contact sheet. Below `md`
+   everything is a plain square — a featured tile at phone width just pushes
+   the rest off the first screen. */
+.gallery-grid {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .gallery-grid > .gallery-item--featured {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.gallery-item > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.35s ease;
+}
+
+.gallery-item:hover > img {
+  transform: scale(1.04);
+}
+
+.gallery-caption {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  padding: 1.75rem 0.875rem 0.75rem;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.72), transparent);
+  color: #fff;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+/* Announcement bar. Sits above the header, hidden below `sm` — at phone width
+   it costs a line of the first screen and the same phone number is already a
+   tap away in the sticky FAB. */
+.announce-bar {
+  display: none;
+  background: var(--foreground);
+  color: #fff;
+  font-size: 0.8125rem;
+  text-align: center;
+  padding-block: 0.5rem;
+}
+
+@media (min-width: 640px) {
+  .announce-bar {
+    display: block;
+  }
+}
+
+/* Mobile quick-contact buttons. Phone-only: on desktop the header CTA and the
+   hero form are both permanently visible, so these would be noise. */
+.fabs {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  display: flex;
+  gap: 0.625rem;
+}
+
+@media (min-width: 768px) {
+  .fabs {
+    display: none;
+  }
+}
+
+.fab {
+  display: flex;
+  height: 3.25rem;
+  width: 3.25rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  box-shadow: 0 8px 24px -6px rgb(0 0 0 / 0.4);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .btn,
-  .card--hover {
+  .card--hover,
+  .gallery-item > img {
     transition: none;
   }
 
   .btn:active,
-  .card--hover:hover {
+  .card--hover:hover,
+  .gallery-item:hover > img {
     transform: none;
   }
+}
+
+/* ------------------------------------------------------------ long prose */
+
+/* Body copy in the longform and local-area sections. These run 250-450 words
+   and are the pages' ranking substance, so they get a comfortable measure and
+   real paragraph spacing rather than the tighter card rhythm. */
+.prose-block p {
+  color: var(--muted);
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.prose-block p + p {
+  margin-top: 1rem;
 }

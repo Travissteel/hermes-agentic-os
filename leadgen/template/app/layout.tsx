@@ -1,10 +1,14 @@
-import { Inter, Oswald } from "next/font/google";
+import { Inter, Oswald, Poppins } from "next/font/google";
 import "./globals.css";
 import { SITE } from "@/site.config";
 import { rootMetadata } from "@/lib/seo";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { AnnouncementBar } from "@/components/layout/announcement-bar";
+import { MobileFabs } from "@/components/layout/mobile-fabs";
 import { LocalBusinessSchema } from "@/components/seo";
+import { getAllPosts } from "@/lib/posts";
+import { getAllFaqPages } from "@/lib/faq-pages";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -17,6 +21,14 @@ const oswald = Oswald({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   variable: "--font-display",
+  preload: false,
+});
+
+/** Heading face for the "trade" variant only — same preload reasoning. */
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800"],
+  variable: "--font-trade",
   preload: false,
 });
 
@@ -33,8 +45,8 @@ export default function RootLayout({
     <html
       lang="en-AU"
       data-variant={variant}
-      className={`${inter.variable} ${
-        variant === "bold" ? oswald.variable : ""
+      className={`${inter.variable} ${variant === "bold" ? oswald.variable : ""} ${
+        variant === "trade" ? poppins.variable : ""
       }`}
       style={
         {
@@ -45,7 +57,16 @@ export default function RootLayout({
     >
       <body>
         <LocalBusinessSchema />
-        <Navbar />
+        {/*
+          A hub with no children is an empty page, and linking one sitewide is
+          how Google finds it whether or not it is in the sitemap. Both links
+          return automatically on the first post / FAQ page.
+        */}
+        <AnnouncementBar />
+        <Navbar
+          hasPosts={getAllPosts().length > 0}
+          hasFaqPages={getAllFaqPages().length > 0}
+        />
         {/*
           <main> is deliberately unconstrained. Each section sets its own
           full-bleed background and wraps its content in .container, which is
@@ -54,6 +75,7 @@ export default function RootLayout({
         */}
         <main>{children}</main>
         <Footer />
+        <MobileFabs />
       </body>
     </html>
   );

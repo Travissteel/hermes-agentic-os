@@ -1,10 +1,17 @@
 import Link from "next/link";
 import { SITE, CORE_PHRASE } from "@/site.config";
 import { getAllAreas } from "@/lib/locations";
+import { getAllFaqPages } from "@/lib/faq-pages";
 import { CallButton } from "@/components/call-button";
 
+/**
+ * /faq is dropped while the colony is empty — a hub with no children is an
+ * empty page, and a sitewide footer link is how Google finds it regardless of
+ * the sitemap. It returns on the first FAQ page. Server component, so reading
+ * the data here costs the client nothing.
+ */
 const SITE_LINKS = [
-  { href: "/faq", label: "FAQ" },
+  ...(getAllFaqPages().length ? [{ href: "/faq", label: "FAQ" }] : []),
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
   { href: "/privacy", label: "Privacy" },
@@ -20,14 +27,27 @@ export function Footer() {
             <span aria-hidden className="h-6 w-1.5 rounded-full bg-accent" />
             {SITE.brandName}
           </p>
+          {SITE.tagline && (
+            <p className="mt-2 text-sm font-semibold text-accent">
+              {SITE.tagline}
+            </p>
+          )}
           <p className="mt-3 max-w-sm leading-relaxed text-muted">
-            Free quote-matching service for {SITE.service.phrase} in{" "}
-            {SITE.location.city}, {SITE.location.stateAbbr}. We connect you with
-            local pros — we don&apos;t perform the work ourselves.
+            {SITE.service.name} for {SITE.location.city},{" "}
+            {SITE.location.stateAbbr} and the surrounding communities
+            {SITE.establishedYear ? ` since ${SITE.establishedYear}` : ""}.
           </p>
+          {/* Real, produceable credentials only — see SiteConfig.credentials. */}
+          {SITE.credentials?.length ? (
+            <ul className="mt-4 space-y-1 text-xs text-muted">
+              {SITE.credentials.map((c) => (
+                <li key={c}>{c}</li>
+              ))}
+            </ul>
+          ) : null}
           <div className="mt-6 flex flex-wrap gap-3">
             <Link href="/contact" className="btn btn--accent">
-              Get free quotes
+              Get a free quote
             </Link>
             <CallButton compact />
           </div>
@@ -69,7 +89,7 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="container py-5 text-center text-xs text-muted">
-          © {new Date().getFullYear()} {SITE.brandName} — {CORE_PHRASE} quotes
+          © {new Date().getFullYear()} {SITE.brandName} — {CORE_PHRASE}
         </div>
       </div>
     </footer>

@@ -19,7 +19,7 @@ seed  →  draft  →  approved  →  scaffolded
    (with correct postcodes) and to draft `brand`, `theme`, `subServices`,
    `faqs`, `facts`, and `targetKeywords` — obeying the content gates in
    `~/.hermes/skills/leadgen/SKILL.md` (truth / specificity / uniqueness /
-   never interlink / AU spelling) and the referral VOICE RULE. It flips the row
+   never interlink / AU spelling) and the operator VOICE RULE. It flips the row
    to `status: "draft"`.
 3. **approved (you):** review the drafted row. Confirm the **`domain`** you
    bought (or will buy) and the contact **`email`**, tweak any copy, then set
@@ -57,7 +57,7 @@ them it skips cleanly (scaffolding + push are unaffected).
 | `city`,`state`,`stateAbbr`,`postcode` | you | AU location, 60k–400k pop or capital suburb |
 | `population` | AI | rough city population (band check) |
 | `greenLight` | you | `{ verdict, notes }` — your manual SERP judgement |
-| `brand` | AI | referral-style, e.g. "<City> <Service> Quotes" |
+| `brand` | AI | operator-style, e.g. "<City> <Service>" or "<City> <Service> Co" — not "<City> <Service> Quotes" |
 | `domain` | you | www form; the domain slug drives the repo + worker name |
 | `email` | you | contact address (reply-to on leads) |
 | `phone` | you | optional; empty string hides phone UI |

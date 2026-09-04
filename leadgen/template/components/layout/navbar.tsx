@@ -5,9 +5,16 @@ import Link from "next/link";
 import { SITE } from "@/site.config";
 import { telHref } from "@/components/call-button";
 
+/**
+ * `hasPosts` / `hasFaqPages` arrive as props rather than being read here,
+ * because this is a client component: importing lib/posts would ship every
+ * guide's full body text in the client bundle, growing with each cron-added
+ * post. The server layout already has the data for free.
+ */
 const LINKS = [
   { href: "/services", label: "Services" },
   { href: "/areas", label: "Areas" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/blog", label: "Guides" },
   { href: "/faq", label: "FAQ" },
 ];
@@ -20,29 +27,51 @@ const LINKS = [
  * traffic that is overwhelmingly mobile. Everything except the brand and the
  * two conversion actions now collapses behind a toggle.
  */
-export function Navbar() {
+export function Navbar({
+  hasPosts = true,
+  hasFaqPages = true,
+}: {
+  hasPosts?: boolean;
+  hasFaqPages?: boolean;
+}) {
   const [open, setOpen] = useState(false);
+  const links = LINKS.filter(
+    (l) =>
+      (l.href !== "/blog" || hasPosts) &&
+      (l.href !== "/faq" || hasFaqPages) &&
+      /* /gallery 404s without images. Read straight from SITE rather than a
+         prop — it is a static config value, not file-system data, so it costs
+         nothing in the client bundle. */
+      (l.href !== "/gallery" || !!SITE.images?.gallery?.length)
+  );
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white/85 backdrop-blur">
-      <nav className="container flex items-center justify-between gap-4 py-3">
+      <nav className="container flex items-center justify-between gap-2 py-3 sm:gap-4">
+        {/* min-w-0 + a fluid size so a long brand wraps to at most two lines.
+            "Ballarat Restumping Kings" at the old fixed 0.95rem broke to three
+            lines at 360px and tripled the height of the sticky header, on the
+            width most of this traffic arrives at. Brand names in this network
+            run long by design (city + service + suffix), so the header has to
+            absorb them rather than assume a short one — clamp scales down to
+            the narrowest phones and stops at the desktop size. */}
         <Link
           href="/"
-          className="flex items-center gap-2 font-extrabold tracking-tight text-foreground"
+          className="flex min-w-0 items-center gap-2 font-extrabold tracking-tight text-foreground"
           onClick={() => setOpen(false)}
         >
           <span
             aria-hidden
             className="h-6 w-1.5 shrink-0 rounded-full bg-accent"
           />
-          <span className="text-[0.95rem] leading-tight sm:text-base">
+          <span className="text-[clamp(0.72rem,3vw,1rem)] leading-tight">
             {SITE.brandName}
           </span>
         </Link>
 
         {/* Desktop */}
         <div className="hidden items-center gap-6 lg:flex">
-          {LINKS.map((l) => (
+          {links.map((l) => (
             <Link
               key={l.href}
               href={l.href}
@@ -57,7 +86,7 @@ export function Navbar() {
             </a>
           )}
           <Link href="/contact" className="btn btn--accent text-sm">
-            Get Quotes
+            Get a Quote
           </Link>
         </div>
 
@@ -65,7 +94,7 @@ export function Navbar() {
             and put navigation behind the toggle. */}
         <div className="flex items-center gap-2 lg:hidden">
           <Link href="/contact" className="btn btn--accent px-3 py-2 text-sm">
-            Get Quotes
+            Get a Quote
           </Link>
           <button
             type="button"
@@ -105,7 +134,7 @@ export function Navbar() {
       {open && (
         <div id="mobile-nav" className="border-t border-border bg-white lg:hidden">
           <div className="container grid gap-1 py-3">
-            {LINKS.map((l) => (
+            {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}

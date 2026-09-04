@@ -30,8 +30,8 @@ export default function ServicesPage() {
         <p className="eyebrow">Our services</p>
         <h1 className="h1 mt-4">{CORE_PHRASE} services</h1>
         <p className="lede mt-4 max-w-2xl">
-          Whatever the job, we&apos;ll match you with local {SITE.location.city}{" "}
-          pros who can quote it.
+          Whatever the job, we&apos;ll assess it properly and quote it clearly
+          — anywhere in {SITE.location.city} and the surrounding suburbs.
         </p>
         {/* Flex so the final row fills the width at any sub-service count —
             these lists run to five, which orphaned two cards under a fixed

@@ -8,23 +8,25 @@ the whole network did before this layer existed. That is a supported state.
 
 ## The rule that is not negotiable
 
-**Objects and places. Never people presented as ours.**
+**The work, the tools and the place. Never identifiable people presented as
+our team.**
 
-This brand is a quote-matching service, not the trade. A photo of a smiling
-electrician in hi-vis on a site that says "we connect you with local pros" is
-the same Gate 1 fabrication as an invented review or a made-up licence number —
-it asserts something untrue about who we are.
+These sites present as the local operator (voice rule changed 2026-09-01), so
+a photo of the work captioned as ours is fine — a gallery is expected of a
+trade site. What stays out is any image that makes a claim about a *person*: a
+stranger's face in stock hi-vis captioned "our crew" is a fabrication about a
+real, identifiable individual, and no amount of positioning makes it true.
 
 | Use | Avoid |
 |---|---|
-| A switchboard, an engine bay, a hand tool | Anyone in branded uniform or hi-vis |
-| A streetscape or landmark of the city we serve | "Meet the team" / staff portraits |
-| Materials, parts, a work site | Before/after shots implying we did the job |
-| Equipment in use, hands on a tool, unbranded | Anything that reads as a company van or premises |
+| A switchboard, an engine bay, a hand tool | Recognisable faces captioned as our staff |
+| A work site, materials, equipment in use | "Meet the team" / staff portraits |
+| Hands on a tool, unbranded workwear | Before/after pairs staged as one named customer's job |
+| A streetscape or landmark of the city we serve | Another company's van, signage or branding |
 
-Alt text follows the same rule. Describe what is literally in the frame — "a
-residential switchboard with circuit breakers and safety switches" — never
-"our electrician upgrading a switchboard".
+Alt text describes what is literally in the frame — "concrete stumps set and
+levelled beneath a timber floor frame". It may say the work is ours. It may
+not name or characterise a person in the shot.
 
 ## What stock images are and are not for
 
@@ -109,6 +111,23 @@ images: {
     credit: "Pexels — photographer name — Pexels License",
   },
 },
+```
+
+Gallery entries add a caption and live under `images.gallery`. The home page
+renders the first eight; `/gallery` renders all of them, and both the section
+and the route disappear when the array is absent:
+
+```ts
+gallery: [
+  {
+    src: "house-restumping.webp",
+    alt: "New concrete stumps set beneath a timber floor frame",
+    caption: "House Restumping",
+    width: 800,
+    height: 600,
+    credit: "Pexels — photographer name — Pexels License",
+  },
+],
 ```
 
 Per sub-service, on the `SubService` entry itself:

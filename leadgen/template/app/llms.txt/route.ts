@@ -15,10 +15,11 @@ export function GET() {
   const lines = [
     `# ${SITE.brandName}`,
     "",
-    `> Free quote-matching service for ${SITE.service.phrase} in ${SITE.location.city}, ${SITE.location.state}, Australia. Residents describe their job and licensed local professionals respond with quotes. ${SITE.brandName} is a referral service and does not perform the work itself.`,
+    `> ${SITE.service.name} serving ${SITE.location.city}, ${SITE.location.state}, Australia and the surrounding communities${SITE.establishedYear ? `, established ${SITE.establishedYear}` : ""}. ${SITE.brandName} assesses the job on site, explains the practical options and provides a clear written quote. Free quotes, no obligation.`,
     "",
     "## Key facts",
     ...SITE.facts.map((f) => `- ${f.label}: ${f.value}`),
+    ...(SITE.stats ?? []).map((s) => `- ${s.label}: ${s.value}`),
     `- Contact: ${SITE.email}`,
     "",
     "## Services",
@@ -44,7 +45,7 @@ export function GET() {
       (f) => `- [${f.question}](${absoluteUrl(`/faq/${f.slug}`)})`
     ),
     "",
-    `Site: ${SITE.domain} — ${CORE_PHRASE} quotes.`,
+    `Site: ${SITE.domain} — ${CORE_PHRASE}.`,
   ];
 
   return new Response(lines.join("\n"), {

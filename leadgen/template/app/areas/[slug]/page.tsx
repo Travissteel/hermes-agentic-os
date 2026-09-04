@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!area) return {};
   return pageMetadata({
     title: `${SITE.service.name} ${area.name} — Free Local Quotes`,
-    description: `Need ${SITE.service.phrase} in ${area.name} ${area.postcode}? Get free quotes from local pros who service ${area.name} and nearby suburbs.`,
+    description: `Need ${SITE.service.phrase} in ${area.name} ${area.postcode}? ${SITE.brandName} works throughout ${area.name} and the nearby suburbs. Free quotes, no obligation.`,
     path: `/areas/${area.slug}`,
   });
 }
@@ -39,7 +39,7 @@ export default async function AreaPage({
     <div className="container">
       <ServiceSchema
         serviceName={SITE.service.name}
-        description={`${SITE.service.name} quote matching for ${area.name}, ${SITE.location.stateAbbr} ${area.postcode}.`}
+        description={`${SITE.service.name} services in ${area.name}, ${SITE.location.stateAbbr} ${area.postcode}.`}
         areaName={`${area.name}, ${SITE.location.stateAbbr}`}
       />
       <BreadcrumbSchema

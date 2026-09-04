@@ -12,6 +12,30 @@ Hosting is standardised on **Cloudflare Workers** (via the OpenNext adapter) —
 free tier, no per-site cost, no commercial-use restriction. Domains and Resend
 are the only per-site costs.
 
+## Voice rule (changed 2026-09-01 — operator brand)
+
+Sites present as the **local operator**, not as a quote-matching or referral
+service. Copy is first person and confident — "we assess", "our process", "the
+work we do". There are no "we only connect you with pros" disclaimers anywhere
+in the funnel; they were removed on purpose.
+
+**Positioning is not permission to invent facts.** Never ship a fabricated
+review, rating, testimonial, job count, ABN, licence or registration number,
+insurance claim, or founding year. `establishedYear` and `credentials` in
+`site.config.ts` exist for real values, ship empty, and every consumer of them
+falls back to timeless phrasing when they are absent. Fill them in when a real
+operator rents the site and can produce them on request.
+
+Two consequences worth knowing before you scaffold:
+
+- **Brand names** should read as an operator — "Ballarat Restumping Co", not
+  "Ballarat Restumping Quotes".
+- **Licensed trades need a decision.** Presenting as an electrician, plumber or
+  builder implies a licence that neither you nor the site holds. Until a site is
+  let, keep the copy about the work rather than about credentials, and do not
+  imply registration. This is a live question on `electricianballarat` in
+  particular, where Victorian electrical work is licensed.
+
 ## Batch workflow (build many at once)
 
 The single-site checklist below still applies to each site — the batch tooling

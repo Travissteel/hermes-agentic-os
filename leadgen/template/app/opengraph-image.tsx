@@ -38,7 +38,7 @@ export default function OpenGraphImage() {
             color: "rgba(255,255,255,0.85)",
           }}
         >
-          {`Free quotes from local pros — ${SITE.brandName}`}
+          {`Free quotes, no obligation — ${SITE.brandName}`}
         </div>
       </div>
     ),

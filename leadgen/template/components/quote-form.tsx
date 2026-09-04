@@ -64,7 +64,7 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
           Request received
         </p>
         <p className="mt-1 text-slate-600">
-          Local pros will be in touch with your quote shortly.
+          We&apos;ll be in touch shortly to arrange a look at the job.
         </p>
       </div>
     );
@@ -182,8 +182,8 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
         </p>
       )}
       <p className="text-xs text-muted">
-        Free service. No obligation. Your details go only to local pros who can
-        quote your job.
+        Free quote, no obligation. We use your details to quote your job and
+        nothing else.
       </p>
     </form>
   );

@@ -5,7 +5,7 @@ import { BreadcrumbSchema } from "@/components/seo";
 
 export const metadata = pageMetadata({
   title: `Get Free ${SITE.service.name} Quotes — ${SITE.location.city}`,
-  description: `Request free ${SITE.service.phrase} quotes in ${SITE.location.city}. Describe the job and local pros will contact you — no obligation.`,
+  description: `Request a free ${SITE.service.phrase} quote in ${SITE.location.city}. Tell us about the job and we'll be in touch — no obligation.`,
   path: "/contact",
 });
 

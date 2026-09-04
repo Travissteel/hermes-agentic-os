@@ -12,6 +12,19 @@ import { cpSync, existsSync, mkdirSync, readFileSync, writeFileSync } from "node
 import { execSync } from "node:child_process";
 import { homedir } from "node:os";
 import path from "node:path";
+/**
+ * Type-only, so it is erased before this ever runs — no runtime coupling to
+ * the Next app, just one definition of the content shapes instead of a second
+ * copy that drifts. These are passed straight through into the generated
+ * site.config.ts.
+ */
+import type {
+  GalleryItem,
+  LongformSection,
+  ProcessStep,
+  Stat,
+  ValueCard,
+} from "../../template/lib/site-types";
 
 export const LEADGEN_DIR = path.join(homedir(), "antigravity", "leadgen");
 export const TEMPLATE_DIR = path.join(LEADGEN_DIR, "template");
@@ -87,6 +100,16 @@ export interface ScaffoldOpts {
   stateAbbr: string;
   postcode: string;
   brand: string;
+  /** Short positioning line under the logo, e.g. "Strong Foundations Start Here". */
+  tagline?: string;
+  /**
+   * Real founding year only. Drives the stats strip, the about heading and
+   * `foundingDate` in LocalBusiness JSON-LD — omit it and every consumer
+   * falls back to timeless phrasing. Never pass a number you made up.
+   */
+  establishedYear?: number;
+  /** Thin bar above the header. Omitted → no bar. */
+  announcement?: string;
   /** www host or bare domain, with or without protocol — normalised internally. */
   domain: string;
   email: string;
@@ -94,6 +117,12 @@ export interface ScaffoldOpts {
   phone?: string;
   primary?: string;
   accent?: string;
+  /**
+   * Visual variant — "bold" | "clean" | "trade". Forty sites off one template
+   * rendering one layout is a footprint, so spread these across the network
+   * rather than defaulting everything. Omitted → "bold", as before.
+   */
+  variant?: "bold" | "clean" | "trade";
   /**
    * Optional AI-drafted config (from the batch candidates file). When present
    * and non-empty these replace the generic defaults the single-site CLI uses.
@@ -106,7 +135,23 @@ export interface ScaffoldOpts {
    * by hand after scaffolding — this only carries the config that points at
    * them. Omitted → the site renders text-only.
    */
-  images?: { hero?: SiteImage };
+  images?: { hero?: SiteImage; about?: SiteImage; gallery?: GalleryItem[] };
+  /**
+   * Rich home-page content. All optional — a site with none of it renders the
+   * same lean page the network shipped before these sections existed.
+   *
+   * `longform` is the one that matters most: 250-450 words per section of
+   * genuinely local, genuinely specific copy is the fix for the thin-page
+   * indexation problem (service pages measured ~180 words and 54% identical
+   * to their siblings on 2026-08-19, and went uncrawled).
+   */
+  stats?: Stat[];
+  differentiators?: ValueCard[];
+  process?: ProcessStep[];
+  promises?: ValueCard[];
+  about?: { eyebrow: string; heading: string; body: string[] };
+  localArea?: { eyebrow: string; heading: string; intro: string; body: string[] };
+  longform?: LongformSection[];
   /**
    * Niche-specific qualifying questions for the lead form. Omitted → the form
    * ships with the four core fields only, which is a fine starting point.
@@ -157,12 +202,12 @@ export async function scaffoldSite(opts: ScaffoldOpts): Promise<ScaffoldResult> 
           {
             slug: "urgent-callouts",
             name: `Urgent ${opts.service} Call-Outs`,
-            blurb: `Fast-response ${opts.phrase} for jobs that can't wait. We connect you with local pros available now.`,
+            blurb: `Fast-response ${opts.phrase} for jobs that can't wait. Tell us what's happening and we'll get to you as soon as we can.`,
           },
           {
             slug: "quotes-and-inspections",
             name: "Quotes & Inspections",
-            blurb: `Planning ahead? Get local ${opts.phrase} professionals to inspect and quote your job for free.`,
+            blurb: `Planning ahead? We'll inspect the job, explain what we find and quote the work in writing — free, with no obligation.`,
           },
         ];
 
@@ -171,12 +216,12 @@ export async function scaffoldSite(opts: ScaffoldOpts): Promise<ScaffoldResult> 
       ? opts.faqs
       : [
           {
-            question: `How do I get ${opts.phrase} quotes in ${opts.city}?`,
-            answer: `Describe your job through ${opts.brand} and licensed local professionals who service ${opts.city} will contact you directly with quotes. The service is free with no obligation.`,
+            question: `How do I get a ${opts.phrase} quote in ${opts.city}?`,
+            answer: `Tell us what you need through the form or give us a call. We look at the job, talk through the practical options and give you a clear written quote. Quoting is free and there is no obligation to go ahead.`,
           },
           {
-            question: `Does ${opts.brand} do the work itself?`,
-            answer: `No. ${opts.brand} is a free quote-matching service — we pass your job details to licensed local professionals who quote and carry out the work.`,
+            question: `Which areas around ${opts.city} do you cover?`,
+            answer: `We work throughout ${opts.city} and the surrounding towns. If you are not sure whether your address falls inside the service area, send it through and we will tell you straight away.`,
           },
         ];
 
@@ -238,97 +283,45 @@ export async function scaffoldSite(opts: ScaffoldOpts): Promise<ScaffoldResult> 
  * ~/antigravity/leadgen/scripts/new-site.ts. Every page, schema block, and
  * llms.txt read from here.
  *
- * VOICE RULE (do not remove): this brand is a quote-matching / referral
- * service. Copy must never claim to be a licensed tradesperson, and no
- * reviews, ABNs, or licence numbers may be invented.
+ * The shape lives in lib/site-types.ts and is re-exported below, so
+ * \`@/site.config\` stays the import path for the rest of the app. This file
+ * used to carry its own copy of every interface, which drifted from the
+ * template's — \`theme.variant\` existed in the template for weeks while every
+ * scaffolded site declared a theme with no variant field.
+ *
+ * VOICE RULE (do not remove) — operator brand, set 2026-09-01.
+ *
+ * This site presents as the local operator. Copy is first-person and
+ * confident: "we assess", "our process", "the work we do". No "we're only a
+ * matching service" disclaimers anywhere in the funnel.
+ *
+ * Positioning is not licence to invent facts. Never fabricate reviews,
+ * ratings, testimonials, job counts, an ABN, a licence or registration
+ * number, an insurance claim, or a founding year. \`credentials\` and
+ * \`establishedYear\` exist for real values and ship empty — every consumer
+ * of them falls back to timeless phrasing when they are absent.
+ *
+ * Write in the operator's voice about the WORK: what the job involves, what
+ * moves the price, how long it takes, what the local ground and access
+ * conditions are. That is both true and the part that ranks.
  */
 
-export interface SubService {
-  slug: string;
-  name: string;
-  blurb: string;
+export type {
+  IconName,
+  SubService,
+  SiteImage,
+  FAQ,
+  Fact,
+  Stat,
+  ValueCard,
+  ProcessStep,
+  LongformSection,
+  GalleryItem,
+  Qualifier,
+  SiteConfig,
+} from "@/lib/site-types";
 
-  /**
-   * These are the MONEY PAGES. Everything below is optional so the site still
-   * builds, but shipping a sub-service on \`blurb\` alone is what produced the
-   * network's indexation problem — write only what is TRUE and specific.
-   */
-  whatItInvolves?: string;
-  whenYouNeedIt?: string[];
-  process?: { step: string; detail: string }[];
-  priceGuide?: string;
-  faqs?: FAQ[];
-  image?: SiteImage;
-}
-
-/**
- * An image shipped in public/images. Referenced by filename only.
- *
- * VOICE RULE APPLIES TO IMAGERY. This brand is a quote-matching service, not
- * the trade. An image — or an alt text — that reads as "our team" or "our
- * work" is the same fabrication as an invented review or licence number.
- * Photograph the WORK and the PLACE: a switchboard, an engine bay, a
- * streetscape. Never people presented as ours.
- *
- * width/height are load-bearing. Images are unoptimised (Next's optimiser
- * needs paid Cloudflare Images on Workers), so these values are the only
- * thing reserving space before the file loads. See public/images/README.md
- * for sourcing licences and the resize/compress step.
- */
-export interface SiteImage {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  credit?: string;
-}
-
-export interface FAQ {
-  question: string;
-  answer: string;
-}
-
-export interface Fact {
-  label: string;
-  value: string;
-}
-
-/**
- * A qualifying question shown under the main lead fields, so the operator you
- * forward the lead to can price the job without a site visit.
- *
- * Keep it to ~5, prefer \`select\` over \`text\`, always offer a "Not sure"
- * option, and leave \`required\` off unless the job cannot be priced without
- * it. Every extra field costs conversion.
- */
-export interface Qualifier {
-  name: string;
-  label: string;
-  type: "select" | "text";
-  options?: string[];
-  placeholder?: string;
-  required?: boolean;
-}
-
-export interface SiteConfig {
-  brandName: string;
-  domain: string;
-  service: { name: string; phrase: string };
-  location: { city: string; state: string; stateAbbr: string; postcode: string };
-  email: string;
-  phoneDisplay: string;
-  theme: { primary: string; accent: string };
-  subServices: SubService[];
-  faqs: FAQ[];
-  facts: Fact[];
-  /** Optional. Omit and every page renders text-only, as before. */
-  images?: {
-    /** Wide contextual shot behind the hero — the LCP element. ~1600px max. */
-    hero?: SiteImage;
-  };
-  qualifiers?: Qualifier[];
-  messagePrompt?: string;
-}
+import type { SiteConfig } from "@/lib/site-types";
 
 export const SITE: SiteConfig = ${JSON.stringify(
     {
@@ -343,11 +336,23 @@ export const SITE: SiteConfig = ${JSON.stringify(
       },
       email: opts.email,
       phoneDisplay: phone,
-      theme: { primary, accent },
+      theme: { primary, accent, ...(opts.variant ? { variant: opts.variant } : {}) },
       subServices,
       faqs,
       facts,
-      ...(opts.images?.hero ? { images: opts.images } : {}),
+      ...(opts.tagline ? { tagline: opts.tagline } : {}),
+      ...(opts.establishedYear ? { establishedYear: opts.establishedYear } : {}),
+      ...(opts.announcement ? { announcement: opts.announcement } : {}),
+      ...(opts.images ? { images: opts.images } : {}),
+      ...(opts.stats?.length ? { stats: opts.stats } : {}),
+      ...(opts.differentiators?.length
+        ? { differentiators: opts.differentiators }
+        : {}),
+      ...(opts.process?.length ? { process: opts.process } : {}),
+      ...(opts.promises?.length ? { promises: opts.promises } : {}),
+      ...(opts.about ? { about: opts.about } : {}),
+      ...(opts.localArea ? { localArea: opts.localArea } : {}),
+      ...(opts.longform?.length ? { longform: opts.longform } : {}),
       ...(opts.qualifiers?.length ? { qualifiers: opts.qualifiers } : {}),
       ...(opts.messagePrompt ? { messagePrompt: opts.messagePrompt } : {}),
     },

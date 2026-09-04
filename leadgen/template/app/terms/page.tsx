@@ -3,7 +3,7 @@ import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
   title: "Terms of Use",
-  description: `Terms of use for the ${SITE.brandName} quote-matching service.`,
+  description: `Terms of use for the ${SITE.brandName} website.`,
   path: "/terms",
 });
 
@@ -14,21 +14,22 @@ export default function TermsPage() {
       <h1 className="text-3xl font-bold text-foreground">Terms of Use</h1>
       <div className="mt-6 space-y-4 leading-relaxed text-muted">
         <p>
-          {SITE.brandName} is a referral and quote-matching service. We do not
-          perform {SITE.service.phrase} work ourselves, and we are not a party
-          to any agreement you enter with a professional we refer you to.
+          These terms cover your use of the {SITE.brandName} website. They are
+          not the contract for any work — the scope, price and conditions for a
+          job are set out in the written quote you receive and agree to.
         </p>
         <p>
-          <strong className="text-foreground">No guarantee.</strong> We take
-          reasonable steps to refer genuine local professionals, but we make no
-          warranty about their availability, pricing, licensing, or workmanship.
-          Always verify licence and insurance details directly with any
-          tradesperson before engaging them.
+          <strong className="text-foreground">Quotes and estimates.</strong>{" "}
+          Prices, timeframes and availability described on this site are
+          general guidance only. A binding figure for your property comes from
+          a written quote following an assessment of the actual site
+          conditions, and may change if conditions differ from those visible at
+          the time of quoting.
         </p>
         <p>
-          <strong className="text-foreground">Referral fees.</strong> We may
-          receive a fee from professionals for leads or advertising. This does
-          not affect the price you are quoted.
+          <strong className="text-foreground">Subcontracting.</strong> Some
+          work may be carried out by qualified subcontractors engaged by us.
+          Your agreement remains with {SITE.brandName}.
         </p>
         <p>
           <strong className="text-foreground">Content.</strong> Guides and

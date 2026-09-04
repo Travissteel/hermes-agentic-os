@@ -23,7 +23,7 @@ export const dynamic = "force-static";
 export function GET() {
   const body = [
     "# Content signals — https://contentsignals.org/",
-    "# This site is a lead gen referral service. Being read, cited, and",
+    "# This site exists to generate enquiries. Being read, cited, and",
     "# surfaced by AI answer engines is the point, so all three are yes.",
     "User-agent: *",
     "Content-Signal: search=yes,ai-input=yes,ai-train=yes",
