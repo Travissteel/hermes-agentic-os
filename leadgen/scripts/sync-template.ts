@@ -87,6 +87,40 @@ function same(a: string, b: string): boolean {
   return readFileSync(a).equals(readFileSync(b));
 }
 
+/**
+ * lib/posts.ts and lib/faq-pages.ts are protected because they hold content,
+ * but they also declare the `Post` / `FaqPage` interfaces that synced template
+ * code compiles against. Protecting the file therefore freezes the type, and a
+ * template that starts reading a new field breaks the build on every older
+ * site — which is exactly what `Post.updatedAt` did on 2026-09-05.
+ *
+ * We can't safely rewrite these files, so surface the mismatch instead: report
+ * any interface field the template declares that the site's copy is missing.
+ */
+function protectedTypeDrift(siteDir: string): string[] {
+  const out: string[] = [];
+  const fields = (src: string, iface: string): string[] => {
+    const m = src.match(new RegExp(`export interface ${iface} \\{([\\s\\S]*?)\\n\\}`));
+    if (!m) return [];
+    return [...m[1].matchAll(/^\s*(\w+)\??:/gm)].map((x) => x[1]);
+  };
+
+  for (const [file, iface] of [["lib/posts.ts", "Post"], ["lib/faq-pages.ts", "FaqPage"]]) {
+    const sitePath = path.join(siteDir, file);
+    if (!existsSync(sitePath)) continue;
+    const tplFields = fields(readFileSync(path.join(TEMPLATE_DIR, file), "utf8"), iface);
+    const siteFields = fields(readFileSync(sitePath, "utf8"), iface);
+    const missing = tplFields.filter((f) => !siteFields.includes(f));
+    if (missing.length) {
+      out.push(
+        `${file}: interface ${iface} is missing ${missing.map((f) => `"${f}"`).join(", ")} ` +
+          `— protected file, add the field by hand or the build will fail`
+      );
+    }
+  }
+  return out;
+}
+
 function main() {
   const args = process.argv.slice(2);
   const apply = args.includes("--apply");
@@ -137,6 +171,7 @@ function main() {
       (f) => existsSync(path.join(site.localPath, f)) &&
         !same(path.join(TEMPLATE_DIR, f), path.join(site.localPath, f))
     );
+    const typeDrift = protectedTypeDrift(site.localPath);
 
     console.log(`=== ${site.slug} (${site.status})`);
     console.log(`    ${added.length} added, ${changed.length} updated, ${removed.length} removed`);
@@ -144,6 +179,7 @@ function main() {
     for (const f of changed) console.log(`      ~ ${f}`);
     for (const f of removed) console.log(`      - ${f} (obsolete)`);
     if (depDrift.length) console.log(`      ! package.json differs from template — review by hand`);
+    for (const d of typeDrift) console.log(`      ! ${d}`);
     console.log();
   }
 
