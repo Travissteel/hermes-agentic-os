@@ -15,8 +15,11 @@ Both Hermes and Claude Code read and write these files:
 
 | File | Purpose | Written by |
 |---|---|---|
-| `shared/hermes-state.md` | Live Hermes snapshot — services, model, crons, recent sessions | `scripts/refresh-hermes-state.sh` (manual or cron) |
+| `shared/hermes-state.md` | Human-readable Hermes snapshot — services, model, crons, recent sessions, stale warnings, daily workscore | `scripts/refresh-hermes-state.sh` (manual or cron) |
+| `shared/hermes-state.json` | Machine-readable Hermes snapshot for dashboards and automation | `state_integrity_refresh.py` |
+| `shared/workscore.json` | Lightweight daily ops scoreboard + stale-file warnings | `state_integrity_refresh.py` |
 | `shared/activity-log.md` | Append-only log of every file Claude Code edits + Hermes deliveries | Claude Code (PostToolUse hook) + Hermes (when applicable) |
+| `~/.hermes/state/events.jsonl` | Append-only machine event log for scheduling, publishing, refresh jobs, and future DM/SEO events | Hermes automation scripts |
 | `shared/notes.md` | Freeform shared scratchpad — decisions, context, ideas | Both agents |
 | `shared/goals.json` | Active goals with progress (used by dashboard) | Both agents |
 | `shared/hf-gsc-worklist.md` | HF nightly work queue, ranked from Search Console | `hf_gsc_worklist.py` (cron runs it) |
@@ -94,6 +97,27 @@ regenerates a queue from real Search Console data and takes the top item.
 | Lead gen quality gate | `~/.hermes/scripts/leadgen_page_quality.py <site-dir> --strict` — blocks commits on thin/duplicate pages |
 
 Covers 6 properties: 4 leadgen `sc-domain:` + hypnotherapy-finder + business-software-finder.
+
+**Diagnosis changed 2026-09-05 — the lead gen problem is RANKING, not crawling.**
+The 2026-08-31 reading ("mostly *Discovered — currently not indexed*") no longer
+holds. Every page inspected on 2026-09-05 came back **Submitted and indexed**,
+and both sitemaps were downloaded by Google on 2–3 Sept with zero warnings and
+zero errors. Crawling is healthy; sitemap resubmission achieves nothing (and
+403s anyway — the service account has `webmasters.readonly` and restricted GSC
+permission, so it can read coverage but not submit).
+
+What is actually wrong is position: 42–98 for the core money terms, which is
+why both sites show impressions and **zero clicks**. So:
+
+- **Do not add pages to fix this.** Page count is not the constraint — both
+  live sites already exceed `launchTarget`. Depth, query targeting and
+  authority are the constraint.
+- **Work the queries that already appear.** They prove Google has understood
+  the site. The highest-value gap found this way: `mobile diesel mechanic
+  townsville` was mobilemechanictownsville's 2nd-highest impression query at
+  position 56 with *no diesel page on the site*. That page now exists.
+- Local-pack presence (GBP, a real phone) is the likely structural ceiling on
+  `<trade> <city>` queries and is a business decision, not a content one.
 
 **API trap:** summing clicks over a `query`-dimension result undercounts badly
 (GSC omits anonymized rare queries). Totals must come from a `date`-dimension query.
