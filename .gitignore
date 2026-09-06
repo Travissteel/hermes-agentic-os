@@ -51,3 +51,6 @@ Thumbs.db
 
 # Personal Ralph PRDs + run state
 ralphs/
+
+# Regenerated before each run — not source of truth
+shared/leadgen-worker-usage.md

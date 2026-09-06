@@ -26,7 +26,16 @@ Both Hermes and Claude Code read and write these files:
 | `shared/hf-gsc-latest.json` | HF Search Console snapshot | `hf_gsc_report.py` |
 | `shared/leadgen-gsc-latest.md` | Lead gen network coverage + index-state report | `leadgen_gsc_report.py` |
 
-The three GSC files are gitignored — regenerated before every run.
+The three GSC files and `shared/leadgen-worker-usage.md` are gitignored — regenerated before every run.
+
+**Cloudflare Workers request budget.** Every site is its own Worker, so request
+volume scales with *site count*, not revenue — the sites earn almost no clicks yet,
+so essentially all of it is crawler traffic. Measured 2026-09-06: **148k requests /
+30 days across 6 workers (~4.9k/day, ~823/day per site)** — 4.9% of the free plan's
+100k/DAY cap and 1.5% of the paid plan's 10M/month. At 50 sites that projects to
+~41k/day (41% of the free cap) and ~1.2M/month (12% of paid). The free cap is a hard
+cap: breaching it is an outage, not an invoice. `leadgen-nightly` now reports this
+each run.
 
 **Refresh Hermes state:** `bash ~/antigravity/scripts/refresh-hermes-state.sh`
 
@@ -95,6 +104,7 @@ regenerates a queue from real Search Console data and takes the top item.
 | HF snapshot | `~/.hermes/scripts/hf_gsc_report.py` |
 | Lead gen coverage | `~/.hermes/scripts/leadgen_gsc_report.py` — indexation gap + URL Inspection state |
 | Lead gen quality gate | `~/.hermes/scripts/leadgen_page_quality.py <site-dir> --strict` — blocks commits on thin/duplicate pages |
+| Workers request budget | `~/.hermes/scripts/leadgen_worker_usage.py [--days 30] [--project 50]` — per-Worker request volume vs plan limits |
 
 Covers 6 properties: 4 leadgen `sc-domain:` + hypnotherapy-finder + business-software-finder.
 
