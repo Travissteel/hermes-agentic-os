@@ -106,7 +106,10 @@ regenerates a queue from real Search Console data and takes the top item.
 | Lead gen quality gate | `~/.hermes/scripts/leadgen_page_quality.py <site-dir> --strict` — blocks commits on thin/duplicate pages |
 | Workers request budget | `~/.hermes/scripts/leadgen_worker_usage.py [--days 30] [--project 50]` — per-Worker request volume vs plan limits |
 
-Covers 6 properties: 4 leadgen `sc-domain:` + hypnotherapy-finder + business-software-finder.
+Covers 8 properties: **6** leadgen `sc-domain:` (all six sites now have one — the
+earlier "4" predated the two August launches) + hypnotherapy-finder +
+business-software-finder. `leadgen_gsc_report.py` filters to `status == "live"`,
+so a paused site has a property but is excluded from the report until unpaused.
 
 **Diagnosis changed 2026-09-05 — the lead gen problem is RANKING, not crawling.**
 The 2026-08-31 reading ("mostly *Discovered — currently not indexed*") no longer
