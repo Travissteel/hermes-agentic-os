@@ -68,7 +68,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className={`home-section ${SITE.homepage ? "brand-services" : ""}`}>
+      <section id="services" className={`home-section ${SITE.homepage ? `brand-services brand-services--${SITE.homepage.style}` : ""}`}>
         <div className="container">
           <p className="eyebrow">What we do</p>
           <h2 className="h2 mt-2">{SITE.service.name} services in {SITE.location.city}</h2>

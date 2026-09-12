@@ -62,9 +62,9 @@ export function Navbar({
           className="flex min-w-0 items-center gap-2 font-extrabold tracking-tight text-foreground"
           onClick={() => setOpen(false)}
         >
-          {SITE.homepage?.style === "grounded" ? (
+          {SITE.homepage ? (
             <svg aria-hidden="true" viewBox="0 0 36 36" className="h-9 w-9 shrink-0 text-primary" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="square">
-              <path d="M5 15 18 5l13 10M9 15v9h18v-9M6 24h24M10 25v6m8-6v6m8-6v6M5 32h26" />
+              {SITE.homepage.style === "goldfields" ? <><rect x="3" y="10" width="30" height="16" rx="2" /><circle cx="18" cy="18" r="4" /><path d="M8 15v6m20-6v6M5 31h26" /></> : <path d="M5 15 18 5l13 10M9 15v9h18v-9M6 24h24M10 25v6m8-6v6m8-6v6M5 32h26" />}
             </svg>
           ) : <span aria-hidden className="h-6 w-1.5 shrink-0 rounded-full bg-accent" />}
           <span className="text-[clamp(0.72rem,3vw,1rem)] leading-tight">

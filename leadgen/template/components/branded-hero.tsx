@@ -20,6 +20,7 @@ export function BrandedHero() {
             <Link href="#services" className="brand-secondary-link">Explore the services</Link>
           </div>
           <p className="mt-3 text-sm text-muted">Free quote · No obligation to proceed</p>
+          {!!brand.quickLinks?.length && <nav aria-label="Plan your project" className="brand-quick-links">{brand.quickLinks.map(link => <Link key={link.href} href={link.href}>{link.label} <span aria-hidden>→</span></Link>)}</nav>}
           {SITE.images?.hero && <figure className="brand-hero-image">
             <SiteImage image={SITE.images.hero} priority sizes="(max-width: 767px) 100vw, 600px" className="h-full w-full object-cover" />
             <figcaption>From the ground up.</figcaption>

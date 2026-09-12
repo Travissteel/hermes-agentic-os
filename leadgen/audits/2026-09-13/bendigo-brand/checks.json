@@ -1,0 +1,48 @@
+{
+  "base": "https://www.bendigorestumping.com",
+  "results": [
+    {
+      "width": 360,
+      "height": 8711,
+      "overflow": false,
+      "h1": [
+        "Does your home need re-levelling or restumping?"
+      ],
+      "cards": 5,
+      "canonical": "https://www.bendigorestumping.com/"
+    },
+    {
+      "width": 390,
+      "height": 8398,
+      "overflow": false,
+      "h1": [
+        "Does your home need re-levelling or restumping?"
+      ],
+      "cards": 5,
+      "canonical": "https://www.bendigorestumping.com/"
+    },
+    {
+      "width": 768,
+      "height": 5548,
+      "overflow": false,
+      "h1": [
+        "Does your home need re-levelling or restumping?"
+      ],
+      "cards": 5,
+      "canonical": "https://www.bendigorestumping.com/"
+    },
+    {
+      "width": 1440,
+      "height": 5072,
+      "overflow": false,
+      "h1": [
+        "Does your home need re-levelling or restumping?"
+      ],
+      "cards": 5,
+      "canonical": "https://www.bendigorestumping.com/"
+    }
+  ],
+  "formSuccess": true,
+  "formFailure": true,
+  "errors": []
+}

@@ -216,7 +216,8 @@ export interface Qualifier {
 export interface SiteConfig {
   /** Optional site-owned brand treatment; preserved by template sync. */
   homepage?: {
-    style: "grounded";
+    style: "grounded" | "goldfields";
+    quickLinks?: { label: string; href: string }[];
     headline: string;
     introduction: string;
     serviceHints: Record<string, { situation: string; explanation: string }>;

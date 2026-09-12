@@ -562,3 +562,23 @@ html { scroll-padding-top: 6rem; }
   .brand-hero-image { display: none; }
   .brand-assurances .container { flex-direction: column; }
 }
+
+/* Goldfields: slate, muted gold and a measured, technical treatment. */
+.brand-hero--goldfields { background: #172c32; color: #f7f8f4; background-image: linear-gradient(#ffffff04 1px, transparent 1px), linear-gradient(90deg, #ffffff04 1px, transparent 1px); background-size: 36px 36px; }
+.brand-hero--goldfields .eyebrow, .brand-hero--goldfields .brand-hero-tagline { color: #e3c47c; }
+.brand-hero--goldfields .brand-hero-intro, .brand-hero--goldfields .brand-hero-copy > .text-muted { color: #d3dedd; }
+.brand-hero--goldfields h1 { max-width: 15ch; font-weight: 650; letter-spacing: -.035em; }
+.brand-hero--goldfields .brand-hero-copy .btn { background: #e3c47c; color: #172c32; border-color: #e3c47c; }
+.brand-hero--goldfields .brand-quote { border-radius: 2px; border-color: #e3c47c; color: #172c32; }
+.brand-hero--goldfields .brand-quote-kicker { color: #58624d; }
+.brand-hero--goldfields .brand-hero-image { height: 135px; border-radius: 2px; }
+.brand-hero--goldfields .brand-assurances { background: #213a40; border-color: #ffffff20; }
+.brand-hero--goldfields .brand-assurances b { color: #e3c47c; }
+.brand-quick-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.3rem; }
+.brand-quick-links a { padding: .6rem .8rem; border: 1px solid #ffffff45; border-radius: 2px; font-size: .8rem; }
+.brand-quick-links a:hover { background: #ffffff12; }
+.brand-quick-links a:focus-visible { outline: 2px solid #e3c47c; outline-offset: 3px; }
+
+.brand-services--goldfields .brand-service-situation { color: #3b595d; }
+.brand-services--goldfields .brand-service-card { border-radius: 2px; border-color: #d4dfde; }
+.brand-services--goldfields .brand-service-card:hover { background: #f3f7f6; border-color: #6b8382; }
