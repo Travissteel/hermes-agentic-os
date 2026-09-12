@@ -70,8 +70,13 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
           Request received
         </p>
         <p className="mt-1 text-slate-600">
-          We&apos;ll be in touch shortly to arrange a look at the job.
+          We&apos;ll contact you on the number you provided to discuss the job and the next step.
         </p>
+        <ol className="mt-5 space-y-3 border-t border-primary/15 pt-4 text-left text-sm text-slate-700">
+          <li><strong>1. We review your enquiry.</strong> Your job details help us prepare for the conversation.</li>
+          <li><strong>2. We discuss what&apos;s needed.</strong> We clarify the work and whether a site visit is needed.</li>
+          <li><strong>3. You decide the next step.</strong> Sending this form does not book or authorise any work.</li>
+        </ol>
       </div>
     );
   }

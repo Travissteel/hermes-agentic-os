@@ -214,6 +214,13 @@ export interface Qualifier {
 }
 
 export interface SiteConfig {
+  /** Optional site-owned brand treatment; preserved by template sync. */
+  homepage?: {
+    style: "grounded";
+    headline: string;
+    introduction: string;
+    serviceHints: Record<string, { situation: string; explanation: string }>;
+  };
   brandName: string;
   /** Short positioning line under the logo, e.g. "Strong Foundations Start Here". */
   tagline?: string;

@@ -4,6 +4,7 @@ import { getAllAreas } from "@/lib/locations";
 import { getAllFaqPages } from "@/lib/faq-pages";
 import { pageMetadata } from "@/lib/seo";
 import { QuoteForm } from "@/components/quote-form";
+import { BrandedHero } from "@/components/branded-hero";
 import { CallButton } from "@/components/call-button";
 import { SiteImage } from "@/components/site-image";
 import { FAQSchema, ServiceSchema } from "@/components/seo";
@@ -32,7 +33,7 @@ export default function HomePage() {
     <>
       <ServiceSchema serviceName={SITE.service.name} description={`${SITE.service.name} services in ${SITE.location.city}, ${SITE.location.stateAbbr}.`} />
       <FAQSchema faqs={SITE.faqs} />
-      <section className={`home-hero relative overflow-hidden ${dark ? "bg-[#171717]" : "bg-surface"}`}>
+      {SITE.homepage ? <BrandedHero /> : <section className={`home-hero relative overflow-hidden ${dark ? "bg-[#171717]" : "bg-surface"}`}>
         {dark && hero && <SiteImage image={hero} priority sizes="100vw" className="absolute inset-0 h-full w-full object-cover" />}
         {dark && <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-black/40" />}
         <div className={`container relative grid items-center gap-8 py-8 md:grid-cols-[1.05fr_minmax(0,26rem)] md:gap-14 md:py-14 ${dark ? "on-dark" : ""}`}>
@@ -59,7 +60,7 @@ export default function HomePage() {
             <div className="mt-5"><QuoteForm sourcePage="/" /></div>
           </div>
         </div>
-      </section>
+      </section>}
 
       <section className="border-b border-border bg-surface">
         <div className="container grid gap-5 py-6 sm:grid-cols-3">
@@ -67,16 +68,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="home-section">
+      <section id="services" className={`home-section ${SITE.homepage ? "brand-services" : ""}`}>
         <div className="container">
           <p className="eyebrow">What we do</p>
           <h2 className="h2 mt-2">{SITE.service.name} services in {SITE.location.city}</h2>
           {/* SITE_SERVICE_INTRO: preserve site-owned contextual service links here. */}
+          {SITE.homepage && <p className="mt-3 max-w-2xl text-muted">Start with what you&apos;ve noticed. We inspect the cause before recommending the work.</p>}
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {SITE.subServices.map((s) => (
-              <Link key={s.slug} href={`/services/${s.slug}`} className="card card--hover flex items-start gap-4 p-5">
+              <Link key={s.slug} href={`/services/${s.slug}`} className={`card card--hover flex items-start gap-4 p-5 ${SITE.homepage ? "brand-service-card" : ""}`}>
                 {s.image && <SiteImage image={s.image} sizes="80px" className="home-service-image shrink-0" />}
-                <div className="min-w-0"><h3 className="text-lg font-bold leading-snug">{s.name}</h3><p className="mt-2 text-sm leading-relaxed text-muted">{s.blurb}</p><span className="mt-3 inline-block text-sm font-semibold text-accent-ink">View service →</span></div>
+                <div className="min-w-0">{SITE.homepage?.serviceHints[s.slug] && <p className="brand-service-situation">{SITE.homepage.serviceHints[s.slug].situation}</p>}<h3 className="text-lg font-bold leading-snug">{s.name}</h3><p className="mt-2 text-sm leading-relaxed text-muted">{SITE.homepage?.serviceHints[s.slug]?.explanation ?? s.blurb}</p><span className="mt-3 inline-block text-sm font-semibold text-accent-ink">View service →</span></div>
               </Link>
             ))}
           </div>

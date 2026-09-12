@@ -1,0 +1,48 @@
+{
+  "base": "http://localhost:3100",
+  "results": [
+    {
+      "width": 360,
+      "height": 9559,
+      "overflow": false,
+      "h1": [
+        "Uneven floors? Cracking walls?"
+      ],
+      "cards": 6,
+      "canonical": "https://www.ballaratrestumping.com/"
+    },
+    {
+      "width": 390,
+      "height": 9265,
+      "overflow": false,
+      "h1": [
+        "Uneven floors? Cracking walls?"
+      ],
+      "cards": 6,
+      "canonical": "https://www.ballaratrestumping.com/"
+    },
+    {
+      "width": 768,
+      "height": 6039,
+      "overflow": false,
+      "h1": [
+        "Uneven floors? Cracking walls?"
+      ],
+      "cards": 6,
+      "canonical": "https://www.ballaratrestumping.com/"
+    },
+    {
+      "width": 1440,
+      "height": 5707,
+      "overflow": false,
+      "h1": [
+        "Uneven floors? Cracking walls?"
+      ],
+      "cards": 6,
+      "canonical": "https://www.ballaratrestumping.com/"
+    }
+  ],
+  "formSuccess": true,
+  "formFailure": true,
+  "errors": []
+}
