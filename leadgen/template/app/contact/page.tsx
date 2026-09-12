@@ -18,11 +18,10 @@ export default function ContactPage() {
           { name: "Contact", path: "/contact" },
         ]}
       />
-      <section className="mx-auto max-w-xl py-12">
-        <h1 className="h1">Get free quotes</h1>
+      <section id="quote" className="mx-auto max-w-xl py-12">
+        <h1 className="h1">Request a free quote</h1>
         <p className="mt-3 text-muted">
-          Tell us about the job and local {SITE.service.phrase} pros in{" "}
-          {SITE.location.city} will be in touch.
+          Tell us what you need done in {SITE.location.city}. We&apos;ll be in touch to discuss the job and your quote.
         </p>
         <div className="mt-8 rounded-xl border border-border bg-white p-6 shadow-sm">
           <QuoteForm sourcePage="/contact" />

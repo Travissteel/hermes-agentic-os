@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import {
   COUNTER_VISIBLE_FROM,
   COUNTER_WARN_FROM,
@@ -15,6 +15,10 @@ type FormState = "idle" | "sending" | "sent" | "error";
  * field is a honeypot — bots fill it, humans never see it.
  */
 export function QuoteForm({ sourcePage }: { sourcePage: string }) {
+  const formId = useId();
+  const counterId = `${formId}-message-counter`;
+  const requiredQualifiers = (SITE.qualifiers ?? []).filter((q) => q.required);
+  const optionalQualifiers = (SITE.qualifiers ?? []).filter((q) => !q.required);
   const [state, setState] = useState<FormState>("idle");
   const [messageLength, setMessageLength] = useState(0);
 
@@ -34,6 +38,8 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
         body: JSON.stringify({ ...data, sourcePage }),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const result = await res.json();
+      if (result.delivered === false) throw new Error("Delivery unavailable");
       setState("sent");
       form.reset();
       setMessageLength(0);
@@ -44,7 +50,7 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
 
   if (state === "sent") {
     return (
-      <div className="rounded-xl border border-primary/30 bg-primary/5 p-6 text-center">
+      <div role="status" className="rounded-xl border border-primary/30 bg-primary/5 p-6 text-center">
         <span className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-accent text-on-accent">
           <svg
             width="22"
@@ -72,96 +78,74 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
 
   return (
     <form onSubmit={handleSubmit} className="grid gap-3">
-      <input
-        name="name"
-        required
-        maxLength={LEAD_LIMITS.name}
-        placeholder="Your name"
-        className="field"
-        autoComplete="name"
-      />
-      <input
-        name="phone"
-        required
-        maxLength={LEAD_LIMITS.phone}
-        placeholder="Phone number"
-        className="field"
-        autoComplete="tel"
-        inputMode="tel"
-      />
-      <input
-        name="suburb"
-        required
-        maxLength={LEAD_LIMITS.suburb}
-        placeholder="Suburb"
-        className="field"
-        autoComplete="address-level2"
-      />
-      {/* Config-driven qualifying questions. Two columns from `sm` up so a
-          handful of dropdowns doesn't read as a long form — the perceived
-          length is what drives abandonment, not the field count. */}
-      {SITE.qualifiers?.length ? (
-        <div className="grid gap-3 sm:grid-cols-2">
-          {SITE.qualifiers.map((q) => (
-            <label key={q.name} className="grid gap-1 text-sm">
-              <span className="font-medium text-foreground">
-                {q.label}
-                {!q.required && (
-                  <span className="ml-1 font-normal text-muted">(optional)</span>
-                )}
-              </span>
-              {q.type === "select" ? (
-                <select
-                  name={q.name}
-                  required={q.required}
-                  defaultValue=""
-                  className="field"
-                >
-                  <option value="" disabled>
-                    Choose…
-                  </option>
-                  {q.options?.map((opt) => (
-                    <option key={opt} value={opt}>
-                      {opt}
-                    </option>
-                  ))}
-                </select>
-              ) : (
-                <input
-                  name={q.name}
-                  required={q.required}
-                  maxLength={LEAD_LIMITS.qualifier}
-                  placeholder={q.placeholder}
-                  className="field"
-                />
-              )}
-            </label>
-          ))}
-        </div>
-      ) : null}
+      <div className="grid gap-3 sm:grid-cols-2">
+        <label className="grid gap-1 text-sm font-medium">
+          Your name
+          <input name="name" required maxLength={LEAD_LIMITS.name} className="field" autoComplete="name" />
+        </label>
+        <label className="grid gap-1 text-sm font-medium">
+          Phone number
+          <input name="phone" type="tel" required maxLength={LEAD_LIMITS.phone} className="field" autoComplete="tel" inputMode="tel" />
+        </label>
+      </div>
+      <label className="grid gap-1 text-sm font-medium">
+        Suburb
+        <input name="suburb" required maxLength={LEAD_LIMITS.suburb} className="field" autoComplete="address-level2" />
+      </label>
+      {requiredQualifiers.map((q) => (
+        <label key={q.name} className="grid gap-1 text-sm font-medium">
+          {q.label}
+          {q.type === "select" ? (
+            <select name={q.name} required defaultValue="" className="field">
+              <option value="" disabled>Choose…</option>
+              {q.options?.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+            </select>
+          ) : <input name={q.name} required maxLength={LEAD_LIMITS.qualifier} placeholder={q.placeholder} className="field" />}
+        </label>
+      ))}
       <div>
+        <label htmlFor={`${formId}-message`} className="mb-1 block text-sm font-medium">What do you need done?</label>
         <textarea
+          id={`${formId}-message`}
           name="message"
           required
           maxLength={LEAD_LIMITS.message}
-          rows={4}
+          rows={3}
           placeholder={SITE.messagePrompt ?? "What do you need done?"}
           className="field resize-y"
           onChange={(e) => setMessageLength(e.target.value.length)}
-          aria-describedby="message-counter"
+          aria-describedby={showCounter ? counterId : undefined}
         />
         {/* Stays hidden until the cap is actually in sight, so a short
             enquiry never sees a limit it will not reach. */}
         <p
-          id="message-counter"
+          id={counterId}
           aria-live="polite"
           className={`mt-1 text-right text-xs ${
-            showCounter ? (warn ? "text-amber-600" : "text-muted") : "invisible"
+            showCounter ? (warn ? "text-amber-600" : "text-muted") : "hidden"
           }`}
         >
           {remaining.toLocaleString()} characters left
         </p>
       </div>
+      {optionalQualifiers.length > 0 && (
+        <details className="job-details">
+          <summary>More job details <span className="font-normal text-muted">(optional)</span></summary>
+          <div className="grid gap-3 pt-3 sm:grid-cols-2">
+            {optionalQualifiers.map((q) => (
+              <label key={q.name} className="grid gap-1 text-sm font-medium">
+                {q.label}
+                {q.type === "select" ? (
+                  <select name={q.name} defaultValue="" className="field">
+                    <option value="">Not sure / skip</option>
+                    {q.options?.map((opt) => <option key={opt} value={opt}>{opt}</option>)}
+                  </select>
+                ) : <input name={q.name} maxLength={LEAD_LIMITS.qualifier} placeholder={q.placeholder} className="field" />}
+              </label>
+            ))}
+          </div>
+        </details>
+      )}
       <input
         name="company_website"
         tabIndex={-1}
@@ -174,11 +158,11 @@ export function QuoteForm({ sourcePage }: { sourcePage: string }) {
         disabled={state === "sending"}
         className="btn btn--accent w-full disabled:opacity-50"
       >
-        {state === "sending" ? "Sending…" : "Get My Free Quotes"}
+        {state === "sending" ? "Sending…" : "Request a free quote"}
       </button>
       {state === "error" && (
-        <p className="text-sm text-red-600">
-          Something went wrong — please try again or email us directly.
+        <p role="alert" className="text-sm text-red-600">
+          Something went wrong — your details are still here. Please try again or{" "}<a className="underline" href={`mailto:${SITE.email}`}>email us directly</a>.
         </p>
       )}
       <p className="text-xs text-muted">

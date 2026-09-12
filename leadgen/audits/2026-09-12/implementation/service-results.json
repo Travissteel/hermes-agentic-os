@@ -1,0 +1,250 @@
+[
+  {
+    "site": "ballaratrestumping",
+    "path": "/services/full-house-restumping",
+    "status": 200,
+    "canonical": "https://www.ballaratrestumping.com/services/full-house-restumping",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "ballaratrestumping",
+    "path": "/services/partial-reblocking",
+    "status": 200,
+    "canonical": "https://www.ballaratrestumping.com/services/partial-reblocking",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "ballaratrestumping",
+    "path": "/services/house-re-levelling-and-laser-levelling",
+    "status": 200,
+    "canonical": "https://www.ballaratrestumping.com/services/house-re-levelling-and-laser-levelling",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "ballaratrestumping",
+    "path": "/services/subfloor-repairs",
+    "status": 200,
+    "canonical": "https://www.ballaratrestumping.com/services/subfloor-repairs",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "ballaratrestumping",
+    "path": "/services/underpinning",
+    "status": 200,
+    "canonical": "https://www.ballaratrestumping.com/services/underpinning",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "ballaratrestumping",
+    "path": "/services/concrete-and-steel-stumps",
+    "status": 200,
+    "canonical": "https://www.ballaratrestumping.com/services/concrete-and-steel-stumps",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigorestumping",
+    "path": "/services/full-house-restumping",
+    "status": 200,
+    "canonical": "https://www.bendigorestumping.com/services/full-house-restumping",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigorestumping",
+    "path": "/services/reblocking-and-underpinning",
+    "status": 200,
+    "canonical": "https://www.bendigorestumping.com/services/reblocking-and-underpinning",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigorestumping",
+    "path": "/services/laser-house-levelling-and-jacking",
+    "status": 200,
+    "canonical": "https://www.bendigorestumping.com/services/laser-house-levelling-and-jacking",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigorestumping",
+    "path": "/services/subfloor-inspection-and-stump-repairs",
+    "status": 200,
+    "canonical": "https://www.bendigorestumping.com/services/subfloor-inspection-and-stump-repairs",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigorestumping",
+    "path": "/services/steel-vs-concrete-stumps",
+    "status": 200,
+    "canonical": "https://www.bendigorestumping.com/services/steel-vs-concrete-stumps",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "townsvillendismods",
+    "path": "/services/ndis-bathroom-modifications",
+    "status": 200,
+    "canonical": "https://www.townsvillendismods.com/services/ndis-bathroom-modifications",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "townsvillendismods",
+    "path": "/services/wheelchair-ramps",
+    "status": 200,
+    "canonical": "https://www.townsvillendismods.com/services/wheelchair-ramps",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "townsvillendismods",
+    "path": "/services/disability-home-renovations",
+    "status": 200,
+    "canonical": "https://www.townsvillendismods.com/services/disability-home-renovations",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "townsvillendismods",
+    "path": "/services/aged-care-home-modifications",
+    "status": 200,
+    "canonical": "https://www.townsvillendismods.com/services/aged-care-home-modifications",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigoestatecleanouts",
+    "path": "/services/estate-sorting-and-donations",
+    "status": 200,
+    "canonical": "https://www.bendigoestatecleanouts.com/services/estate-sorting-and-donations",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigoestatecleanouts",
+    "path": "/services/pre-sale-property-clearing",
+    "status": 200,
+    "canonical": "https://www.bendigoestatecleanouts.com/services/pre-sale-property-clearing",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigoestatecleanouts",
+    "path": "/services/hoarder-and-complex-clearance",
+    "status": 200,
+    "canonical": "https://www.bendigoestatecleanouts.com/services/hoarder-and-complex-clearance",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "bendigoestatecleanouts",
+    "path": "/services/executor-and-solicitor-clearance",
+    "status": 200,
+    "canonical": "https://www.bendigoestatecleanouts.com/services/executor-and-solicitor-clearance",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "path": "/services/breakdown-and-wont-start-callouts",
+    "status": 200,
+    "canonical": "https://www.mobilemechanictownsville.com/services/breakdown-and-wont-start-callouts",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "path": "/services/logbook-servicing",
+    "status": 200,
+    "canonical": "https://www.mobilemechanictownsville.com/services/logbook-servicing",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "path": "/services/car-battery-replacement",
+    "status": 200,
+    "canonical": "https://www.mobilemechanictownsville.com/services/car-battery-replacement",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "path": "/services/brake-repairs-and-pad-replacement",
+    "status": 200,
+    "canonical": "https://www.mobilemechanictownsville.com/services/brake-repairs-and-pad-replacement",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "path": "/services/pre-purchase-inspections",
+    "status": 200,
+    "canonical": "https://www.mobilemechanictownsville.com/services/pre-purchase-inspections",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "path": "/services/mobile-diesel-mechanic",
+    "status": 200,
+    "canonical": "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "electricianballarat",
+    "path": "/services/emergency-electrician",
+    "status": 200,
+    "canonical": "https://www.electricianballarat.net/services/emergency-electrician",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "electricianballarat",
+    "path": "/services/switchboard-upgrades",
+    "status": 200,
+    "canonical": "https://www.electricianballarat.net/services/switchboard-upgrades",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "electricianballarat",
+    "path": "/services/rental-electrical-safety-checks",
+    "status": 200,
+    "canonical": "https://www.electricianballarat.net/services/rental-electrical-safety-checks",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "electricianballarat",
+    "path": "/services/commercial-electrical",
+    "status": 200,
+    "canonical": "https://www.electricianballarat.net/services/commercial-electrical",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "electricianballarat",
+    "path": "/services/ev-charger-installation",
+    "status": 200,
+    "canonical": "https://www.electricianballarat.net/services/ev-charger-installation",
+    "robots": "index, follow",
+    "h1": 1
+  },
+  {
+    "site": "electricianballarat",
+    "path": "/services/house-rewiring-and-old-wiring-repairs",
+    "status": 200,
+    "canonical": "https://www.electricianballarat.net/services/house-rewiring-and-old-wiring-repairs",
+    "robots": "index, follow",
+    "h1": 1
+  }
+]

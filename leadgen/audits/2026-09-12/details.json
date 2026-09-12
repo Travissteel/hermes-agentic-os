@@ -1,0 +1,140 @@
+[
+  {
+    "site": "ballaratrestumping",
+    "statuses": [
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "body": "# Content signals — https://contentsignals.org/\n# This site exists to generate enquiries. Being read, cited, and\n# surfaced by AI answer engines is the point, so all three are yes.\nUser-agent: *\nContent-Signal: search=yes,ai-input=yes,ai-train=yes\nAllow: /\nDisallow: /api/\n\nSitemap: https://www.ballaratrestumping.com/sitemap.xml\n\n# Plain-text site summary for AI/answer engines:\n# https://www.ballaratrestumping.com/llms.txt\n"
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200
+      },
+      {
+        "path": "/contact",
+        "status": 200
+      },
+      {
+        "path": "/not-a-real-audit-page-48121",
+        "status": 404
+      }
+    ],
+    "brokenImages": []
+  },
+  {
+    "site": "bendigorestumping",
+    "statuses": [
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "body": "# Content signals — https://contentsignals.org/\n# This site exists to generate enquiries. Being read, cited, and\n# surfaced by AI answer engines is the point, so all three are yes.\nUser-agent: *\nContent-Signal: search=yes,ai-input=yes,ai-train=yes\nAllow: /\nDisallow: /api/\n\nSitemap: https://www.bendigorestumping.com/sitemap.xml\n\n# Plain-text site summary for AI/answer engines:\n# https://www.bendigorestumping.com/llms.txt\n"
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200
+      },
+      {
+        "path": "/contact",
+        "status": 200
+      },
+      {
+        "path": "/not-a-real-audit-page-48121",
+        "status": 404
+      }
+    ],
+    "brokenImages": []
+  },
+  {
+    "site": "townsvillendismods",
+    "statuses": [
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "body": "# Content signals — https://contentsignals.org/\n# This site exists to generate enquiries. Being read, cited, and\n# surfaced by AI answer engines is the point, so all three are yes.\nUser-agent: *\nContent-Signal: search=yes,ai-input=yes,ai-train=yes\nAllow: /\nDisallow: /api/\n\nSitemap: https://www.townsvillendismods.com/sitemap.xml\n\n# Plain-text site summary for AI/answer engines:\n# https://www.townsvillendismods.com/llms.txt\n"
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200
+      },
+      {
+        "path": "/contact",
+        "status": 200
+      },
+      {
+        "path": "/not-a-real-audit-page-48121",
+        "status": 404
+      }
+    ],
+    "brokenImages": []
+  },
+  {
+    "site": "bendigoestatecleanouts",
+    "statuses": [
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "body": "# Content signals — https://contentsignals.org/\n# This site exists to generate enquiries. Being read, cited, and\n# surfaced by AI answer engines is the point, so all three are yes.\nUser-agent: *\nContent-Signal: search=yes,ai-input=yes,ai-train=yes\nAllow: /\nDisallow: /api/\n\nSitemap: https://www.bendigoestatecleanouts.com/sitemap.xml\n\n# Plain-text site summary for AI/answer engines:\n# https://www.bendigoestatecleanouts.com/llms.txt\n"
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200
+      },
+      {
+        "path": "/contact",
+        "status": 200
+      },
+      {
+        "path": "/not-a-real-audit-page-48121",
+        "status": 404
+      }
+    ],
+    "brokenImages": []
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "statuses": [
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "body": "# Content signals — https://contentsignals.org/\n# This site exists to generate enquiries. Being read, cited, and\n# surfaced by AI answer engines is the point, so all three are yes.\nUser-agent: *\nContent-Signal: search=yes,ai-input=yes,ai-train=yes\nAllow: /\nDisallow: /api/\n\nSitemap: https://www.mobilemechanictownsville.com/sitemap.xml\n\n# Plain-text site summary for AI/answer engines:\n# https://www.mobilemechanictownsville.com/llms.txt\n"
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200
+      },
+      {
+        "path": "/contact",
+        "status": 200
+      },
+      {
+        "path": "/not-a-real-audit-page-48121",
+        "status": 404
+      }
+    ],
+    "brokenImages": []
+  },
+  {
+    "site": "electricianballarat",
+    "statuses": [
+      {
+        "path": "/robots.txt",
+        "status": 200,
+        "body": "# Content signals — https://contentsignals.org/\n# This site exists to generate enquiries. Being read, cited, and\n# surfaced by AI answer engines is the point, so all three are yes.\nUser-agent: *\nContent-Signal: search=yes,ai-input=yes,ai-train=yes\nAllow: /\nDisallow: /api/\n\nSitemap: https://www.electricianballarat.net/sitemap.xml\n\n# Plain-text site summary for AI/answer engines:\n# https://www.electricianballarat.net/llms.txt\n"
+      },
+      {
+        "path": "/sitemap.xml",
+        "status": 200
+      },
+      {
+        "path": "/contact",
+        "status": 200
+      },
+      {
+        "path": "/not-a-real-audit-page-48121",
+        "status": 404
+      }
+    ],
+    "brokenImages": []
+  }
+]

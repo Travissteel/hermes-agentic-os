@@ -6,7 +6,7 @@ import { CardMedia } from "@/components/card-media";
 
 export const metadata = pageMetadata({
   title: `${SITE.service.name} Services in ${SITE.location.city}`,
-  description: `All ${SITE.service.phrase} services we arrange quotes for in ${SITE.location.city}: ${SITE.subServices.map((s) => s.name.toLowerCase()).join(", ")}.`,
+  description: `All ${SITE.service.phrase} services we provide in ${SITE.location.city}: ${SITE.subServices.map((s) => s.name.toLowerCase()).join(", ")}.`,
   path: "/services",
 });
 

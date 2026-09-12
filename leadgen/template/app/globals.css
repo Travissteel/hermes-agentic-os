@@ -469,7 +469,11 @@ h3,
 .fab {
   display: flex;
   height: 3.25rem;
-  width: 3.25rem;
+  min-width: 3.25rem;
+  padding-inline: 1rem;
+  gap: .5rem;
+  font-size: .875rem;
+  font-weight: 700;
   align-items: center;
   justify-content: center;
   border-radius: 999px;
@@ -503,4 +507,24 @@ h3,
 
 .prose-block p + p {
   margin-top: 1rem;
+}
+
+/* Compact home: all detailed content is server rendered and user-expandable. */
+html { scroll-padding-top: 6rem; }
+#quote { scroll-margin-top: 6rem; }
+.home-section { padding-block: clamp(2.25rem, 5vw, 4rem); }
+.home-details, .job-details { border: 1px solid var(--border); border-radius: var(--radius); background: var(--background); color: var(--foreground); }
+.home-details { padding: 1rem 1.25rem; }
+.job-details { padding: .75rem; }
+.home-details > summary, .job-details > summary { cursor: pointer; font-weight: 650; line-height: 1.5; }
+.home-details > summary:focus-visible, .job-details > summary:focus-visible { outline: 2px solid var(--primary); outline-offset: 5px; }
+.home-details[open] > summary { margin-bottom: 1rem; }
+.home-details .prose-block { max-width: 75ch; }
+.home-details .prose-block p { margin-block: .75rem; }
+.home-service-image { width: 5rem; height: 5rem; object-fit: cover; border-radius: var(--radius); }
+@media (max-width: 767px) {
+  body { padding-bottom: calc(5rem + env(safe-area-inset-bottom)); }
+  .fabs { bottom: max(.75rem, env(safe-area-inset-bottom)); }
+  .home-hero .h1 { font-size: clamp(2rem, 8vw, 3rem); }
+  .home-hero .lede { font-size: 1rem; }
 }

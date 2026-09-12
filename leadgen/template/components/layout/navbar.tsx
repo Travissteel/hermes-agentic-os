@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { SITE } from "@/site.config";
 import { telHref } from "@/components/call-button";
 
@@ -34,6 +35,7 @@ export function Navbar({
   hasPosts?: boolean;
   hasFaqPages?: boolean;
 }) {
+  const quoteHref = usePathname() === "/" ? "#quote" : "/contact#quote";
   const [open, setOpen] = useState(false);
   const links = LINKS.filter(
     (l) =>
@@ -85,7 +87,7 @@ export function Navbar({
               {SITE.phoneDisplay}
             </a>
           )}
-          <Link href="/contact" className="btn btn--accent text-sm">
+          <Link href={quoteHref} className="btn btn--accent text-sm">
             Get a Quote
           </Link>
         </div>
@@ -93,7 +95,7 @@ export function Navbar({
         {/* Mobile: keep the single highest-value action visible at all times,
             and put navigation behind the toggle. */}
         <div className="flex items-center gap-2 lg:hidden">
-          <Link href="/contact" className="btn btn--accent px-3 py-2 text-sm">
+          <Link href={quoteHref} className="btn btn--accent px-3 py-2 text-sm">
             Get a Quote
           </Link>
           <button

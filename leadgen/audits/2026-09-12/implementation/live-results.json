@@ -1,0 +1,159 @@
+[
+  {
+    "slug": "ballaratrestumping",
+    "status": 200,
+    "height": 9119,
+    "overflow": false,
+    "h1": 1,
+    "canonical": "https://www.ballaratrestumping.com/",
+    "details": 20,
+    "optionalClosed": true,
+    "serviceLinks": [
+      "/services/full-house-restumping",
+      "/services/partial-reblocking",
+      "/services/house-re-levelling-and-laser-levelling",
+      "/services/subfloor-repairs",
+      "/services/underpinning",
+      "/services/concrete-and-steel-stumps"
+    ],
+    "routes": {
+      "/sitemap.xml": 200,
+      "/robots.txt": 200,
+      "/contact": 200,
+      "/services/full-house-restumping": 200
+    },
+    "formFailure": true,
+    "formSuccess": true,
+    "errors": []
+  },
+  {
+    "slug": "bendigorestumping",
+    "status": 200,
+    "height": 8082,
+    "overflow": false,
+    "h1": 1,
+    "canonical": "https://www.bendigorestumping.com/",
+    "details": 18,
+    "optionalClosed": true,
+    "serviceLinks": [
+      "/services/full-house-restumping",
+      "/services/reblocking-and-underpinning",
+      "/services/laser-house-levelling-and-jacking",
+      "/services/subfloor-inspection-and-stump-repairs",
+      "/services/steel-vs-concrete-stumps"
+    ],
+    "routes": {
+      "/sitemap.xml": 200,
+      "/robots.txt": 200,
+      "/contact": 200,
+      "/services/full-house-restumping": 200
+    },
+    "formFailure": true,
+    "formSuccess": true,
+    "errors": []
+  },
+  {
+    "slug": "townsvillendismods",
+    "status": 200,
+    "height": 7961,
+    "overflow": false,
+    "h1": 1,
+    "canonical": "https://www.townsvillendismods.com/",
+    "details": 17,
+    "optionalClosed": true,
+    "serviceLinks": [
+      "/services/ndis-bathroom-modifications",
+      "/services/wheelchair-ramps",
+      "/services/disability-home-renovations",
+      "/services/aged-care-home-modifications"
+    ],
+    "routes": {
+      "/sitemap.xml": 200,
+      "/robots.txt": 200,
+      "/contact": 200,
+      "/services/ndis-bathroom-modifications": 200
+    },
+    "formFailure": true,
+    "formSuccess": true,
+    "errors": []
+  },
+  {
+    "slug": "bendigoestatecleanouts",
+    "status": 200,
+    "height": 7987,
+    "overflow": false,
+    "h1": 1,
+    "canonical": "https://www.bendigoestatecleanouts.com/",
+    "details": 18,
+    "optionalClosed": true,
+    "serviceLinks": [
+      "/services/estate-sorting-and-donations",
+      "/services/pre-sale-property-clearing",
+      "/services/hoarder-and-complex-clearance",
+      "/services/executor-and-solicitor-clearance"
+    ],
+    "routes": {
+      "/sitemap.xml": 200,
+      "/robots.txt": 200,
+      "/contact": 200,
+      "/services/estate-sorting-and-donations": 200
+    },
+    "formFailure": true,
+    "formSuccess": true,
+    "errors": []
+  },
+  {
+    "slug": "mobilemechanictownsville",
+    "status": 200,
+    "height": 8451,
+    "overflow": false,
+    "h1": 1,
+    "canonical": "https://www.mobilemechanictownsville.com/",
+    "details": 19,
+    "optionalClosed": true,
+    "serviceLinks": [
+      "/services/breakdown-and-wont-start-callouts",
+      "/services/logbook-servicing",
+      "/services/car-battery-replacement",
+      "/services/brake-repairs-and-pad-replacement",
+      "/services/pre-purchase-inspections",
+      "/services/mobile-diesel-mechanic"
+    ],
+    "routes": {
+      "/sitemap.xml": 200,
+      "/robots.txt": 200,
+      "/contact": 200,
+      "/services/breakdown-and-wont-start-callouts": 200
+    },
+    "formFailure": true,
+    "formSuccess": true,
+    "errors": []
+  },
+  {
+    "slug": "electricianballarat",
+    "status": 200,
+    "height": 8768,
+    "overflow": false,
+    "h1": 1,
+    "canonical": "https://www.electricianballarat.net/",
+    "details": 18,
+    "optionalClosed": true,
+    "serviceLinks": [
+      "/services/emergency-electrician",
+      "/services/switchboard-upgrades",
+      "/services/rental-electrical-safety-checks",
+      "/services/commercial-electrical",
+      "/services/ev-charger-installation",
+      "/services/house-rewiring-and-old-wiring-repairs"
+    ],
+    "routes": {
+      "/sitemap.xml": 200,
+      "/robots.txt": 200,
+      "/contact": 200,
+      "/services/emergency-electrician": 200
+    },
+    "formFailure": true,
+    "formSuccess": true,
+    "errors": []
+  }
+]

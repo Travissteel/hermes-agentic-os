@@ -1,0 +1,660 @@
+[
+  {
+    "site": "ballaratrestumping",
+    "lcp": {
+      "time": 848,
+      "url": "https://www.ballaratrestumping.com/images/hero.webp",
+      "size": 300690
+    },
+    "resources": [
+      {
+        "url": "https://www.ballaratrestumping.com/images/hero.webp",
+        "bytes": 150696,
+        "decoded": 150396,
+        "duration": 472
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/834800a6b130715c.js",
+        "bytes": 69281,
+        "decoded": 214811,
+        "duration": 448.5
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/images/full-house-restumping.webp",
+        "bytes": 52752,
+        "decoded": 52452,
+        "duration": 91.29999995231628
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+        "bytes": 48732,
+        "decoded": 48432,
+        "duration": 403.2000000476837
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/fac5ae1e3fcd988d.js",
+        "bytes": 24407,
+        "decoded": 90611,
+        "duration": 347.40000009536743
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/6740f161f60c6ab5.js",
+        "bytes": 24189,
+        "decoded": 85399,
+        "duration": 348.5
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/87ba510bd2b33ebc.js",
+        "bytes": 19832,
+        "decoded": 53824,
+        "duration": 339.09999990463257
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/?_rsc=ivliq",
+        "bytes": 13923,
+        "decoded": 58147,
+        "duration": 250.09999990463257
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/cf7bc3b073bf7aa7.css",
+        "bytes": 9382,
+        "decoded": 45480,
+        "duration": 253.70000004768372
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/media/47fe1b7cd6e6ed85-s.855a563b.woff2",
+        "bytes": 8148,
+        "decoded": 7848,
+        "duration": 274
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/media/829ba4228c966254-s.a61bc753.woff2",
+        "bytes": 8116,
+        "decoded": 7816,
+        "duration": 272.7999999523163
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/247eb132b7f7b574.js",
+        "bytes": 7625,
+        "decoded": 27854,
+        "duration": 315.2999999523163
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/16f018ffef19d540.js",
+        "bytes": 7261,
+        "decoded": 17382,
+        "duration": 303.2000000476837
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/475fa0f5a019bf38.js",
+        "bytes": 5460,
+        "decoded": 13521,
+        "duration": 218.40000009536743
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/turbopack-3c27ebc1c3c13961.js",
+        "bytes": 4382,
+        "decoded": 9909,
+        "duration": 218.60000014305115
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/?_rsc=nn07o",
+        "bytes": 2752,
+        "decoded": 7942,
+        "duration": 172.30000019073486
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/23d69cfe70e9c331.js",
+        "bytes": 2008,
+        "decoded": 3580,
+        "duration": 27.700000047683716
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/?_rsc=1pn8p",
+        "bytes": 1371,
+        "decoded": 3635,
+        "duration": 199.90000009536743
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/icon?648dc10b4519e731",
+        "bytes": 1343,
+        "decoded": 1043,
+        "duration": 261.2999999523163
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/contact?_rsc=1pn8p",
+        "bytes": 1232,
+        "decoded": 2661,
+        "duration": 248.20000004768372
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/contact?_rsc=ufrug",
+        "bytes": 1152,
+        "decoded": 1717,
+        "duration": 69.20000004768372
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/contact?_rsc=1r34m",
+        "bytes": 602,
+        "decoded": 584,
+        "duration": 693
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/?_rsc=1r34m",
+        "bytes": 589,
+        "decoded": 458,
+        "duration": 683.8000001907349
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/contact?_rsc=1399r",
+        "bytes": 558,
+        "decoded": 432,
+        "duration": 89.30000019073486
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/_next/static/chunks/ff1a16fafef87110.js",
+        "bytes": 513,
+        "decoded": 282,
+        "duration": 253.30000019073486
+      },
+      {
+        "url": "https://www.ballaratrestumping.com/cdn-cgi/rum?",
+        "bytes": 300,
+        "decoded": 0,
+        "duration": 98.39999985694885
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+        "bytes": 0,
+        "decoded": 0,
+        "duration": 279.2999999523163
+      }
+    ]
+  },
+  {
+    "site": "bendigorestumping",
+    "lcp": {
+      "time": 556,
+      "url": "https://www.bendigorestumping.com/images/hero.webp",
+      "size": 300690
+    },
+    "resources": [
+      {
+        "url": "https://www.bendigorestumping.com/images/hero.webp",
+        "bytes": 150482,
+        "decoded": 150182,
+        "duration": 281.5
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/834800a6b130715c.js",
+        "bytes": 69281,
+        "decoded": 214811,
+        "duration": 251.20000004768372
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+        "bytes": 48732,
+        "decoded": 48432,
+        "duration": 118.20000004768372
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/fac5ae1e3fcd988d.js",
+        "bytes": 24411,
+        "decoded": 90611,
+        "duration": 212.90000009536743
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/6740f161f60c6ab5.js",
+        "bytes": 24119,
+        "decoded": 85399,
+        "duration": 213.79999995231628
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/c13979b0ceebdedf.js",
+        "bytes": 20659,
+        "decoded": 55493,
+        "duration": 215.90000009536743
+      },
+      {
+        "url": "https://www.bendigorestumping.com/?_rsc=ivliq",
+        "bytes": 13165,
+        "decoded": 50798,
+        "duration": 151.59999990463257
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/8db5814a2fbf35ae.css",
+        "bytes": 9384,
+        "decoded": 45691,
+        "duration": 54.700000047683716
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/media/47fe1b7cd6e6ed85-s.855a563b.woff2",
+        "bytes": 8148,
+        "decoded": 7848,
+        "duration": 181.09999990463257
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/media/829ba4228c966254-s.a61bc753.woff2",
+        "bytes": 8116,
+        "decoded": 7816,
+        "duration": 157.90000009536743
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/247eb132b7f7b574.js",
+        "bytes": 7665,
+        "decoded": 27854,
+        "duration": 209.89999985694885
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/16f018ffef19d540.js",
+        "bytes": 7261,
+        "decoded": 17382,
+        "duration": 147.09999990463257
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/475fa0f5a019bf38.js",
+        "bytes": 5460,
+        "decoded": 13521,
+        "duration": 132.70000004768372
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/turbopack-3c27ebc1c3c13961.js",
+        "bytes": 4424,
+        "decoded": 9909,
+        "duration": 133.39999985694885
+      },
+      {
+        "url": "https://www.bendigorestumping.com/contact?_rsc=nn07o",
+        "bytes": 2821,
+        "decoded": 7833,
+        "duration": 457.69999980926514
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/23d69cfe70e9c331.js",
+        "bytes": 2008,
+        "decoded": 3580,
+        "duration": 66.79999995231628
+      },
+      {
+        "url": "https://www.bendigorestumping.com/?_rsc=1pn8p",
+        "bytes": 1367,
+        "decoded": 3584,
+        "duration": 114.20000004768372
+      },
+      {
+        "url": "https://www.bendigorestumping.com/icon?648dc10b4519e731",
+        "bytes": 1314,
+        "decoded": 1014,
+        "duration": 40.59999990463257
+      },
+      {
+        "url": "https://www.bendigorestumping.com/contact?_rsc=1pn8p",
+        "bytes": 1226,
+        "decoded": 2634,
+        "duration": 454.7999999523163
+      },
+      {
+        "url": "https://www.bendigorestumping.com/contact?_rsc=ufrug",
+        "bytes": 1155,
+        "decoded": 1712,
+        "duration": 120.10000014305115
+      },
+      {
+        "url": "https://www.bendigorestumping.com/contact?_rsc=1r34m",
+        "bytes": 607,
+        "decoded": 584,
+        "duration": 49
+      },
+      {
+        "url": "https://www.bendigorestumping.com/?_rsc=1r34m",
+        "bytes": 595,
+        "decoded": 458,
+        "duration": 473.7999999523163
+      },
+      {
+        "url": "https://www.bendigorestumping.com/contact?_rsc=1399r",
+        "bytes": 563,
+        "decoded": 432,
+        "duration": 457.2000000476837
+      },
+      {
+        "url": "https://www.bendigorestumping.com/_next/static/chunks/ff1a16fafef87110.js",
+        "bytes": 513,
+        "decoded": 282,
+        "duration": 143.29999995231628
+      },
+      {
+        "url": "https://www.bendigorestumping.com/cdn-cgi/rum?",
+        "bytes": 300,
+        "decoded": 0,
+        "duration": 57
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+        "bytes": 0,
+        "decoded": 0,
+        "duration": 290.30000019073486
+      }
+    ]
+  },
+  {
+    "site": "mobilemechanictownsville",
+    "lcp": {
+      "time": 1332,
+      "url": "https://www.mobilemechanictownsville.com/images/hero.webp",
+      "size": 300690
+    },
+    "resources": [
+      {
+        "url": "https://www.mobilemechanictownsville.com/images/hero.webp",
+        "bytes": 102456,
+        "decoded": 102156,
+        "duration": 938.5
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/834800a6b130715c.js",
+        "bytes": 69281,
+        "decoded": 214811,
+        "duration": 884
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/images/mobile-callout.webp",
+        "bytes": 53938,
+        "decoded": 53638,
+        "duration": 129.70000004768372
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+        "bytes": 48732,
+        "decoded": 48432,
+        "duration": 533
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/fac5ae1e3fcd988d.js",
+        "bytes": 24411,
+        "decoded": 90611,
+        "duration": 256.60000014305115
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/6740f161f60c6ab5.js",
+        "bytes": 24119,
+        "decoded": 85399,
+        "duration": 533.1000001430511
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/media/6ad1cda2f16975ee-s.b58dc1ff.woff2",
+        "bytes": 21712,
+        "decoded": 21412,
+        "duration": 609.4000000953674
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/b243b3c25c016f97.js",
+        "bytes": 21526,
+        "decoded": 58864,
+        "duration": 532
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/?_rsc=ivliq",
+        "bytes": 13087,
+        "decoded": 51843,
+        "duration": 512.7000000476837
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/e84f10928f3a6eca.css",
+        "bytes": 9346,
+        "decoded": 45282,
+        "duration": 128.29999995231628
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/247eb132b7f7b574.js",
+        "bytes": 7624,
+        "decoded": 27854,
+        "duration": 367.2000000476837
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/16f018ffef19d540.js",
+        "bytes": 7324,
+        "decoded": 17382,
+        "duration": 367.69999980926514
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/475fa0f5a019bf38.js",
+        "bytes": 5460,
+        "decoded": 13521,
+        "duration": 284.7000000476837
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/turbopack-3c27ebc1c3c13961.js",
+        "bytes": 4382,
+        "decoded": 9909,
+        "duration": 281.2999999523163
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/?_rsc=nn07o",
+        "bytes": 2867,
+        "decoded": 8222,
+        "duration": 486.7000000476837
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/23d69cfe70e9c331.js",
+        "bytes": 2008,
+        "decoded": 3580,
+        "duration": 27.600000143051147
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/icon?648dc10b4519e731",
+        "bytes": 1517,
+        "decoded": 1217,
+        "duration": 602.8999998569489
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/?_rsc=1pn8p",
+        "bytes": 1389,
+        "decoded": 3739,
+        "duration": 477.80000019073486
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/contact?_rsc=1pn8p",
+        "bytes": 1239,
+        "decoded": 2744,
+        "duration": 453.7000000476837
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/contact?_rsc=ufrug",
+        "bytes": 1164,
+        "decoded": 1748,
+        "duration": 56.5
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/contact?_rsc=1r34m",
+        "bytes": 603,
+        "decoded": 584,
+        "duration": 198.80000019073486
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/?_rsc=1r34m",
+        "bytes": 592,
+        "decoded": 458,
+        "duration": 126.29999995231628
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/contact?_rsc=1399r",
+        "bytes": 560,
+        "decoded": 432,
+        "duration": 57.700000047683716
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/_next/static/chunks/ff1a16fafef87110.js",
+        "bytes": 513,
+        "decoded": 282,
+        "duration": 137.79999995231628
+      },
+      {
+        "url": "https://www.mobilemechanictownsville.com/cdn-cgi/rum?",
+        "bytes": 300,
+        "decoded": 0,
+        "duration": 81
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+        "bytes": 0,
+        "decoded": 0,
+        "duration": 777.4000000953674
+      }
+    ]
+  },
+  {
+    "site": "electricianballarat",
+    "lcp": {
+      "time": 568,
+      "url": "https://www.electricianballarat.net/images/hero.webp",
+      "size": 84488
+    },
+    "resources": [
+      {
+        "url": "https://www.electricianballarat.net/images/hero.webp",
+        "bytes": 136826,
+        "decoded": 136526,
+        "duration": 230.5
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/834800a6b130715c.js",
+        "bytes": 69335,
+        "decoded": 214811,
+        "duration": 192.39999985694885
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2",
+        "bytes": 48732,
+        "decoded": 48432,
+        "duration": 102.79999995231628
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/fac5ae1e3fcd988d.js",
+        "bytes": 24411,
+        "decoded": 90611,
+        "duration": 148.09999990463257
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/6740f161f60c6ab5.js",
+        "bytes": 24119,
+        "decoded": 85399,
+        "duration": 150.89999985694885
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/dfe70f0c1cc2f523.js",
+        "bytes": 20825,
+        "decoded": 58712,
+        "duration": 154.70000004768372
+      },
+      {
+        "url": "https://www.electricianballarat.net/?_rsc=ivliq",
+        "bytes": 12693,
+        "decoded": 51414,
+        "duration": 92.70000004768372
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/9145f478bd6f1e36.css",
+        "bytes": 9348,
+        "decoded": 45325,
+        "duration": 70.60000014305115
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/247eb132b7f7b574.js",
+        "bytes": 7625,
+        "decoded": 27854,
+        "duration": 140.30000019073486
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/16f018ffef19d540.js",
+        "bytes": 7261,
+        "decoded": 17382,
+        "duration": 141.59999990463257
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/475fa0f5a019bf38.js",
+        "bytes": 5460,
+        "decoded": 13521,
+        "duration": 103.90000009536743
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/turbopack-3c27ebc1c3c13961.js",
+        "bytes": 4382,
+        "decoded": 9909,
+        "duration": 133.89999985694885
+      },
+      {
+        "url": "https://www.electricianballarat.net/contact?_rsc=nn07o",
+        "bytes": 2837,
+        "decoded": 8153,
+        "duration": 430
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/23d69cfe70e9c331.js",
+        "bytes": 2008,
+        "decoded": 3580,
+        "duration": 26.399999856948853
+      },
+      {
+        "url": "https://www.electricianballarat.net/?_rsc=1pn8p",
+        "bytes": 1381,
+        "decoded": 3643,
+        "duration": 94.70000004768372
+      },
+      {
+        "url": "https://www.electricianballarat.net/contact?_rsc=1pn8p",
+        "bytes": 1243,
+        "decoded": 2680,
+        "duration": 431.5
+      },
+      {
+        "url": "https://www.electricianballarat.net/contact?_rsc=ufrug",
+        "bytes": 1161,
+        "decoded": 1726,
+        "duration": 117.39999985694885
+      },
+      {
+        "url": "https://www.electricianballarat.net/icon?648dc10b4519e731",
+        "bytes": 988,
+        "decoded": 688,
+        "duration": 30.600000143051147
+      },
+      {
+        "url": "https://www.electricianballarat.net/contact?_rsc=1r34m",
+        "bytes": 604,
+        "decoded": 584,
+        "duration": 42.200000047683716
+      },
+      {
+        "url": "https://www.electricianballarat.net/?_rsc=1r34m",
+        "bytes": 592,
+        "decoded": 458,
+        "duration": 462
+      },
+      {
+        "url": "https://www.electricianballarat.net/contact?_rsc=1399r",
+        "bytes": 558,
+        "decoded": 432,
+        "duration": 420.2000000476837
+      },
+      {
+        "url": "https://www.electricianballarat.net/_next/static/chunks/ff1a16fafef87110.js",
+        "bytes": 513,
+        "decoded": 282,
+        "duration": 131.80000019073486
+      },
+      {
+        "url": "https://www.electricianballarat.net/cdn-cgi/rum?",
+        "bytes": 300,
+        "decoded": 0,
+        "duration": 22.90000009536743
+      },
+      {
+        "url": "https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495",
+        "bytes": 0,
+        "decoded": 0,
+        "duration": 126.5
+      }
+    ]
+  }
+]

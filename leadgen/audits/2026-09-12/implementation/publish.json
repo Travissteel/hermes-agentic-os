@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "ballaratrestumping",
+    "deployed": true,
+    "commit": "62c19550816855a9e003189c5aef07826c871d57",
+    "pushed": true,
+    "wordingDeployed": true
+  },
+  {
+    "slug": "bendigorestumping",
+    "deployed": true,
+    "commit": "77368a7fcc6993b3f4fba13ccb6d056605eb501c",
+    "pushed": true,
+    "wordingDeployed": true
+  },
+  {
+    "slug": "townsvillendismods",
+    "deployed": true,
+    "commit": "d02e443b26f8f564a2ff369c6161f569ca045f2d",
+    "pushed": true,
+    "wordingDeployed": true
+  },
+  {
+    "slug": "bendigoestatecleanouts",
+    "deployed": true,
+    "commit": "de8a53b2eb6caa85905b1680f187fc063f94a83d",
+    "pushed": true,
+    "wordingDeployed": true
+  },
+  {
+    "slug": "mobilemechanictownsville",
+    "deployed": true,
+    "commit": "5a02d1d61b91919c7f4881446071fb8a5b6ef8c4",
+    "pushed": true,
+    "wordingDeployed": true
+  },
+  {
+    "slug": "electricianballarat",
+    "deployed": true,
+    "commit": "ff62f76fa30886f818be179db377272e40938dc8",
+    "pushed": true,
+    "wordingDeployed": true
+  }
+]

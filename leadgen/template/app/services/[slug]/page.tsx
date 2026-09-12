@@ -21,7 +21,7 @@ export async function generateMetadata({
   if (!sub) return {};
   return pageMetadata({
     title: `${sub.name} ${SITE.location.city} — Free Quotes`,
-    description: `${sub.blurb} Get free quotes from ${SITE.location.city} pros today.`,
+    description: `${sub.blurb} Request a free quote from ${SITE.brandName}.`,
     path: `/services/${sub.slug}`,
   });
 }
@@ -152,7 +152,7 @@ export default async function SubServicePage({
             <Link href="/services" className="text-primary underline">
               {SITE.service.phrase} services
             </Link>{" "}
-            we arrange quotes for.
+            we provide.
           </p>
         </div>
         <div className="card h-fit p-6 shadow-sm md:sticky md:top-24">

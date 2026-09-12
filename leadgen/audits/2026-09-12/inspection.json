@@ -1,0 +1,49 @@
+[
+  {
+    "domain": "ballaratrestumping.com",
+    "path": "/services/full-house-restumping",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+  },
+  {
+    "domain": "bendigorestumping.com",
+    "path": "/services/full-house-restumping",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL is unknown to Google",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+  },
+  {
+    "domain": "mobilemechanictownsville.com",
+    "path": "/services/mobile-diesel-mechanic",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "lastCrawlTime": "2026-09-05T12:04:10Z",
+    "pageFetchState": "SUCCESSFUL",
+    "googleCanonical": "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic",
+    "userCanonical": "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic",
+    "referringUrls": [
+      "https://www.mobilemechanictownsville.com/areas/kirwan"
+    ],
+    "crawledAs": "MOBILE"
+  },
+  {
+    "domain": "electricianballarat.net",
+    "path": "/services/rental-electrical-safety-checks",
+    "verdict": "PASS",
+    "coverageState": "Submitted and indexed",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "lastCrawlTime": "2026-09-03T18:28:51Z",
+    "pageFetchState": "SUCCESSFUL",
+    "googleCanonical": "https://www.electricianballarat.net/services/rental-electrical-safety-checks",
+    "userCanonical": "https://www.electricianballarat.net/services/rental-electrical-safety-checks",
+    "crawledAs": "MOBILE"
+  }
+]

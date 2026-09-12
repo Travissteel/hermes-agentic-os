@@ -1,0 +1,2355 @@
+{
+  "generated_at": "2026-09-12T03:55:03.177777+00:00",
+  "window_start": "2026-08-13",
+  "window_end": "2026-09-09",
+  "sites": [
+    {
+      "slug": "ballaratrestumping",
+      "inspections": [
+        {
+          "url": "https://www.ballaratrestumping.com/",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.ballaratrestumping.com/",
+          "userCanonical": "https://www.ballaratrestumping.com/",
+          "lastCrawlTime": "2026-09-11T15:09:16Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.ballaratrestumping.com/areas",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.ballaratrestumping.com/services/concrete-and-steel-stumps",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.ballaratrestumping.com/services/full-house-restumping",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.ballaratrestumping.com/services/house-re-levelling-and-laser-levelling",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.ballaratrestumping.com/services/partial-reblocking",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.ballaratrestumping.com/services/subfloor-repairs",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.ballaratrestumping.com/services/underpinning",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        }
+      ],
+      "errors": [],
+      "property": "sc-domain:ballaratrestumping.com",
+      "clicks": 3,
+      "impressions": 340,
+      "pages": [
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/"
+          ],
+          "clicks": 3,
+          "impressions": 226,
+          "ctr": 0.01327433628318584,
+          "position": 42.60176991150443
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/areas/wendouree"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 20.666666666666668
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/are-steel-stumps-better-than-concrete-stumps-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 33.5
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/can-you-restump-a-house-in-stages-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 88,
+          "ctr": 0,
+          "position": 49.28409090909091
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/do-i-need-to-move-out-during-restumping-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 24.333333333333332
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/how-long-does-restumping-take-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 40.27777777777778
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/how-much-does-full-house-restumping-cost-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 42,
+          "ctr": 0,
+          "position": 73.61904761904762
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/how-much-does-house-re-levelling-cost-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 29.5
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/how-much-does-partial-reblocking-cost-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 48.5
+        },
+        {
+          "keys": [
+            "https://www.ballaratrestumping.com/faq/what-is-the-difference-between-restumping-and-underpinning-in-ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 25,
+          "ctr": 0,
+          "position": 46.16
+        }
+      ],
+      "queries": [
+        {
+          "keys": [
+            "ballarat restumping"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 34.5
+        },
+        {
+          "keys": [
+            "cost of restumping a house"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 81
+        },
+        {
+          "keys": [
+            "foundation restumping ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 49
+        },
+        {
+          "keys": [
+            "foundation underpinning ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 59
+        },
+        {
+          "keys": [
+            "house relevelling ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 30,
+          "ctr": 0,
+          "position": 49
+        },
+        {
+          "keys": [
+            "house restumping ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 32,
+          "ctr": 0,
+          "position": 34.9375
+        },
+        {
+          "keys": [
+            "house restumping cost"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 81.33333333333333
+        },
+        {
+          "keys": [
+            "house restumping costs"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 82.66666666666667
+        },
+        {
+          "keys": [
+            "house stump installation ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 57.10526315789474
+        },
+        {
+          "keys": [
+            "house stumps ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 29,
+          "ctr": 0,
+          "position": 46.96551724137931
+        },
+        {
+          "keys": [
+            "how much does restumping cost"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 77.2
+        },
+        {
+          "keys": [
+            "reblocking ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 21,
+          "ctr": 0,
+          "position": 48.095238095238095
+        },
+        {
+          "keys": [
+            "restumping and underpinning"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 68
+        },
+        {
+          "keys": [
+            "restumping ararat"
+          ],
+          "clicks": 0,
+          "impressions": 32,
+          "ctr": 0,
+          "position": 40.59375
+        },
+        {
+          "keys": [
+            "restumping ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 94,
+          "ctr": 0,
+          "position": 32.648936170212764
+        },
+        {
+          "keys": [
+            "restumping cost"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 79.3
+        },
+        {
+          "keys": [
+            "restumping cost per stump"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 16
+        },
+        {
+          "keys": [
+            "restumping costs"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 81.5
+        },
+        {
+          "keys": [
+            "underpinning and restumping"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 82
+        },
+        {
+          "keys": [
+            "underpinning ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 22,
+          "ctr": 0,
+          "position": 39.59090909090909
+        },
+        {
+          "keys": [
+            "underpinning vs restumping"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 63
+        }
+      ],
+      "sitemap_urls": [
+        "https://www.ballaratrestumping.com/",
+        "https://www.ballaratrestumping.com/about",
+        "https://www.ballaratrestumping.com/areas",
+        "https://www.ballaratrestumping.com/areas/alfredton",
+        "https://www.ballaratrestumping.com/areas/buninyong",
+        "https://www.ballaratrestumping.com/areas/delacombe",
+        "https://www.ballaratrestumping.com/areas/sebastopol",
+        "https://www.ballaratrestumping.com/areas/wendouree",
+        "https://www.ballaratrestumping.com/contact",
+        "https://www.ballaratrestumping.com/faq",
+        "https://www.ballaratrestumping.com/faq/are-steel-stumps-better-than-concrete-stumps-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-cracked-plaster-mean-i-need-restumping-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-rotten-bearers-and-joists-be-fixed-during-restumping-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-you-restump-a-house-in-stages-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-you-restump-a-house-in-winter-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/do-i-need-to-move-out-during-restumping-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-long-does-restumping-take-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-much-does-full-house-restumping-cost-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-much-does-house-re-levelling-cost-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-much-does-partial-reblocking-cost-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/what-is-the-difference-between-restumping-and-underpinning-in-ballarat",
+        "https://www.ballaratrestumping.com/gallery",
+        "https://www.ballaratrestumping.com/privacy",
+        "https://www.ballaratrestumping.com/services",
+        "https://www.ballaratrestumping.com/services/concrete-and-steel-stumps",
+        "https://www.ballaratrestumping.com/services/full-house-restumping",
+        "https://www.ballaratrestumping.com/services/house-re-levelling-and-laser-levelling",
+        "https://www.ballaratrestumping.com/services/partial-reblocking",
+        "https://www.ballaratrestumping.com/services/subfloor-repairs",
+        "https://www.ballaratrestumping.com/services/underpinning",
+        "https://www.ballaratrestumping.com/terms"
+      ],
+      "uninspected_commercial_urls": [
+        "https://www.ballaratrestumping.com/areas/alfredton",
+        "https://www.ballaratrestumping.com/areas/buninyong",
+        "https://www.ballaratrestumping.com/areas/delacombe",
+        "https://www.ballaratrestumping.com/areas/sebastopol",
+        "https://www.ballaratrestumping.com/areas/wendouree",
+        "https://www.ballaratrestumping.com/faq",
+        "https://www.ballaratrestumping.com/faq/are-steel-stumps-better-than-concrete-stumps-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-cracked-plaster-mean-i-need-restumping-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-rotten-bearers-and-joists-be-fixed-during-restumping-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-you-restump-a-house-in-stages-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/can-you-restump-a-house-in-winter-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/do-i-need-to-move-out-during-restumping-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-long-does-restumping-take-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-much-does-full-house-restumping-cost-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-much-does-house-re-levelling-cost-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/how-much-does-partial-reblocking-cost-in-ballarat",
+        "https://www.ballaratrestumping.com/faq/what-is-the-difference-between-restumping-and-underpinning-in-ballarat",
+        "https://www.ballaratrestumping.com/services"
+      ]
+    },
+    {
+      "slug": "bendigorestumping",
+      "inspections": [
+        {
+          "url": "https://www.bendigorestumping.com/",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.bendigorestumping.com/",
+          "userCanonical": "https://www.bendigorestumping.com/",
+          "lastCrawlTime": "2026-08-25T11:38:35Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.bendigorestumping.com/areas",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.bendigorestumping.com/areas/eaglehawk",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.bendigorestumping.com/services/full-house-restumping",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.bendigorestumping.com/services/laser-house-levelling-and-jacking",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.bendigorestumping.com/services/laser-house-levelling-and-jacking",
+          "userCanonical": "https://www.bendigorestumping.com/services/laser-house-levelling-and-jacking",
+          "lastCrawlTime": "2026-08-25T00:19:01Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.bendigorestumping.com/services/reblocking-and-underpinning",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.bendigorestumping.com/services/steel-vs-concrete-stumps",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.bendigorestumping.com/services/subfloor-inspection-and-stump-repairs",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "URL is unknown to Google",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        }
+      ],
+      "errors": [],
+      "property": "sc-domain:bendigorestumping.com",
+      "clicks": 0,
+      "impressions": 426,
+      "pages": [
+        {
+          "keys": [
+            "https://www.bendigorestumping.com/"
+          ],
+          "clicks": 0,
+          "impressions": 203,
+          "ctr": 0,
+          "position": 52.3743842364532
+        },
+        {
+          "keys": [
+            "https://www.bendigorestumping.com/faq/do-i-need-to-move-out-during-restumping-in-bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 8.5
+        },
+        {
+          "keys": [
+            "https://www.bendigorestumping.com/faq/how-much-does-full-house-restumping-cost-in-bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 228,
+          "ctr": 0,
+          "position": 69.82894736842105
+        },
+        {
+          "keys": [
+            "https://www.bendigorestumping.com/services/laser-house-levelling-and-jacking"
+          ],
+          "clicks": 0,
+          "impressions": 49,
+          "ctr": 0,
+          "position": 69.08163265306122
+        }
+      ],
+      "queries": [
+        {
+          "keys": [
+            "average cost to restump a house"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 76.27272727272727
+        },
+        {
+          "keys": [
+            "bendigo restumping"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 57
+        },
+        {
+          "keys": [
+            "cost of restumping a house"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 77.58333333333333
+        },
+        {
+          "keys": [
+            "cost of restumping a house in victoria"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 72.72727272727273
+        },
+        {
+          "keys": [
+            "cost to restump house"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 84
+        },
+        {
+          "keys": [
+            "down under restumping"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 65
+        },
+        {
+          "keys": [
+            "house relevelling bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 28,
+          "ctr": 0,
+          "position": 62.17857142857143
+        },
+        {
+          "keys": [
+            "house restumping bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 53.23529411764706
+        },
+        {
+          "keys": [
+            "house restumping cost"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 79.27272727272727
+        },
+        {
+          "keys": [
+            "house restumping cost per stump"
+          ],
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 75.125
+        },
+        {
+          "keys": [
+            "house restumping costs"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 79
+        },
+        {
+          "keys": [
+            "house stump installation bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 54
+        },
+        {
+          "keys": [
+            "house stump repairs"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 12
+        },
+        {
+          "keys": [
+            "house stumping bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 24,
+          "ctr": 0,
+          "position": 56.666666666666664
+        },
+        {
+          "keys": [
+            "house stumps bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 53.583333333333336
+        },
+        {
+          "keys": [
+            "how much does it cost to restump a house"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 78.5
+        },
+        {
+          "keys": [
+            "how much does it cost to restump a house in victoria"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 55
+        },
+        {
+          "keys": [
+            "how much does restumping a house cost"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 79.75
+        },
+        {
+          "keys": [
+            "how much does restumping cost"
+          ],
+          "clicks": 0,
+          "impressions": 13,
+          "ctr": 0,
+          "position": 75.15384615384616
+        },
+        {
+          "keys": [
+            "how much does restumping cost in victoria"
+          ],
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 70.25
+        },
+        {
+          "keys": [
+            "how much to restump a house"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 86
+        },
+        {
+          "keys": [
+            "reblocking bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 45.57142857142857
+        },
+        {
+          "keys": [
+            "restumping a house cost"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 78.54545454545455
+        },
+        {
+          "keys": [
+            "restumping bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 61,
+          "ctr": 0,
+          "position": 43.24590163934426
+        },
+        {
+          "keys": [
+            "restumping cost"
+          ],
+          "clicks": 0,
+          "impressions": 27,
+          "ctr": 0,
+          "position": 77.88888888888889
+        },
+        {
+          "keys": [
+            "restumping cost calculator"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 83
+        },
+        {
+          "keys": [
+            "restumping cost per stump"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 76.33333333333333
+        },
+        {
+          "keys": [
+            "restumping costs"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 81
+        },
+        {
+          "keys": [
+            "restumping mooroopna"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 56.22222222222222
+        },
+        {
+          "keys": [
+            "rock solid restumping"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 59
+        },
+        {
+          "keys": [
+            "stump replacement cost"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 79.2
+        },
+        {
+          "keys": [
+            "underpinning bendigo"
+          ],
+          "clicks": 0,
+          "impressions": 30,
+          "ctr": 0,
+          "position": 56.56666666666667
+        }
+      ],
+      "sitemap_urls": [
+        "https://www.bendigorestumping.com/",
+        "https://www.bendigorestumping.com/about",
+        "https://www.bendigorestumping.com/areas",
+        "https://www.bendigorestumping.com/areas/eaglehawk",
+        "https://www.bendigorestumping.com/areas/flora-hill",
+        "https://www.bendigorestumping.com/areas/golden-square",
+        "https://www.bendigorestumping.com/areas/kangaroo-flat",
+        "https://www.bendigorestumping.com/areas/quarry-hill",
+        "https://www.bendigorestumping.com/areas/spring-gully",
+        "https://www.bendigorestumping.com/contact",
+        "https://www.bendigorestumping.com/faq",
+        "https://www.bendigorestumping.com/faq/are-steel-stumps-better-than-concrete-stumps-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-cracked-plaster-mean-i-need-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-rotten-bearers-and-joists-be-fixed-during-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-sticking-doors-and-windows-mean-i-need-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-you-restump-a-house-in-stages-in-bendigo",
+        "https://www.bendigorestumping.com/faq/do-i-need-a-building-permit-for-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/do-i-need-to-move-out-during-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/how-long-does-restumping-take-in-bendigo",
+        "https://www.bendigorestumping.com/faq/how-much-does-full-house-restumping-cost-in-bendigo",
+        "https://www.bendigorestumping.com/faq/how-much-does-partial-restumping-cost-in-bendigo",
+        "https://www.bendigorestumping.com/privacy",
+        "https://www.bendigorestumping.com/services",
+        "https://www.bendigorestumping.com/services/full-house-restumping",
+        "https://www.bendigorestumping.com/services/laser-house-levelling-and-jacking",
+        "https://www.bendigorestumping.com/services/reblocking-and-underpinning",
+        "https://www.bendigorestumping.com/services/steel-vs-concrete-stumps",
+        "https://www.bendigorestumping.com/services/subfloor-inspection-and-stump-repairs",
+        "https://www.bendigorestumping.com/terms"
+      ],
+      "uninspected_commercial_urls": [
+        "https://www.bendigorestumping.com/areas/flora-hill",
+        "https://www.bendigorestumping.com/areas/golden-square",
+        "https://www.bendigorestumping.com/areas/kangaroo-flat",
+        "https://www.bendigorestumping.com/areas/quarry-hill",
+        "https://www.bendigorestumping.com/areas/spring-gully",
+        "https://www.bendigorestumping.com/faq",
+        "https://www.bendigorestumping.com/faq/are-steel-stumps-better-than-concrete-stumps-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-cracked-plaster-mean-i-need-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-rotten-bearers-and-joists-be-fixed-during-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-sticking-doors-and-windows-mean-i-need-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/can-you-restump-a-house-in-stages-in-bendigo",
+        "https://www.bendigorestumping.com/faq/do-i-need-a-building-permit-for-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/do-i-need-to-move-out-during-restumping-in-bendigo",
+        "https://www.bendigorestumping.com/faq/how-long-does-restumping-take-in-bendigo",
+        "https://www.bendigorestumping.com/faq/how-much-does-full-house-restumping-cost-in-bendigo",
+        "https://www.bendigorestumping.com/faq/how-much-does-partial-restumping-cost-in-bendigo",
+        "https://www.bendigorestumping.com/services"
+      ]
+    },
+    {
+      "slug": "mobilemechanictownsville",
+      "inspections": [
+        {
+          "url": "https://www.mobilemechanictownsville.com/",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/",
+          "userCanonical": "https://www.mobilemechanictownsville.com/",
+          "lastCrawlTime": "2026-09-04T16:16:41Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.mobilemechanictownsville.com/areas",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/areas",
+          "userCanonical": "https://www.mobilemechanictownsville.com/areas",
+          "lastCrawlTime": "2026-09-05T05:34:04Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.mobilemechanictownsville.com/services/brake-repairs-and-pad-replacement",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/services/brake-repairs-and-pad-replacement",
+          "userCanonical": "https://www.mobilemechanictownsville.com/services/brake-repairs-and-pad-replacement",
+          "lastCrawlTime": "2026-09-03T11:56:30Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.mobilemechanictownsville.com/services/breakdown-and-wont-start-callouts",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/services/breakdown-and-wont-start-callouts",
+          "userCanonical": "https://www.mobilemechanictownsville.com/services/breakdown-and-wont-start-callouts",
+          "lastCrawlTime": "2026-09-01T16:53:03Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.mobilemechanictownsville.com/services/car-battery-replacement",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/services/car-battery-replacement",
+          "userCanonical": "https://www.mobilemechanictownsville.com/services/car-battery-replacement",
+          "lastCrawlTime": "2026-09-04T13:19:04Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.mobilemechanictownsville.com/services/logbook-servicing",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/services/logbook-servicing",
+          "userCanonical": "https://www.mobilemechanictownsville.com/services/logbook-servicing",
+          "lastCrawlTime": "2026-09-05T20:34:05Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic",
+          "userCanonical": "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic",
+          "lastCrawlTime": "2026-09-05T12:04:10Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.mobilemechanictownsville.com/services/pre-purchase-inspections",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.mobilemechanictownsville.com/services/pre-purchase-inspections",
+          "userCanonical": "https://www.mobilemechanictownsville.com/services/pre-purchase-inspections",
+          "lastCrawlTime": "2026-09-05T18:04:05Z",
+          "pageFetchState": "SUCCESSFUL"
+        }
+      ],
+      "errors": [],
+      "property": "sc-domain:mobilemechanictownsville.com",
+      "clicks": 0,
+      "impressions": 319,
+      "pages": [
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/"
+          ],
+          "clicks": 0,
+          "impressions": 145,
+          "ctr": 0,
+          "position": 58.69655172413793
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/about"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 72.22222222222223
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/areas"
+          ],
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 67.52173913043478
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/areas/aitkenvale"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 53.5
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/areas/annandale"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 7
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/areas/deeragun"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 8.5
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/areas/kelso"
+          ],
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 42.05263157894737
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/areas/kirwan"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 37.09090909090909
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/blog"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 72
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/contact"
+          ],
+          "clicks": 0,
+          "impressions": 21,
+          "ctr": 0,
+          "position": 74.33333333333333
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/faq"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 80.57142857142857
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/privacy"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 31.77777777777778
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/services"
+          ],
+          "clicks": 0,
+          "impressions": 87,
+          "ctr": 0,
+          "position": 63.12643678160919
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/services/brake-repairs-and-pad-replacement"
+          ],
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 41
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/services/breakdown-and-wont-start-callouts"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 68.75
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/services/car-battery-replacement"
+          ],
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 29.944444444444443
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/services/logbook-servicing"
+          ],
+          "clicks": 0,
+          "impressions": 16,
+          "ctr": 0,
+          "position": 47.8125
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 64,
+          "ctr": 0,
+          "position": 47.046875
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/services/pre-purchase-inspections"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 66.14285714285714
+        },
+        {
+          "keys": [
+            "https://www.mobilemechanictownsville.com/terms"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 87
+        }
+      ],
+      "queries": [
+        {
+          "keys": [
+            "24 hour mobile mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 42
+        },
+        {
+          "keys": [
+            "4wd mechanic kelso"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 31
+        },
+        {
+          "keys": [
+            "aaron's mobile mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 64
+        },
+        {
+          "keys": [
+            "after hours diesel services"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 58.5
+        },
+        {
+          "keys": [
+            "after hours diesel servicing"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 53.25
+        },
+        {
+          "keys": [
+            "aitkenvale auto & dyno"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 46
+        },
+        {
+          "keys": [
+            "aitkenvale auto and dyno"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 61
+        },
+        {
+          "keys": [
+            "brake pad replacement cost rangeville"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 73
+        },
+        {
+          "keys": [
+            "brake pads townsville"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 62
+        },
+        {
+          "keys": [
+            "brake repairs near me"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 41
+        },
+        {
+          "keys": [
+            "brake repairs townsville"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 65.66666666666667
+        },
+        {
+          "keys": [
+            "brakes townsville"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 65
+        },
+        {
+          "keys": [
+            "car battery replacement townsville"
+          ],
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 40.36363636363637
+        },
+        {
+          "keys": [
+            "car mechanics townsville"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 56
+        },
+        {
+          "keys": [
+            "car service townsville"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 72
+        },
+        {
+          "keys": [
+            "car won't start brisbane mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 91
+        },
+        {
+          "keys": [
+            "charlie mobile mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 11
+        },
+        {
+          "keys": [
+            "cheapest mobile mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 26
+        },
+        {
+          "keys": [
+            "diesel mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 49.111111111111114
+        },
+        {
+          "keys": [
+            "diesel repairs"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 34.6
+        },
+        {
+          "keys": [
+            "diesel servicing"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 36
+        },
+        {
+          "keys": [
+            "diesel townsville"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 64.8
+        },
+        {
+          "keys": [
+            "emergency diesel services"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 83
+        },
+        {
+          "keys": [
+            "fleet mechanics near me"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 67.66666666666667
+        },
+        {
+          "keys": [
+            "free mechanic quote"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "keys": [
+            "free quote mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 63
+        },
+        {
+          "keys": [
+            "logbook car service"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 49
+        },
+        {
+          "keys": [
+            "logbook service townsville"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 48
+        },
+        {
+          "keys": [
+            "logbook services kelso"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 33
+        },
+        {
+          "keys": [
+            "logbook services rangeville"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 87.5
+        },
+        {
+          "keys": [
+            "logbook servicing"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 36
+        },
+        {
+          "keys": [
+            "logbook servicing kelso"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 11.5
+        },
+        {
+          "keys": [
+            "logbook servicing townsville"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 42.25
+        },
+        {
+          "keys": [
+            "mechanic in townsville"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 62.25
+        },
+        {
+          "keys": [
+            "mechanic kirwan"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 46.5
+        },
+        {
+          "keys": [
+            "mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 59.93333333333333
+        },
+        {
+          "keys": [
+            "mechanic townsville city"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 68
+        },
+        {
+          "keys": [
+            "mechanical check"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 93
+        },
+        {
+          "keys": [
+            "mechanical inspection report"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 77
+        },
+        {
+          "keys": [
+            "mechanics near me"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 58.5
+        },
+        {
+          "keys": [
+            "mechanics townsville"
+          ],
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 60.56521739130435
+        },
+        {
+          "keys": [
+            "mobile battery replacement townsville"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 28.5
+        },
+        {
+          "keys": [
+            "mobile brake repairs townsville"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 20
+        },
+        {
+          "keys": [
+            "mobile diesel mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 18,
+          "ctr": 0,
+          "position": 47.27777777777778
+        },
+        {
+          "keys": [
+            "mobile diesel repairs"
+          ],
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 48.5
+        },
+        {
+          "keys": [
+            "mobile diesel service"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 25
+        },
+        {
+          "keys": [
+            "mobile mechanic battery replacement"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 5
+        },
+        {
+          "keys": [
+            "mobile mechanic free quote"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 25.5
+        },
+        {
+          "keys": [
+            "mobile mechanic free quotes"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 35
+        },
+        {
+          "keys": [
+            "mobile mechanic kirwan"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 10.25
+        },
+        {
+          "keys": [
+            "mobile mechanic near me"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 30
+        },
+        {
+          "keys": [
+            "mobile mechanic pre purchase inspection"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 100
+        },
+        {
+          "keys": [
+            "mobile mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 32.4
+        },
+        {
+          "keys": [
+            "mobile mechanic townsville prices"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 22
+        },
+        {
+          "keys": [
+            "mobile mechanics townsville"
+          ],
+          "clicks": 0,
+          "impressions": 16,
+          "ctr": 0,
+          "position": 36.6875
+        },
+        {
+          "keys": [
+            "mobile tyre fitting kelso"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 58.5
+        },
+        {
+          "keys": [
+            "mobile tyre repair townsville"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 59
+        },
+        {
+          "keys": [
+            "motor mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 67.66666666666667
+        },
+        {
+          "keys": [
+            "pre purchase inspection"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 8
+        },
+        {
+          "keys": [
+            "quick start auto electrical"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 88.5
+        },
+        {
+          "keys": [
+            "steering repairs kelso"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 56
+        },
+        {
+          "keys": [
+            "townsville brake and wheel alignment"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 59
+        },
+        {
+          "keys": [
+            "townsville car mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 65.06666666666666
+        },
+        {
+          "keys": [
+            "townsville car services"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 72
+        },
+        {
+          "keys": [
+            "townsville mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 67.23529411764706
+        },
+        {
+          "keys": [
+            "townsville mechanics"
+          ],
+          "clicks": 0,
+          "impressions": 7,
+          "ctr": 0,
+          "position": 62.57142857142857
+        },
+        {
+          "keys": [
+            "townsville mobile mechanic"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 30
+        },
+        {
+          "keys": [
+            "townsville mobile mechanic reviews"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 35
+        },
+        {
+          "keys": [
+            "truck mechanic annandale"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 55
+        },
+        {
+          "keys": [
+            "turbo repairs townsville"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 42
+        },
+        {
+          "keys": [
+            "vehicle mechanic townsville"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 75.5
+        },
+        {
+          "keys": [
+            "vehicle service and repairs townsville"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 70.66666666666667
+        },
+        {
+          "keys": [
+            "wheel alignment service kelso"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 70
+        }
+      ],
+      "sitemap_urls": [
+        "https://www.mobilemechanictownsville.com/",
+        "https://www.mobilemechanictownsville.com/about",
+        "https://www.mobilemechanictownsville.com/areas",
+        "https://www.mobilemechanictownsville.com/areas/aitkenvale",
+        "https://www.mobilemechanictownsville.com/areas/annandale",
+        "https://www.mobilemechanictownsville.com/areas/deeragun",
+        "https://www.mobilemechanictownsville.com/areas/douglas",
+        "https://www.mobilemechanictownsville.com/areas/idalia",
+        "https://www.mobilemechanictownsville.com/areas/kelso",
+        "https://www.mobilemechanictownsville.com/areas/kirwan",
+        "https://www.mobilemechanictownsville.com/contact",
+        "https://www.mobilemechanictownsville.com/faq",
+        "https://www.mobilemechanictownsville.com/faq/can-a-mobile-mechanic-replace-my-car-battery-in-townsville",
+        "https://www.mobilemechanictownsville.com/faq/mobile-diesel-service-townsville",
+        "https://www.mobilemechanictownsville.com/privacy",
+        "https://www.mobilemechanictownsville.com/services",
+        "https://www.mobilemechanictownsville.com/services/brake-repairs-and-pad-replacement",
+        "https://www.mobilemechanictownsville.com/services/breakdown-and-wont-start-callouts",
+        "https://www.mobilemechanictownsville.com/services/car-battery-replacement",
+        "https://www.mobilemechanictownsville.com/services/logbook-servicing",
+        "https://www.mobilemechanictownsville.com/services/mobile-diesel-mechanic",
+        "https://www.mobilemechanictownsville.com/services/pre-purchase-inspections",
+        "https://www.mobilemechanictownsville.com/terms"
+      ],
+      "uninspected_commercial_urls": [
+        "https://www.mobilemechanictownsville.com/areas/aitkenvale",
+        "https://www.mobilemechanictownsville.com/areas/annandale",
+        "https://www.mobilemechanictownsville.com/areas/deeragun",
+        "https://www.mobilemechanictownsville.com/areas/douglas",
+        "https://www.mobilemechanictownsville.com/areas/idalia",
+        "https://www.mobilemechanictownsville.com/areas/kelso",
+        "https://www.mobilemechanictownsville.com/areas/kirwan",
+        "https://www.mobilemechanictownsville.com/faq",
+        "https://www.mobilemechanictownsville.com/faq/can-a-mobile-mechanic-replace-my-car-battery-in-townsville",
+        "https://www.mobilemechanictownsville.com/faq/mobile-diesel-service-townsville",
+        "https://www.mobilemechanictownsville.com/services"
+      ]
+    },
+    {
+      "slug": "electricianballarat",
+      "inspections": [
+        {
+          "url": "https://www.electricianballarat.net/",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.electricianballarat.net/",
+          "userCanonical": "https://www.electricianballarat.net/",
+          "lastCrawlTime": "2026-09-02T16:50:52Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.electricianballarat.net/areas",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.electricianballarat.net/areas",
+          "userCanonical": "https://www.electricianballarat.net/areas",
+          "lastCrawlTime": "2026-09-09T18:42:34Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.electricianballarat.net/services/commercial-electrical",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "NEUTRAL",
+          "coverageState": "Discovered - currently not indexed",
+          "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+        },
+        {
+          "url": "https://www.electricianballarat.net/services/emergency-electrician",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.electricianballarat.net/services/emergency-electrician",
+          "userCanonical": "https://www.electricianballarat.net/services/emergency-electrician",
+          "lastCrawlTime": "2026-09-04T10:43:20Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.electricianballarat.net/services/ev-charger-installation",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.electricianballarat.net/services/ev-charger-installation",
+          "userCanonical": "https://www.electricianballarat.net/services/ev-charger-installation",
+          "lastCrawlTime": "2026-09-04T13:13:20Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.electricianballarat.net/services/house-rewiring-and-old-wiring-repairs",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.electricianballarat.net/services/house-rewiring-and-old-wiring-repairs",
+          "userCanonical": "https://www.electricianballarat.net/services/house-rewiring-and-old-wiring-repairs",
+          "lastCrawlTime": "2026-09-03T04:59:45Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.electricianballarat.net/services/rental-electrical-safety-checks",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.electricianballarat.net/services/rental-electrical-safety-checks",
+          "userCanonical": "https://www.electricianballarat.net/services/rental-electrical-safety-checks",
+          "lastCrawlTime": "2026-09-03T18:28:51Z",
+          "pageFetchState": "SUCCESSFUL"
+        },
+        {
+          "url": "https://www.electricianballarat.net/services/switchboard-upgrades",
+          "checked_at": "2026-09-12T03:47:06.937941+00:00",
+          "verdict": "PASS",
+          "coverageState": "Submitted and indexed",
+          "googleCanonical": "https://www.electricianballarat.net/services/switchboard-upgrades",
+          "userCanonical": "https://www.electricianballarat.net/services/switchboard-upgrades",
+          "lastCrawlTime": "2026-09-12T02:17:55Z",
+          "pageFetchState": "SUCCESSFUL"
+        }
+      ],
+      "errors": [],
+      "property": "sc-domain:electricianballarat.net",
+      "clicks": 0,
+      "impressions": 83,
+      "pages": [
+        {
+          "keys": [
+            "https://www.electricianballarat.net/"
+          ],
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 73.34782608695652
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/about"
+          ],
+          "clicks": 0,
+          "impressions": 27,
+          "ctr": 0,
+          "position": 54.592592592592595
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/areas"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 69.5
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/areas/delacombe"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 36.2
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/areas/lucas"
+          ],
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 41.22222222222222
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/areas/miners-rest"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 86
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/areas/mount-clear"
+          ],
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 70
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/areas/sebastopol"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 29.5
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/services"
+          ],
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 78.6842105263158
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/services/emergency-electrician"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 40
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/services/ev-charger-installation"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 57
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/services/rental-electrical-safety-checks"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 67.5
+        },
+        {
+          "keys": [
+            "https://www.electricianballarat.net/services/switchboard-upgrades"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 56.666666666666664
+        }
+      ],
+      "queries": [
+        {
+          "keys": [
+            "ballarat electrical company"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 22
+        },
+        {
+          "keys": [
+            "ballarat electrical services"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 73
+        },
+        {
+          "keys": [
+            "ballarat electrician"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 68.5
+        },
+        {
+          "keys": [
+            "ballarat electricians"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 64
+        },
+        {
+          "keys": [
+            "ceramic fuse switchboard"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 81
+        },
+        {
+          "keys": [
+            "ceramic switchboard"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 85
+        },
+        {
+          "keys": [
+            "effective electrical"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 68
+        },
+        {
+          "keys": [
+            "electrical ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 82
+        },
+        {
+          "keys": [
+            "electrician ballan"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 83
+        },
+        {
+          "keys": [
+            "electrician ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 74
+        },
+        {
+          "keys": [
+            "electrician berringa"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 86
+        },
+        {
+          "keys": [
+            "electrician cape clear"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 63
+        },
+        {
+          "keys": [
+            "electrician delacombe"
+          ],
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 43.75
+        },
+        {
+          "keys": [
+            "electrician in ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 75
+        },
+        {
+          "keys": [
+            "electrician jobs ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 42
+        },
+        {
+          "keys": [
+            "electrician quotes"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 98.25
+        },
+        {
+          "keys": [
+            "electrician snake valley"
+          ],
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 66.5
+        },
+        {
+          "keys": [
+            "electrician springdallah"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 84
+        },
+        {
+          "keys": [
+            "emergency electrician ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 40
+        },
+        {
+          "keys": [
+            "ev charger installation ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 57
+        },
+        {
+          "keys": [
+            "home electrician ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 81.5
+        },
+        {
+          "keys": [
+            "home safety ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 59
+        },
+        {
+          "keys": [
+            "industrial electrician ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 72
+        },
+        {
+          "keys": [
+            "laser electrical ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 75
+        },
+        {
+          "keys": [
+            "lucas electrical"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 58
+        },
+        {
+          "keys": [
+            "lucas electrician"
+          ],
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 39.125
+        },
+        {
+          "keys": [
+            "rcd testing ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 76
+        },
+        {
+          "keys": [
+            "residential electrician ballarat"
+          ],
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 84
+        },
+        {
+          "keys": [
+            "ron smart electrical"
+          ],
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 83
+        }
+      ],
+      "sitemap_urls": [
+        "https://www.electricianballarat.net/",
+        "https://www.electricianballarat.net/about",
+        "https://www.electricianballarat.net/areas",
+        "https://www.electricianballarat.net/areas/alfredton",
+        "https://www.electricianballarat.net/areas/delacombe",
+        "https://www.electricianballarat.net/areas/lucas",
+        "https://www.electricianballarat.net/areas/miners-rest",
+        "https://www.electricianballarat.net/areas/mount-clear",
+        "https://www.electricianballarat.net/areas/sebastopol",
+        "https://www.electricianballarat.net/areas/wendouree",
+        "https://www.electricianballarat.net/contact",
+        "https://www.electricianballarat.net/faq",
+        "https://www.electricianballarat.net/faq/can-any-electrician-do-a-rental-electrical-safety-check-in-victoria",
+        "https://www.electricianballarat.net/faq/do-electrical-safety-checks-apply-to-older-victorian-rental-agreements",
+        "https://www.electricianballarat.net/faq/do-i-need-an-electrical-safety-check-between-tenancies-in-ballarat",
+        "https://www.electricianballarat.net/faq/do-victorian-rental-properties-need-a-modern-switchboard",
+        "https://www.electricianballarat.net/faq/does-a-rental-safety-switch-need-to-be-tested-or-just-checked",
+        "https://www.electricianballarat.net/faq/how-long-must-a-rental-provider-keep-electrical-safety-check-records",
+        "https://www.electricianballarat.net/faq/how-often-do-rental-electrical-safety-checks-need-to-be-done-in-victoria",
+        "https://www.electricianballarat.net/faq/what-does-a-rental-electrical-safety-check-include",
+        "https://www.electricianballarat.net/faq/what-happens-if-a-rental-property-fails-the-electrical-safety-check",
+        "https://www.electricianballarat.net/faq/when-does-a-renter-get-a-copy-of-the-electrical-safety-check",
+        "https://www.electricianballarat.net/faq/when-is-an-electrical-safety-check-required-for-a-victorian-rental",
+        "https://www.electricianballarat.net/faq/who-pays-for-the-electrical-safety-check-in-a-victorian-rental",
+        "https://www.electricianballarat.net/privacy",
+        "https://www.electricianballarat.net/services",
+        "https://www.electricianballarat.net/services/commercial-electrical",
+        "https://www.electricianballarat.net/services/emergency-electrician",
+        "https://www.electricianballarat.net/services/ev-charger-installation",
+        "https://www.electricianballarat.net/services/house-rewiring-and-old-wiring-repairs",
+        "https://www.electricianballarat.net/services/rental-electrical-safety-checks",
+        "https://www.electricianballarat.net/services/switchboard-upgrades",
+        "https://www.electricianballarat.net/terms"
+      ],
+      "uninspected_commercial_urls": [
+        "https://www.electricianballarat.net/areas/alfredton",
+        "https://www.electricianballarat.net/areas/delacombe",
+        "https://www.electricianballarat.net/areas/lucas",
+        "https://www.electricianballarat.net/areas/miners-rest",
+        "https://www.electricianballarat.net/areas/mount-clear",
+        "https://www.electricianballarat.net/areas/sebastopol",
+        "https://www.electricianballarat.net/areas/wendouree",
+        "https://www.electricianballarat.net/faq",
+        "https://www.electricianballarat.net/faq/can-any-electrician-do-a-rental-electrical-safety-check-in-victoria",
+        "https://www.electricianballarat.net/faq/do-electrical-safety-checks-apply-to-older-victorian-rental-agreements",
+        "https://www.electricianballarat.net/faq/do-i-need-an-electrical-safety-check-between-tenancies-in-ballarat",
+        "https://www.electricianballarat.net/faq/do-victorian-rental-properties-need-a-modern-switchboard",
+        "https://www.electricianballarat.net/faq/does-a-rental-safety-switch-need-to-be-tested-or-just-checked",
+        "https://www.electricianballarat.net/faq/how-long-must-a-rental-provider-keep-electrical-safety-check-records",
+        "https://www.electricianballarat.net/faq/how-often-do-rental-electrical-safety-checks-need-to-be-done-in-victoria",
+        "https://www.electricianballarat.net/faq/what-does-a-rental-electrical-safety-check-include",
+        "https://www.electricianballarat.net/faq/what-happens-if-a-rental-property-fails-the-electrical-safety-check",
+        "https://www.electricianballarat.net/faq/when-does-a-renter-get-a-copy-of-the-electrical-safety-check",
+        "https://www.electricianballarat.net/faq/when-is-an-electrical-safety-check-required-for-a-victorian-rental",
+        "https://www.electricianballarat.net/faq/who-pays-for-the-electrical-safety-check-in-a-victorian-rental",
+        "https://www.electricianballarat.net/services"
+      ]
+    }
+  ],
+  "ok": true
+}
