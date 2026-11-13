@@ -60,7 +60,13 @@ _BANNED: list[tuple[str, re.Pattern[str]]] = [
     ("delve", re.compile(r"\bdelv(?:e|es|ed|ing)\b", re.IGNORECASE)),
     ("landscape", re.compile(r"\blandscapes?\b", re.IGNORECASE)),
     ("10x", re.compile(r"(?<!\w)10[xX](?!\w)")),
-    ("operator", re.compile(r"\boperators?\b", re.IGNORECASE)),
+    # Travis: "biz op is fine". The bio phrase "business operator" is allowed
+    # in any case. Any other "operator" / "operators" stays banned.
+    # IGNORECASE applies to the lookbehind, so "Business Operator" is covered.
+    (
+        "operator",
+        re.compile(r"(?<!business )\boperators?\b", re.IGNORECASE),
+    ),
     ("plumbing", re.compile(r"\bplumbing\b", re.IGNORECASE)),
     ("ceremony", re.compile(r"\bceremon(?:y|ies)\b", re.IGNORECASE)),
     ("theatre", re.compile(r"\btheat(?:re|er)s?\b", re.IGNORECASE)),

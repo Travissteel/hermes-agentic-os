@@ -79,6 +79,23 @@ class VoiceCheckTests(unittest.TestCase):
         result = check_text("Not sure this landed. I shipped the directory anyway and left the listing free.")
         self.assertTrue(result.ok, result.violations)
 
+    def test_business_operator_phrase_is_allowed_and_standalone_operator_is_not(self) -> None:
+        allowed = check_text(
+            "I am a solo AI business operator. The directory is still free and the listing stays that way."
+        )
+        self.assertTrue(allowed.ok, allowed.violations)
+        self.assertFalse(any("operator" in item.message for item in allowed.violations))
+
+        titled = check_text(
+            "Solo AI Business Operator is the job. The directory is still free and the listing stays that way."
+        )
+        self.assertTrue(titled.ok, titled.violations)
+
+        banned = check_text("I am an operator and the directory is still free.")
+        self.assertTrue(
+            any(item.code == "banned_word" and item.message == "banned word: operator" for item in banned.violations)
+        )
+
     def test_banned_word_rhetorical_and_stack(self) -> None:
         banned = check_text("I leverage the directory every morning and the listing is still free.")
         self.assertTrue(any(item.code == "banned_word" for item in banned.violations))
