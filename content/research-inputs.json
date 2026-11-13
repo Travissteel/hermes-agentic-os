@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "note": "Primary paths are hypotheses until confirmed on the laptop. Set CONTENT_PERFORMANCE_INPUT or CONTENT_X_RESEARCH_INPUT, or edit primary, when the real capture files differ. Snapshots remember the last non-empty payload and keep that capture's date. Weekly inputs default to 192 hours (8 days).",
+  "inputs": [
+    {
+      "name": "performance",
+      "description": "Performance capture consumed by content research and the Sunday X draft.",
+      "max_age_hours": 192,
+      "env_override": "CONTENT_PERFORMANCE_INPUT",
+      "primary": "~/.hermes/content/performance_latest.json",
+      "also_try": [
+        "~/.hermes/data/postiz_performance_latest.json",
+        "~/.hermes/scripts/output/postiz_performance_latest.json",
+        "~/antigravity/shared/content-inputs/performance.json"
+      ],
+      "dated_dir": "~/.hermes/content/performance",
+      "snapshot": "~/.hermes/content/last-valid/performance.json"
+    },
+    {
+      "name": "x_research",
+      "description": "X research capture consumed by weekly long-form drafting.",
+      "max_age_hours": 192,
+      "env_override": "CONTENT_X_RESEARCH_INPUT",
+      "primary": "~/.hermes/content/x_research_latest.json",
+      "also_try": [
+        "~/.hermes/data/x_research_latest.json",
+        "~/.hermes/scripts/output/x_research_latest.json",
+        "~/antigravity/shared/content-inputs/x_research.json"
+      ],
+      "dated_dir": "~/.hermes/content/x_research",
+      "snapshot": "~/.hermes/content/last-valid/x_research.json"
+    }
+  ]
+}

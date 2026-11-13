@@ -19,6 +19,12 @@ shared/hf-gsc-latest.json
 shared/hf-gsc-worklist.md
 shared/leadgen-gsc-latest.md
 
+# Content pipeline runtime. The ledger is append-only local state; the example
+# file in shared/ is the schema. Research manifests can contain capture text.
+shared/change-log.jsonl
+shared/change-report-cursor.json
+shared/content-inputs/
+
 # --- Claude Code workspace settings ---
 # .claude/settings.local.json embeds API tokens in command patterns.
 # .claude/ also contains session caches.
