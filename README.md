@@ -89,7 +89,7 @@ cp ../shared/subscriptions.example.json ../shared/subscriptions.json
 bun run start    # or wire as a systemd service
 ```
 
-Hook up the Claude Code PostToolUse hook (see `scripts/log-activity.sh`) and symlink `skills/antigravity` into `~/.hermes/skills/`.
+Hook up the Claude Code PostToolUse hook (see `scripts/log-activity.sh`) and symlink `skills/antigravity`, `skills/x-weekly-draft`, and `skills/daily-change-report` into `~/.hermes/skills/`.
 
 ## Licence
 

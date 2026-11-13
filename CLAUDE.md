@@ -102,6 +102,27 @@ Covers 6 properties: 4 leadgen `sc-domain:` + hypnotherapy-finder + business-sof
 else inherits the `gpt-5.4` default. Never set `gpt-5.5-pro` on a cron — it
 prompts for confirmation and will hang an unattended run.
 
+### Content voice, research inputs, change ledger (repo)
+
+Versioned checks live in this repo. The laptop cron prompts and `~/.hermes/scripts/*.py` are not in git. Do not invent replacements for those files, and do not edit `ops-event-harvest` or the 8am/1pm/6pm content-harvest crons.
+
+| Piece | Path |
+|---|---|
+| Approved voice (verbatim, 27 Oct 2026) | `content/voice/content-lead-voice-prompt.txt` |
+| Draft prompt + hard-ban check | `scripts/content/weekly_draft_gate.py` (`prompt`, `check`) |
+| Research freshness / last-valid fallback | `scripts/content/prepare_research_inputs.py` |
+| Input path hypotheses | `content/research-inputs.json` |
+| Append-only ledger | `shared/change-log.jsonl` (gitignored; schema in `shared/change-log.example.jsonl`) |
+| Exception-only daily report | `scripts/content/daily_change_report.py` |
+| Cron prompt wiring (dry-run unless `--apply`) | `scripts/content/wire_hermes_jobs.py` |
+| Hermes skills | `skills/x-weekly-draft`, `skills/daily-change-report` |
+
+Weekly drafting must use the approved voice. Playbook anatomy can stay; `named_contrast` / `reframe` hooks cannot. The checker rejects contrast-reframes, the banned word list, rhetorical-question openers, and stacked one-liners. It does not apply a short character cap.
+
+`prepare_research_inputs.py` prints one `WARNING` line when performance or X research input is empty, stale, or missing, and points at the last non-empty capture by date. A fresh input prints one `OK` line and refreshes `~/.hermes/content/last-valid/`.
+
+The daily change report lists only commits, deployments, and blockers appended since the previous report. Record them with `scripts/content/change_log.py add`. It does not send Telegram or Postiz.
+
 ---
 
 ## Active Projects
